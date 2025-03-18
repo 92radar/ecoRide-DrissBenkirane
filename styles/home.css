@@ -1,0 +1,41 @@
+.container {
+    overflow: auto;
+    padding-top: 40px;
+
+
+    /* Important pour que le conteneur englobe les éléments flottants */
+}
+
+.right-image {
+    float: right;
+    /* Faire flotter l'image à droite */
+    margin-left: 15px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Ombre portée */
+
+
+}
+
+
+
+.left-image {
+    float: left;
+    margin-right: 15px;
+
+}
+
+p {
+    padding-top: 50px;
+}
+
+.container-bottom {
+    margin-bottom: 150px;
+}
+
+.left-text {
+
+    padding-top: 100px;
+}
