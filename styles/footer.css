@@ -1,0 +1,20 @@
+html {
+    position: relative;
+    min-height: 100%;
+
+}
+
+footer.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+
+}
+
+.bg-custom-footer {
+    background-color: #072d44;
+
+
+    /* Remplacez par votre couleur */
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'acceuil d'eco ride</title>
+    <link rel="stylesheet" href="styles/font.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/research.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body></body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-custom">
+        <div class="navbar-logo-container">
+            <img src="./images/IconOnly_Transparent_NoBuffer-2.png" alt="Logo" class="navbar-logo">
+        </div>
+        <div class="container">
+
+
+            <a class="navbar-brand text-white" href="#">Eco ride</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="#">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="#">Co-voiturage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Connexion/inscription</a>
+                    </li>
+
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-scene text-center text-white">
+        <div class="hero-scene-content ">
+            <form action="/resultats-covoiturage" method="get">
+                <div class="recherche-multicriteres text-black">
+                    <label for="depart">Départ :</label>
+                    <input type="text" id="depart" name="depart" placeholder="Ville de départ">
+
+                    <label for="arrivee">Arrivée :</label>
+                    <input type="text" id="arrivee" name="arrivee" placeholder="Ville d'arrivée">
+
+                    <label for="date">Date de départ :</label>
+                    <input type="date" id="date" name="date">
+
+                    <button type="submit" aria-label="Rechercher">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+
+
+
+</header>
+
+<main id="main-page">
+    <!-- le contenu de la page sera afficher ici-->
+
+</main>
+
+<footer>
+    <footer class="bg-custom-footer text-white text-center footer">
+        <div class="row">
+            <div class="col-12 col-lg-4">
+                <h3 class="text-white">Contact</h3>
+                <p></p>
+            </div>
+            <div class="col-6 col-lg-4">
+                <p>Eco ride
+
+                </p>
+            </div>
+            <div class="col-6 col-lg-4">
+                <p>test</p>
+            </div>
+        </div>
+    </footer>
+</footer>
+
+<script type="module" src="../Router/router.js"></script>
+
+</body>
+
+</html>

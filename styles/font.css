@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Marianne';
+    src: url('../font/Marianne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+
+
+}
+
+nav {
+    font-family: 'Marianne';
+    font-size: 1em;
+
+
+
+}
+
+h1 {
+    font-family: 'Marianne';
+    font-size: 1em;
+    color: #000000;
+}
+
+footer {
+    font-family: 'Marianne';
+    font-size: 1em;
+    color: #000000;
+}
