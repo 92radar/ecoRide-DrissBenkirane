@@ -27,15 +27,31 @@
 
 }
 
-p {
-    padding-top: 50px;
-}
+
 
 .container-bottom {
     margin-bottom: 150px;
 }
 
-.left-text {
 
-    padding-top: 100px;
+
+@media (max-width: 740px) {
+    h1 {
+        font-size: 1em;
+        /* Taille de police réduite pour les petits écrans */
+    }
+
+    p {
+        font-size: 0.5em;
+        /* Taille de police légèrement réduite pour les petits écrans */
+    }
+
+    img {
+        width: 100px;
+        height: auto;
+    }
+
+    .container-bottom {
+        margin-bottom: 50px;
+    }
 }

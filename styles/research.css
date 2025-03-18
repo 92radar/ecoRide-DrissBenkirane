@@ -29,8 +29,10 @@
 .recherche-multicriteres {
     display: flex;
     align-items: center;
+
     /* Aligner verticalement les éléments */
     border: 1px solid #ccc;
+    display: flex;
     /* Bordure pour l'unité */
     border-radius: 30px;
     /* Bords arrondis */
@@ -79,4 +81,20 @@ button svg {
     /* Ajustez la hauteur de l'icône */
     fill: rgb(2, 2, 2);
     /* Couleur de remplissage de l'icône */
+}
+
+@media (max-width: 932px) {
+    h1 {
+        font-size: 0.5em;
+        /* Taille de police réduite pour les petits écrans */
+    }
+
+    p {
+        font-size: 0.5em;
+        /* Taille de police légèrement réduite pour les petits écrans */
+    }
+
+    .recherche-multicriteres {
+        flex-direction: column;
+    }
 }

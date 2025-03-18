@@ -19,5 +19,21 @@ footer.footer {
 
 
 
-    /* Remplacez par votre couleur */
+
+}
+
+@media (max-width: 932px) {
+    footer.footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+
+
+
+    }
+
+    h3 {
+        font-size: 0.5em;
+    }
+
 }
