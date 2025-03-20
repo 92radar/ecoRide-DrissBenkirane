@@ -63,7 +63,8 @@
     /* Couleur de fond */
     color: rgb(0, 0, 0);
     /* Couleur du signe + */
-    font-size: 24px;
+    font-size: 30px;
+
     /* Taille du signe + */
     border: solid 1px #010509;
     /* Supprime la bordure par défaut */
@@ -71,7 +72,7 @@
     align-items: center;
     justify-content: center;
     float: right;
-    margin: 40px;
+    margin: 30px;
 
 }
 
@@ -89,12 +90,15 @@
     /* Centre verticalement les éléments */
     float: right;
     right: 40px;
-    top: 40px;
-    margin-right: 20px;
+    top: 6 0px;
+    margin-right: 10px;
+    bottom: auto;
+    margin: 30px;
 }
 
 .texte-bouton {
     font-size: 20px;
+
     /* Taille du texte */
 }
 
