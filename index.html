@@ -37,7 +37,9 @@
                         <a class="nav-link active text-white" href="/covoiturage">Co-voiturage</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="/login">Connexion/inscription</a>
+                        <a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#loginModal"
+                            data-bs-backdrop="true" data-bs-keyboard="true" role="dialog"
+                            href="/login">Connexion/inscription</a>
                     </li>
 
 
@@ -70,6 +72,45 @@
                 </div>
             </form>
 
+            <!-- Modal -->
+            <div class="modal fade" id="loginModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content text-black">
+                        <div class="modal-header" style="padding:35px 50px;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+                        </div>
+                        <div class="modal-body" style="padding:40px 50px;">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="usrname"> Email</label>
+                                    <input type="text" class="form-control" id="usrname"
+                                        placeholder="Entrer votre email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="psw"> Mot de passe</label>
+                                    <input type="text" class="form-control" id="password"
+                                        placeholder="Entrer votre mot de passe">
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="" checked>Se rappeler de moi</label>
+                                </div>
+                                <button type="submit" class="btn btn-success btn-block"><span
+                                        class="glyphicon glyphicon-off"></span> Login</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+
+                            <p4>Pas encore inscrit? <a href="/register">inscription ici</a></p4>
+                            <a href="#">Mot de passe oublier?</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
 
 </header>
@@ -78,6 +119,7 @@
     <!-- le contenu de la page sera afficher ici-->
 
 </main>
+
 
 <footer>
     <footer class="bg-custom-footer text-white text-center footer">
@@ -96,10 +138,18 @@
             </div>
 
         </div>
+
+
+
+
+
+
+
     </footer>
 </footer>
 
 <script type="module" src="../Router/router.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
