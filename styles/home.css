@@ -119,3 +119,18 @@ h1 {
 p {
     margin-left: 20px;
 }
+
+button {
+    background-color: rgb(46, 123, 120);
+    border: solid 1px rgb(5, 13, 12);
+    border-radius: 30px;
+
+}
+
+a {
+    color: #fefffe;
+}
+
+.button-2 {
+    background-color: rgb(83, 71, 55);
+}
