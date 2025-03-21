@@ -10,7 +10,7 @@
         height: 100%;
         background-color: #1181C9;
         background-size: cover;
-        filter: brightness(0.3);
+
     }
 
     * {
@@ -31,12 +31,12 @@
     align-items: center;
 
     /* Aligner verticalement les éléments */
-    border: 1px solid #ccc;
+    border: 3px solid #29a938b7;
     display: flex;
     /* Bordure pour l'unité */
     border-radius: 30px;
     /* Bords arrondis */
-    padding: 5px;
+    padding: 15px;
     background-color: rgb(255, 255, 255);
 }
 
