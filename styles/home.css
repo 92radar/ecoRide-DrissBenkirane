@@ -5,71 +5,46 @@
 .first-container {
     overflow: auto;
     padding-top: 50px;
-    background-color: rgb(83, 71, 55);
+    background-color: rgb(255, 255, 255);
     color: #fefffe;
 
-
-
-
-
-
-
-    /* Important pour que le conteneur englobe les éléments flottants */
 }
 
-.container-middle {
-    overflow: auto;
-    padding-top: 40px;
-    background-color: rgb(46, 123, 52);
-    color: #fefffe;
+h2 {
 
-
-
-
-
-
-    /* Important pour que le conteneur englobe les éléments flottants */
+    font-size: 2em;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
-.right-image {
-    float: right;
-    /* Faire flotter l'image à droite */
-    margin-left: 15px;
-    margin-bottom: 20px;
-    border-radius: 50px;
-    border: 1px solid #0e910a;
-    /* Coins arrondis */
-
-    /* Ombre portée */
-
-
-}
-
-
-
-
-.left-image {
+.calendar-icon {
     float: left;
-    margin-right: 15px;
-    border-radius: 30px;
-    border: 1px solid #0e910a;
-
 }
+
+
+
 
 
 
 .container-bottom {
     margin-bottom: 100px;
-    background-color: antiquewhite;
-    color: black;
+    background-color: #0a6638;
+
 }
 
 
 
-@media (max-width: 740px) {
+@media (max-width: 930px) {
     h1 {
         font-size: 1em;
+
         /* Taille de police réduite pour les petits écrans */
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 1.5em;
     }
 
     p {
@@ -85,6 +60,7 @@
     .container-bottom {
         margin-bottom: 50px;
     }
+
 }
 
 .conteneur-grid {
@@ -93,6 +69,7 @@
     /* Trois colonnes de largeur égale */
     gap: 10px;
     margin-top: 50px;
+    margin: 10px;
 
 
 
@@ -109,28 +86,122 @@
 }
 
 img {
+    margin: 0 auto 10px;
+    display: block;
+}
+
+.image {
     float: right;
 }
 
-h1 {
-    margin-left: 50px;
+
+
+
+
+
+
+
+
+
+.row {
+    display: flex;
+    margin: 10px;
+    /* Utilise Flexbox pour créer une mise en page en colonnes */
 }
 
-p {
-    margin-left: 20px;
+.column {
+    flex: 1;
+    /* Chaque colonne prendra une part égale de l'espace disponible */
+    padding: 10px;
+    /* Ajoute un peu d'espace autour du contenu des colonnes */
 }
 
-button {
-    background-color: rgb(46, 123, 120);
-    border: solid 1px rgb(5, 13, 12);
+
+
+
+
+.card-container {
+    display: flex;
+    /* Utilise Flexbox pour la mise en page en colonnes */
+    justify-content: space-around;
+    /* Répartit les cartes uniformément */
+    flex-wrap: wrap;
+    /* Permet aux cartes de passer à la ligne si l'écran est trop petit */
+}
+
+.card {
+    width: 30%;
+    /* Chaque carte prend 30% de la largeur du conteneur */
+    border: 1px solid #ccc;
     border-radius: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    /* Ajoute une bordure légère */
+    padding: 20px;
+    margin-bottom: 20px;
+    /* Ajoute un espace entre les cartes */
+    text-align: center;
+    /* Centre le contenu des cartes */
+}
+
+.card img {
+    max-width: 100%;
+    /* L'image ne dépasse pas la largeur de la carte */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Styles supplémentaires pour les liens et les titres */
+.card a {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+fieldset {
+    margin-bottom: 200px;
+
 
 }
 
-a {
-    color: #fefffe;
+fieldset input {
+    border-radius: 10px;
+    width: 50%;
 }
 
-.button-2 {
-    background-color: rgb(83, 71, 55);
+textarea {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#button {
+    background-color: #0a6638;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.grid-container {
+    display: grid;
+    /* Active CSS Grid pour le conteneur */
+    grid-template-columns: 1fr 1fr;
+    /* Définit trois colonnes de largeur égale */
+    gap: 15px;
+    margin: 10px;
+    /* Ajoute un espace (gouttière) entre les colonnes */
+}
+
+.grid-item {
+    padding: 15px;
+    box-sizing: border-box;
+    border: solid 1px #000000;
+    border-radius: 30px;
 }

@@ -1,21 +1,12 @@
-.bg-custom {
-    background-color: #29a938b7;
-    /* Remplacez par votre couleur */
-}
-
 * {
     font-family: 'Marianne';
 }
 
-.modal-header,
-h4,
-.close {
-    background-color: #5cb85c;
-    color: white !important;
-    text-align: center;
-    font-size: 30px;
-}
 
-.modal-footer {
-    background-color: #f9f9f9;
+
+@media (max-width: 990px) {
+    .user-icon {
+        display: none;
+    }
+
 }
