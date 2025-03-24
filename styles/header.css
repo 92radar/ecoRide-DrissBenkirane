@@ -1,6 +1,14 @@
-.bg-custom {
-    background-color: #177A23;
-    /* Remplacez par votre couleur */
+* {
+    font-family: 'Marianne';
+}
+
+
+
+@media (max-width: 990px) {
+    .user-icon {
+        display: none;
+    }
+
 }
 
 * {
