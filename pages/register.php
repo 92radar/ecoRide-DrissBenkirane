@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="styles/register.css">
 
+
+
 <section class="vh-100 gradient-custom">
     <div class="container py-5 h-100">
         <div class="row justify-content-center align-items-center h-100">
@@ -13,7 +15,7 @@
                                 <div class="col-md-6 mb-4">
 
                                     <div data-mdb-input-init class="form-outline">
-                                        <input type="text" id="firstName" placeholder="Nom"
+                                        <input type="text" id="nom" placeholder="Nom"
                                             class="form-control form-control-lg" />
                                         <label class="form-label" for="firstName">Nom</label>
                                     </div>
@@ -22,7 +24,7 @@
                                 <div class="col-md-6 mb-4">
 
                                     <div data-mdb-input-init class="form-outline">
-                                        <input type="text" id="lastName" placeholder="Prenom"
+                                        <input type="text" id="prenom" placeholder="Prenom"
                                             class="form-control form-control-lg" />
                                         <label class="form-label" for="lastName">Prenom</label>
                                     </div>
@@ -34,8 +36,8 @@
                                 <div class="col-md-6 mb-4 d-flex align-items-center">
 
                                     <div data-mdb-input-init class="form-outline datepicker w-100">
-                                        <input type="date" class="form-control form-control-lg" id="birthdayDate" />
-                                        <label for="birthdayDate" class="form-label">Date de naissance</label>
+                                        <input type="date" class="form-control form-control-lg" id="dateNaissance" />
+                                        <label for="dateNaissance" class="form-label">Date de naissance</label>
                                     </div>
 
                                 </div>
@@ -86,9 +88,9 @@
                                 <div class="col-md-6 mb-4 pb-2">
 
                                     <div data-mdb-input-init class="form-outline">
-                                        <input type="tel" id="phoneNumber" class="form-control form-control-lg"
+                                        <input type="text" id="adresse" class="form-control form-control-lg"
                                             placeholder="Adresse" />
-                                        <label class="form-label" for="phoneNumber">Adresse</label>
+                                        <label class="form-label" for="adresse">Adresse</label>
                                     </div>
 
                                 </div>
@@ -106,7 +108,9 @@
                                     <label class="form-label select-label">Choisir une option</label>
 
                                 </div>
-                            </div>
+                            </div></br>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                checked><span>J'accepte les conditions générales d'utilisation</span>
 
                             <div class="mt-4 pt-2">
                                 <input data-mdb-ripple-init class="btn btn-primary btn-lg" type="submit"
