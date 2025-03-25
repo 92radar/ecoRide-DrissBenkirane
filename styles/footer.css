@@ -1,0 +1,39 @@
+html {
+    position: relative;
+    min-height: 100%;
+
+}
+
+footer.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+
+
+
+}
+
+.bg-custom-footer {
+    background-color: #072d44;
+
+
+
+
+}
+
+@media (max-width: 932px) {
+    footer.footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+
+
+
+    }
+
+    h3 {
+        font-size: 0.5em;
+    }
+
+}

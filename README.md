@@ -27,7 +27,7 @@ testée, il faudra effectuer un merge vers la branche principale
 Technologies utilisées :
 
 Front-end : HTML5, CSS/SCSS, Bootstrap et JavaScript.
-Back-end : PHP, le framework Symfony sera utilisé.
+Back-end : PHP, avec utilisation de PDO.
 Base de données : MySQL MariaDB 10.4.28.
 Outils et déploiement : Git, Composer, VS Code et Heroku.
 
