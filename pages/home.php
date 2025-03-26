@@ -1,4 +1,14 @@
 <link rel="stylesheet" href="styles/home.css">
+<?php
+session_start();
+
+if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true) {
+
+    echo "Bienvenue, utilisateur connecté !";
+}
+
+
+?>
 
 
 

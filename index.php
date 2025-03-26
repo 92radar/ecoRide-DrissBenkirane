@@ -1,3 +1,31 @@
+<?php
+session_start();
+if (isset($_POST['logout'])) {
+    // Détruire toutes les variables de session
+    $_SESSION = array();
+
+    if (ini_get("session.use_cookies")) {
+        $params = session_get_cookie_params();
+        setcookie(
+            session_name(),
+            '',
+            time() - 42000,
+            $params["path"],
+            $params["domain"],
+            $params["secure"],
+            $params["httponly"]
+        );
+    }
+
+    session_destroy();
+
+    // Rediriger vers la page de connexion ou la page actuelle (pour rafraîchir l'affichage)
+    header("Location: http://localhost:4000"); // Redirige vers la page home
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,8 +40,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
-        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
-        crossorigin="anonymous"></script>
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
+    </script>
 
 
 </head>
@@ -40,12 +68,17 @@
                         Espace utilisateurs
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/login">Connexion</a>
-                        <a class="dropdown-item" href="/register">S'inscrire</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/account">Profil</a>
-                        <a class="dropdown-item" href="#">Publier un trajet</a>
-                    </div>
+                        <?php
+                        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                            echo '<a class="dropdown-item" href="/profil">Profil</a>';
+                            echo '<a class="dropdown-item" href="/account">Publier un trajet</a>';
+                            echo '<form method="post"><button class="dropdown-item" name="logout">Déconnexion</button></form>';
+                        } else {
+                            // L'utilisateur n'est pas connecté, afficher les liens de connexion/inscription
+                            echo '<a class="dropdown-item" href="/login">Connexion</a>';
+                            echo '<a class="dropdown-item" href="/register">S\'inscrire</a>';
+                        }
+                        ?>
                 </li>
 
             </ul>
@@ -62,7 +95,7 @@
         </div>
 
         <div class=" hero-scene-content " id="sectionRecherche">
-            <form action=" /resultats-covoiturage" method="get">
+            <form action="" method="">
                 <div class="recherche-multicriteres text-black">
                     <label for="depart"></label>
                     <img class="icon" src="/images/location_16138523.png" alt="map" class="map-icon">

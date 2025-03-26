@@ -1,6 +1,62 @@
+<!DOCTYPE html>
+
 <link rel="stylesheet" href="styles/register.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
+<?php
+
+
+
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+
+$pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecorideDatabase.db");
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+
+$error = null;
+
+
+
+
+try {
+    $stmt = $pdo->prepare("INSERT INTO utilisateurs (nom, prenom, date_naissance, email, password, telephone, adresse)
+    VALUES (:nom, :prenom, :date_naissance, :email, :password, :telephone, :adresse)");
+
+    if (isset($_POST['submit'])) {
+        $nom = $_POST['nom'];
+        $prenom = $_POST['prenom'];
+        $dateNaissance = $_POST['date_naissance'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $telephone = $_POST['telephone'];
+        $adresse = $_POST['adresse'];
+
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
+        $stmt->execute([
+            'nom' => $nom,
+            'prenom' => $prenom,
+            'date_naissance' => $dateNaissance,
+            'email' => $email,
+            'password' => $hashedPassword,
+            'telephone' => $telephone,
+            'adresse' => $adresse
+        ]);
+    }
+} catch (PDOException $e) {
+    echo $e->getMessage();
+}
+
+
+
+?>
 
 <section class="vh-100 gradient-custom">
     <div class="container py-5 h-100">
@@ -9,111 +65,69 @@
                 <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                     <div class="card-body p-4 p-md-5">
                         <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Formulaire d'inscription</h3>
-                        <form>
+                        <form action="" method="post">
 
                             <div class="row">
                                 <div class="col-md-6 mb-4">
-
                                     <div data-mdb-input-init class="form-outline">
-                                        <input type="text" id="nom" placeholder="Nom"
+                                        <input type="text" name="nom" id="nom_input" placeholder="Nom"
                                             class="form-control form-control-lg" />
-                                        <label class="form-label" for="firstName">Nom</label>
+                                        <label class="form-label" for="nom_input">Nom</label>
                                     </div>
-
                                 </div>
                                 <div class="col-md-6 mb-4">
-
                                     <div data-mdb-input-init class="form-outline">
-                                        <input type="text" id="prenom" placeholder="Prenom"
+                                        <input type="text" name="prenom" id="prenom_input" placeholder="Prenom"
                                             class="form-control form-control-lg" />
-                                        <label class="form-label" for="lastName">Prenom</label>
+                                        <label class="form-label" for="prenom_input">Prenom</label>
                                     </div>
-
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-6 mb-4 d-flex align-items-center">
-
                                     <div data-mdb-input-init class="form-outline datepicker w-100">
-                                        <input type="date" class="form-control form-control-lg" id="dateNaissance" />
-                                        <label for="dateNaissance" class="form-label">Date de naissance</label>
+                                        <input type="date" name="date_naissance" class="form-control form-control-lg"
+                                            id="date_naissance_input" />
+                                        <label for="date_naissance_input" class="form-label">Date de
+                                            naissance</label>
                                     </div>
-
                                 </div>
                                 <div class="col-md-6 mb-4">
-
-                                    <h6 class="mb-2 pb-1">Genre: </h6>
-
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="femaleGender" value="option1" checked />
-                                        <label class="form-check-label" for="femaleGender">Femme</label>
-                                    </div>
-
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="maleGender" value="option2" />
-                                        <label class="form-check-label" for="maleGender">Homme</label>
-                                    </div>
-
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="otherGender" value="option3" />
-                                        <label class="form-check-label" for="otherGender">Autre</label>
-                                    </div>
-
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-6 mb-4 pb-2">
-
                                     <div data-mdb-input-init class="form-outline">
-                                        <input type="email" id="emailAddress" placeholder="Email"
+                                        <input type="email" name="email" id="emailAddress_input" placeholder="Email"
                                             class="form-control form-control-lg" />
-                                        <label class="form-label" for="emailAddress">Email</label>
+                                        <label class="form-label" for="emailAddress_input">Email</label>
                                     </div>
-
+                                    <div data-mdb-input-init class="form-outline">
+                                        <input type="password" name="password" id="password_input"
+                                            class="form-control form-control-lg" placeholder="Mot de passe" />
+                                        <label class="form-label" for="password_input">Mot de passe</label>
+                                    </div>
                                 </div>
                                 <div class="col-md-6 mb-4 pb-2">
-
                                     <div data-mdb-input-init class="form-outline">
-                                        <input type="tel" id="phoneNumber" class="form-control form-control-lg"
-                                            placeholder="Numero de tel" />
-                                        <label class="form-label" for="phoneNumber">Numero de telephone</label>
+                                        <input type="tel" name="telephone" id="telephone_input"
+                                            class="form-control form-control-lg" placeholder="Numero de tel" />
+                                        <label class="form-label" for="telephone_input">Numero de telephone</label>
                                     </div>
-
                                 </div>
                                 <div class="col-md-6 mb-4 pb-2">
-
                                     <div data-mdb-input-init class="form-outline">
-                                        <input type="text" id="adresse" class="form-control form-control-lg"
-                                            placeholder="Adresse" />
-                                        <label class="form-label" for="adresse">Adresse</label>
+                                        <input type="text" name="adresse" id="adresse_input"
+                                            class="form-control form-control-lg" placeholder="Adresse" />
+                                        <label class="form-label" for="adresse_input">Adresse</label>
                                     </div>
-
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <div class="col-12">
-
-                                    <select class="select form-control-lg">
-                                        <option value="1" disabled>Choisir une option</option>
-                                        <option value="2">Voyageur</option>
-                                        <option value="3">Chauffeur</option>
-                                        <option value="4">Chauffeur + Voyageur</option>
-                                    </select>
-                                    <label class="form-label select-label">Choisir une option</label>
-
-                                </div>
-                            </div></br>
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-                                checked><span>J'accepte les conditions générales d'utilisation</span>
 
                             <div class="mt-4 pt-2">
-                                <input data-mdb-ripple-init class="btn btn-primary btn-lg" type="submit"
+                                <input data-mdb-ripple-init class="btn btn-primary btn-lg" name="submit" type="submit"
                                     value="Sign up" />
                             </div>
 
