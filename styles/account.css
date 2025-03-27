@@ -1,75 +1,168 @@
+* {
+    font-family: 'Marianne';
+}
+
 body {
     font-family: sans-serif;
     background-color: #f4f4f4;
 
-    margin-bottom: 100px;
+    padding: 20px;
+
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
 
 .profile-container {
+    background-color: transparent;
+    /* Le fond est maintenant sur le body */
+    border-radius: 8px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    /* Supprimé du conteneur principal */
+    padding: 20px;
+    /* Réduit le padding du conteneur principal */
+    width: 90%;
+    /* Prend un peu plus de largeur */
+    max-width: 900px;
+    /* Augmente la largeur maximale */
+    display: flex;
+    /* Pour aligner les cartes horizontalement */
+    flex-wrap: wrap;
+    /* Permet aux cartes de passer à la ligne si nécessaire */
+    gap: 20px;
+    /* Espacement entre les cartes */
+    justify-content: center;
+    /* Centre les cartes horizontalement */
+}
+
+.profile-card,
+.history-card {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    width: 80%;
-    max-width: 600px;
+    padding: 20px;
+    margin-bottom: 20px;
+    /* Espacement entre les cartes si elles sont en colonne */
+    width: calc(50% - 20px);
+    /* Prend environ la moitié de la largeur du conteneur (avec l'espacement) */
+    box-sizing: border-box;
+    /* Inclut le padding et la bordure dans la largeur */
     text-align: center;
+    /* Texte centré par défaut dans chaque carte */
 }
 
-.profile-image {
-    width: 120px;
-    height: 120px;
+/* Styles spécifiques à la carte de profil */
+.profile-card .profile-image {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
-    border: 5px solid #ddd;
-}
-
-.profile-info h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.profile-info p {
-    color: #666;
     margin-bottom: 15px;
+    border: 4px solid #ddd;
 }
 
-.profile-details {
-    text-align: left;
-    margin-top: 25px;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-}
-
-.profile-details h3 {
+.profile-card .profile-info h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
     color: #333;
+}
+
+.profile-card .profile-info p {
+    color: #666;
     margin-bottom: 10px;
 }
 
-.profile-details ul {
+.profile-card .profile-details {
+    text-align: left;
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.profile-card .profile-details h3 {
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.profile-card .profile-details ul {
     list-style: none;
     padding: 0;
 }
 
-.profile-details li {
-    margin-bottom: 8px;
+.profile-card .profile-details li {
+    margin-bottom: 6px;
     color: #555;
 }
 
-.profile-details li strong {
+.profile-card .profile-details li strong {
     font-weight: bold;
     color: #333;
     margin-right: 5px;
 }
 
+/* Styles spécifiques à la carte d'historique */
+.history-card {
+    text-align: left;
+    /* Alignement du texte à gauche pour l'historique */
+}
+
+.history-card h3 {
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+    /* Centre le titre de l'historique */
+}
+
+.history-card .history-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.history-card .history-list li {
+    margin-bottom: 8px;
+    color: #555;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #f4f4f4;
+    /* Séparateur entre les éléments */
+}
+
+.history-card .history-list li:last-child {
+    border-bottom: none;
+    /* Supprime le séparateur du dernier élément */
+}
+
+.history-card .history-list li strong {
+    font-weight: bold;
+    color: #333;
+    margin-right: 5px;
+}
+
+.history-card .history-actions {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.history-card .history-actions a {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.history-card .history-actions a:hover {
+    background-color: #0056b3;
+}
+
+/* Styles pour la section des actions (reste en bas) */
 .profile-actions {
     margin-top: 30px;
-    border-top: 1px solid #eee;
     padding-top: 20px;
+    text-align: center;
+    width: 100%;
+    /* Prend toute la largeur pour être en dessous des cartes */
 }
 
 .profile-actions a {
@@ -84,4 +177,22 @@ body {
 
 .profile-actions a:hover {
     background-color: #0056b3;
+}
+
+/* Media query pour un affichage en colonne sur les écrans plus petits */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        /* Les cartes s'affichent en colonne */
+        align-items: stretch;
+        /* Étire les cartes sur toute la largeur */
+    }
+
+    .profile-card,
+    .history-card {
+        width: 100%;
+        /* Chaque carte prend toute la largeur */
+        margin-right: 0;
+        /* Supprime la marge à droite */
+    }
 }

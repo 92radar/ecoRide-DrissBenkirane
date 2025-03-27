@@ -25,8 +25,8 @@ $error = null;
 
 
 try {
-    $stmt = $pdo->prepare("INSERT INTO utilisateurs (nom, prenom, date_naissance, email, password, telephone, adresse)
-    VALUES (:nom, :prenom, :date_naissance, :email, :password, :telephone, :adresse)");
+    $stmt = $pdo->prepare("INSERT INTO utilisateurs (nom, prenom, date_naissance, email, password, telephone, adresse, ville)
+    VALUES (:nom, :prenom, :date_naissance, :email, :password, :telephone, :adresse, :ville)");
 
     if (isset($_POST['submit'])) {
         $nom = $_POST['nom'];
@@ -36,6 +36,7 @@ try {
         $password = $_POST['password'];
         $telephone = $_POST['telephone'];
         $adresse = $_POST['adresse'];
+        $ville = $_POST['ville'];
 
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
@@ -46,7 +47,8 @@ try {
             'email' => $email,
             'password' => $hashedPassword,
             'telephone' => $telephone,
-            'adresse' => $adresse
+            'adresse' => $adresse,
+            'ville' => $ville
         ]);
     }
 } catch (PDOException $e) {
@@ -121,6 +123,13 @@ try {
                                         <input type="text" name="adresse" id="adresse_input"
                                             class="form-control form-control-lg" placeholder="Adresse" />
                                         <label class="form-label" for="adresse_input">Adresse</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4 pb-2">
+                                    <div data-mdb-input-init class="form-outline">
+                                        <input type="text" name="ville" id="ville_input"
+                                            class="form-control form-control-lg" placeholder="Ville" />
+                                        <label class="form-label" for="ville_input">Ville</label>
                                     </div>
                                 </div>
                             </div>
