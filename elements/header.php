@@ -33,10 +33,10 @@ if (isset($_POST['logout'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>site de co-voiturage ecologique</title>
-    <link rel="stylesheet" href="styles/font.css">
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/research.css">
-    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="../styles/font.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/research.css">
+    <link rel="stylesheet" href="../styles/footer.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
@@ -76,7 +76,7 @@ if (isset($_POST['logout'])) {
                         } else {
                             // L'utilisateur n'est pas connecté, afficher les liens de connexion/inscription
                             echo '<a class="dropdown-item" href="/pages/login.php">Connexion</a>';
-                            echo '<a class="dropdown-item" href="/register">S\'inscrire</a>';
+                            echo '<a class="dropdown-item" href="/pages/register.php">S\'inscrire</a>';
                         }
                         ?>
                 </li>
@@ -121,38 +121,3 @@ if (isset($_POST['logout'])) {
 
 
 </header>
-
-
-<main id="main-page">
-    <!-- le contenu de la page sera afficher ici-->
-
-</main>
-
-
-<footer>
-    <footer class="bg-custom-footer text-white text-center footer">
-        <div class="row">
-            <div class="col-6 col-lg-4">
-                <p class="text-white">Contact</p>
-
-            </div>
-            <div class="col-6 col-lg-4">
-                <p>Mentions légales</p>
-            </div>
-            <div class="col-12 col-lg-4">
-
-                <h3>Eco ride
-
-                </h3>
-                </a>
-            </div>
-
-        </div>
-    </footer>
-
-
-    <script type="module" src="../Router/router.js"></script>
-
-    </body>
-
-</html>

@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-
-<link rel="stylesheet" href="styles/register.css">
+<link rel="stylesheet" href="../styles/register.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
@@ -12,6 +10,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
 
 
 
@@ -138,3 +137,6 @@ try {
         </div>
     </div>
 </section>
+<?php
+require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/footer.php';
+?>

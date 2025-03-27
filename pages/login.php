@@ -1,12 +1,16 @@
-<link rel="stylesheet" href="styles/login.css">
+<link rel="stylesheet" href="../styles/login.css">
 
 <?php
 
-
-session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
+
+
+
+
 
 
 
@@ -116,7 +120,8 @@ if (isset($_POST['submit'])) {
                         </div>
 
                         <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Mot de passe oublié ?</a></p>
-                        <p>Vous n'avez pas de compte ? <a href="/register" class="link-info">Inscription ici</a></p>
+                        <p>Vous n'avez pas de compte ? <a href="/pages/register.php" class="link-info">Inscription
+                                ici</a></p>
 
                     </form>
 
@@ -130,3 +135,6 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
 </section>
+<?php
+require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/footer.php';
+?>
