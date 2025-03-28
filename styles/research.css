@@ -42,6 +42,7 @@ h1 {
     /* Bords arrondis */
     padding: 15px;
     background-color: rgb(255, 255, 255);
+
 }
 
 .recherche-multicriteres label {
@@ -100,8 +101,14 @@ button svg {
         /* Taille de police légèrement réduite pour les petits écrans */
     }
 
+    .recherche-multicriteres input {
+        flex-direction: column;
+        width: 100%;
+    }
+
     .recherche-multicriteres {
         flex-direction: column;
+        ;
     }
 
     .icon {
