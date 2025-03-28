@@ -172,7 +172,10 @@ if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true) {
 <div class="row">
     <div class="column">
         <h2>Merci de votre visite</h2>
-        <img src="../images/communicate-2.png"></br>
+        <p>Nous espérons que vous avez aimez cette page et toutes les informations dont vous aviez besoin. Si vous avez
+            des questions
+            ou des commentaires, n'hésitez pas à nous contacter en utilisant le formulaire ci-dessous. Nous serons
+            ravis de vous aider !</p>
     </div>
     <div class="column">
         <form action="/votre-script-de-traitement" method="post">
