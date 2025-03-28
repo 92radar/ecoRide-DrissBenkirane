@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if (isset($_POST['logout'])) {
     // Détruire toutes les variables de session
     $_SESSION = array();
@@ -47,6 +48,23 @@ if (isset($_POST['logout'])) {
 </head>
 
 <header>
+
+    <div>
+        <nav class="mobile-nav">
+            <a href="/">Accueil</br>
+                <img src="/images/home-icon2.png" alt="logo" class="logo"></a>
+
+            <a href="/covoiturage">Co-voiturage</br><img src="./images/vecteezy_location-pointer-pin-icon_22220318.png"
+                    class="logo">
+            </a>
+            <a href="/account">Espace utilisateur</br><img
+                    src="./images/vecteezy_a-person-icon-in-a-circle_54343112.png" class="logo"> </a>
+
+        </nav>
+    </div>
+
+
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="section1">
         <a class="navbar-brand" href="#">ECORIDE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -94,7 +112,7 @@ if (isset($_POST['logout'])) {
 
         </div>
 
-        <div class=" hero-scene-content " id="sectionRecherche">
+        <div class="hero-scene-content" id="sectionRecherche">
             <form action="" method="">
                 <div class="recherche-multicriteres text-black">
                     <label for="depart"></label>
@@ -129,30 +147,35 @@ if (isset($_POST['logout'])) {
 </main>
 
 
-<footer>
-    <footer class="bg-custom-footer text-white text-center footer">
-        <div class="row">
-            <div class="col-6 col-lg-4">
-                <p class="text-white">Contact</p>
 
-            </div>
-            <div class="col-6 col-lg-4">
-                <p>Mentions légales</p>
-            </div>
-            <div class="col-12 col-lg-4">
-
-                <h3>Eco ride
-
-                </h3>
-                </a>
-            </div>
+<footer class="bg-custom-footer text-white text-center footer">
+    <div class="row">
+        <div class="col-6 col-lg-4">
+            <p class="text-white">Contact</p>
 
         </div>
-    </footer>
+        <div class="col-6 col-lg-4">
+            <p>Mentions légales</p>
+        </div>
+        <div class="col-12 col-lg-4">
+
+            <h3>Eco ride
+
+            </h3>
+            </a>
+        </div>
+
+    </div>
+</footer>
 
 
-    <script type="module" src="../Router/router.js"></script>
+</footer>
 
-    </body>
+
+
+
+<script type="module" src="../Router/router.js"></script>
+
+</body>
 
 </html>

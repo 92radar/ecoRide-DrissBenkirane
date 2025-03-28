@@ -2,6 +2,8 @@
     font-family: 'Marianne';
 }
 
+
+
 .first-container {
     overflow: auto;
     padding-top: 50px;
@@ -60,6 +62,21 @@ h2 {
     .container-bottom {
         margin-bottom: 50px;
     }
+
+    .search-icon {
+        display: none;
+    }
+
+    form {
+        width: 50%;
+        margin: 0 auto;
+
+    }
+
+
+
+
+
 
 }
 
@@ -121,6 +138,7 @@ img {
 
 
 .card-container {
+
     display: flex;
     /* Utilise Flexbox pour la mise en page en colonnes */
     justify-content: space-around;
@@ -129,7 +147,10 @@ img {
     /* Permet aux cartes de passer à la ligne si l'écran est trop petit */
 }
 
+
+
 .card {
+
     width: 30%;
     /* Chaque carte prend 30% de la largeur du conteneur */
     border: 1px solid #ccc;

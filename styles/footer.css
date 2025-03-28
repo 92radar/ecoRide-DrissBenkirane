@@ -4,6 +4,12 @@ html {
 
 }
 
+.mobile-nav {
+    display: none;
+}
+
+
+
 footer.footer {
     position: absolute;
     bottom: 0;
@@ -22,18 +28,51 @@ footer.footer {
 
 }
 
-@media (max-width: 932px) {
-    footer.footer {
-        position: relative;
+
+
+@media screen and (max-width: 600px) {
+    .bg-custom-footer {
+        display: none;
+
+    }
+
+    #section1 {
+        display: none;
+    }
+
+    .card-section {
+        display: none;
+    }
+
+
+
+    .mobile-nav {
+        background-color: #072d44;
+        color: white;
+        position: fixed;
         bottom: 0;
         width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+
 
 
 
     }
 
-    h3 {
-        font-size: 0.5em;
+    .mobile-nav a {
+        color: white;
+        text-decoration: none;
+        box-sizing: border-box;
     }
 
+    .logo {
+
+
+        width: 25px;
+        /* Nouvelle largeur (ajustez à votre besoin) */
+        height: auto;
+
+    }
 }

@@ -123,17 +123,17 @@ if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true) {
 
 <div class="first-container container-bottom">
     <h2>OU ALLEZ VOUS ?</h2>
-    <form action=" /resultats-covoiturage" method="get">
+    <form action=" /resultats-covoiturage" method="get" class="form">
         <div class="recherche-multicriteres text-black">
 
-            <img src="/images/location_16138523.png" alt="map" class="map-icon"></br>
+            <img src="/images/location_16138523.png" alt="map" class="search-icon"></br>
 
             <input type="text" id="depart" name="depart" placeholder="Ville de départ">
 
             <input type="text" id="arrivee" name="arrivee" placeholder="Ville d'arrivée">
 
 
-            <img src="/images/calendar_6057403-2.png" alt="calendar" class="calendar-icon">
+            <img src="/images/calendar_6057403-2.png" alt="calendar" class="search-icon">
             <input type="date" id="date" name="date">
 
             <button type="submit" aria-label="Rechercher">
@@ -171,11 +171,8 @@ if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true) {
 
 <div class="row">
     <div class="column">
-        <h2>Merci de votre visite</h2>
-        <p>Nous espérons que vous avez aimez cette page et toutes les informations dont vous aviez besoin. Si vous avez
-            des questions
-            ou des commentaires, n'hésitez pas à nous contacter en utilisant le formulaire ci-dessous. Nous serons
-            ravis de vous aider !</p>
+        <h2>Merci de votre visite</h2></br>
+        <img src="../images/communicate-2.png">
     </div>
     <div class="column">
         <form action="/votre-script-de-traitement" method="post">
