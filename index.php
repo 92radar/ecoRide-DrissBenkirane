@@ -24,6 +24,17 @@ if (isset($_POST['logout'])) {
     header("Location: http://localhost:4000"); // Redirige vers la page home
     exit();
 }
+
+if (isset($_POST['search'])) {
+    $depart = $_POST['depart'];
+    $arrivee = $_POST['arrivee'];
+    $date = $_POST['date'];
+
+    header("Location: /pages/covoiturage.php?depart=$depart&arrivee=$arrivee&date=$date");
+    exit();
+}
+
+
 ?>
 
 
@@ -78,7 +89,7 @@ if (isset($_POST['logout'])) {
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/covoiturage">Co-voiturage</a>
+                    <a class="nav-link" href="/pages/covoiturage.php">Co-voiturage</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

@@ -1,0 +1,146 @@
+[29-Mar-2025 19:25:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$heure_arriveet in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 213
+[29-Mar-2025 19:29:34 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$nom in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 189
+[29-Mar-2025 19:29:34 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$prenom in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 189
+[30-Mar-2025 09:35:54 Europe/Berlin] PHP Warning:  Undefined variable $query in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 24
+[30-Mar-2025 09:35:54 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:24
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 24
+[30-Mar-2025 09:35:55 Europe/Berlin] PHP Warning:  Undefined variable $query in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 24
+[30-Mar-2025 09:35:55 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:24
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 24
+[30-Mar-2025 09:36:08 Europe/Berlin] PHP Warning:  Undefined variable $query in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 32
+[30-Mar-2025 09:36:08 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:32
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 32
+[30-Mar-2025 10:04:55 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$np_place in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 219
+[30-Mar-2025 10:07:40 Europe/Berlin] PHP Warning:  Undefined variable $research in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 170
+[30-Mar-2025 10:07:40 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 170
+[30-Mar-2025 10:09:05 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 174
+[30-Mar-2025 10:22:58 Europe/Berlin] PHP Warning:  Array to string conversion in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 73
+[30-Mar-2025 10:26:02 Europe/Berlin] PHP Warning:  Array to string conversion in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 74
+[30-Mar-2025 10:26:02 Europe/Berlin] PHP Warning:  Undefined variable $countSuccess in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 189
+[30-Mar-2025 10:26:51 Europe/Berlin] PHP Warning:  Array to string conversion in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 75
+[30-Mar-2025 10:29:01 Europe/Berlin] PHP Warning:  Undefined variable $result in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 73
+[30-Mar-2025 10:29:01 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 73
+[30-Mar-2025 10:29:59 Europe/Berlin] PHP Warning:  Undefined array key "COUNT(*)" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 73
+[30-Mar-2025 10:41:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$lieu_depart in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 213
+[30-Mar-2025 10:41:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$lieu_arrivee in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 215
+[30-Mar-2025 10:41:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$date_depart in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 222
+[30-Mar-2025 10:41:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$heure_depart in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 222
+[30-Mar-2025 10:41:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$date_arrivee in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 225
+[30-Mar-2025 10:41:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$heure_arrivee in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 225
+[30-Mar-2025 10:41:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$nb_place in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 233
+[30-Mar-2025 10:41:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$prix_personne in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 236
+[30-Mar-2025 10:41:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$lieu_depart in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 213
+[30-Mar-2025 10:41:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$lieu_arrivee in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 215
+[30-Mar-2025 10:41:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$date_depart in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 222
+[30-Mar-2025 10:41:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$heure_depart in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 222
+[30-Mar-2025 10:41:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$date_arrivee in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 225
+[30-Mar-2025 10:41:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$heure_arrivee in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 225
+[30-Mar-2025 10:41:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$nb_place in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 233
+[30-Mar-2025 10:41:21 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$prix_personne in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 236
+[30-Mar-2025 11:14:26 Europe/Berlin] PHP Warning:  Undefined variable $userInfo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 199
+[30-Mar-2025 11:14:26 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 199
+[30-Mar-2025 11:14:26 Europe/Berlin] PHP Warning:  Undefined variable $userInfo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 199
+[30-Mar-2025 11:14:26 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 199
+[30-Mar-2025 11:14:26 Europe/Berlin] PHP Warning:  Undefined variable $userInfo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 199
+[30-Mar-2025 11:14:26 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 199
+[30-Mar-2025 11:14:26 Europe/Berlin] PHP Warning:  Undefined variable $userInfo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 199
+[30-Mar-2025 11:14:26 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 199
+[30-Mar-2025 11:18:08 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$nom in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 207
+[30-Mar-2025 11:18:08 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$prenom in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 207
+[30-Mar-2025 13:18:33 Europe/Berlin] PHP Warning:  Attempt to read property "nom" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 201
+[30-Mar-2025 13:18:33 Europe/Berlin] PHP Warning:  Attempt to read property "prenom" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 201
+[30-Mar-2025 13:18:33 Europe/Berlin] PHP Warning:  Attempt to read property "lieu_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 211
+[30-Mar-2025 13:18:33 Europe/Berlin] PHP Warning:  Attempt to read property "lieu_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 213
+[30-Mar-2025 13:18:33 Europe/Berlin] PHP Warning:  Attempt to read property "date_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 220
+[30-Mar-2025 13:18:33 Europe/Berlin] PHP Warning:  Attempt to read property "heure_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 220
+[30-Mar-2025 13:18:33 Europe/Berlin] PHP Warning:  Attempt to read property "date_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 223
+[30-Mar-2025 13:18:33 Europe/Berlin] PHP Warning:  Attempt to read property "heure_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 223
+[30-Mar-2025 13:18:33 Europe/Berlin] PHP Warning:  Attempt to read property "nb_place" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 231
+[30-Mar-2025 13:18:33 Europe/Berlin] PHP Warning:  Attempt to read property "prix_personne" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 234
+[30-Mar-2025 13:19:28 Europe/Berlin] PHP Warning:  Attempt to read property "nom" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 205
+[30-Mar-2025 13:19:28 Europe/Berlin] PHP Warning:  Attempt to read property "prenom" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 205
+[30-Mar-2025 13:19:28 Europe/Berlin] PHP Warning:  Attempt to read property "lieu_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 215
+[30-Mar-2025 13:19:28 Europe/Berlin] PHP Warning:  Attempt to read property "lieu_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 217
+[30-Mar-2025 13:19:28 Europe/Berlin] PHP Warning:  Attempt to read property "date_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 224
+[30-Mar-2025 13:19:28 Europe/Berlin] PHP Warning:  Attempt to read property "heure_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 224
+[30-Mar-2025 13:19:28 Europe/Berlin] PHP Warning:  Attempt to read property "date_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 227
+[30-Mar-2025 13:19:28 Europe/Berlin] PHP Warning:  Attempt to read property "heure_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 227
+[30-Mar-2025 13:19:28 Europe/Berlin] PHP Warning:  Attempt to read property "nb_place" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 235
+[30-Mar-2025 13:19:28 Europe/Berlin] PHP Warning:  Attempt to read property "prix_personne" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 238
+[30-Mar-2025 13:21:20 Europe/Berlin] PHP Warning:  Attempt to read property "nom" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 202
+[30-Mar-2025 13:21:20 Europe/Berlin] PHP Warning:  Attempt to read property "prenom" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 202
+[30-Mar-2025 13:21:20 Europe/Berlin] PHP Warning:  Attempt to read property "lieu_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 212
+[30-Mar-2025 13:21:20 Europe/Berlin] PHP Warning:  Attempt to read property "lieu_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 214
+[30-Mar-2025 13:21:20 Europe/Berlin] PHP Warning:  Attempt to read property "date_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 221
+[30-Mar-2025 13:21:20 Europe/Berlin] PHP Warning:  Attempt to read property "heure_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 221
+[30-Mar-2025 13:21:20 Europe/Berlin] PHP Warning:  Attempt to read property "date_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 224
+[30-Mar-2025 13:21:20 Europe/Berlin] PHP Warning:  Attempt to read property "heure_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 224
+[30-Mar-2025 13:21:20 Europe/Berlin] PHP Warning:  Attempt to read property "nb_place" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 232
+[30-Mar-2025 13:21:20 Europe/Berlin] PHP Warning:  Attempt to read property "prix_personne" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 235
+[30-Mar-2025 13:22:41 Europe/Berlin] PHP Warning:  Attempt to read property "nom" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 210
+[30-Mar-2025 13:22:41 Europe/Berlin] PHP Warning:  Attempt to read property "prenom" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 210
+[30-Mar-2025 13:22:41 Europe/Berlin] PHP Warning:  Attempt to read property "lieu_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 220
+[30-Mar-2025 13:22:41 Europe/Berlin] PHP Warning:  Attempt to read property "lieu_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 222
+[30-Mar-2025 13:22:41 Europe/Berlin] PHP Warning:  Attempt to read property "date_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 229
+[30-Mar-2025 13:22:41 Europe/Berlin] PHP Warning:  Attempt to read property "heure_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 229
+[30-Mar-2025 13:22:41 Europe/Berlin] PHP Warning:  Attempt to read property "date_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 232
+[30-Mar-2025 13:22:41 Europe/Berlin] PHP Warning:  Attempt to read property "heure_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 232
+[30-Mar-2025 13:22:41 Europe/Berlin] PHP Warning:  Attempt to read property "nb_place" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 240
+[30-Mar-2025 13:22:41 Europe/Berlin] PHP Warning:  Attempt to read property "prix_personne" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 243
+[30-Mar-2025 13:22:52 Europe/Berlin] PHP Warning:  Attempt to read property "nom" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 210
+[30-Mar-2025 13:22:52 Europe/Berlin] PHP Warning:  Attempt to read property "prenom" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 210
+[30-Mar-2025 13:22:52 Europe/Berlin] PHP Warning:  Attempt to read property "lieu_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 220
+[30-Mar-2025 13:22:52 Europe/Berlin] PHP Warning:  Attempt to read property "lieu_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 222
+[30-Mar-2025 13:22:52 Europe/Berlin] PHP Warning:  Attempt to read property "date_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 229
+[30-Mar-2025 13:22:52 Europe/Berlin] PHP Warning:  Attempt to read property "heure_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 229
+[30-Mar-2025 13:22:52 Europe/Berlin] PHP Warning:  Attempt to read property "date_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 232
+[30-Mar-2025 13:22:52 Europe/Berlin] PHP Warning:  Attempt to read property "heure_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 232
+[30-Mar-2025 13:22:52 Europe/Berlin] PHP Warning:  Attempt to read property "nb_place" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 240
+[30-Mar-2025 13:22:52 Europe/Berlin] PHP Warning:  Attempt to read property "prix_personne" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 243
+[30-Mar-2025 13:23:17 Europe/Berlin] PHP Warning:  Attempt to read property "nom" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 210
+[30-Mar-2025 13:23:17 Europe/Berlin] PHP Warning:  Attempt to read property "prenom" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 210
+[30-Mar-2025 13:23:17 Europe/Berlin] PHP Warning:  Attempt to read property "lieu_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 220
+[30-Mar-2025 13:23:17 Europe/Berlin] PHP Warning:  Attempt to read property "lieu_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 222
+[30-Mar-2025 13:23:17 Europe/Berlin] PHP Warning:  Attempt to read property "date_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 229
+[30-Mar-2025 13:23:17 Europe/Berlin] PHP Warning:  Attempt to read property "heure_depart" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 229
+[30-Mar-2025 13:23:17 Europe/Berlin] PHP Warning:  Attempt to read property "date_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 232
+[30-Mar-2025 13:23:17 Europe/Berlin] PHP Warning:  Attempt to read property "heure_arrivee" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 232
+[30-Mar-2025 13:23:17 Europe/Berlin] PHP Warning:  Attempt to read property "nb_place" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 240
+[30-Mar-2025 13:23:17 Europe/Berlin] PHP Warning:  Attempt to read property "prix_personne" on array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 243
+[30-Mar-2025 13:23:46 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$nom in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 210
+[30-Mar-2025 13:23:46 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$prenom in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 210
+[30-Mar-2025 13:24:31 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$nom in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 210
+[30-Mar-2025 13:24:31 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$prenom in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 210
+[30-Mar-2025 13:32:51 Europe/Berlin] PHP Warning:  Undefined variable $result in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 73
+[30-Mar-2025 13:32:51 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 73
+[30-Mar-2025 13:32:51 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 74
+[30-Mar-2025 13:32:51 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 203
+[30-Mar-2025 13:32:51 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 203
+[30-Mar-2025 13:33:04 Europe/Berlin] PHP Warning:  Undefined variable $result in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 73
+[30-Mar-2025 13:33:04 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 73
+[30-Mar-2025 13:33:04 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 74
+[30-Mar-2025 13:33:04 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 203
+[30-Mar-2025 13:33:04 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 203
+[30-Mar-2025 13:33:49 Europe/Berlin] PHP Warning:  Undefined variable $result in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 73
+[30-Mar-2025 13:33:49 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 73
+[30-Mar-2025 13:33:49 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 74
+[30-Mar-2025 13:33:49 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 203
+[30-Mar-2025 13:33:49 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 203
+[30-Mar-2025 13:44:43 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 200
+[30-Mar-2025 13:44:43 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 200
+[30-Mar-2025 13:44:43 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 200
+[30-Mar-2025 13:44:54 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 200
+[30-Mar-2025 13:44:54 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 200
+[30-Mar-2025 13:44:54 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 200
+[30-Mar-2025 13:45:30 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 190
+[30-Mar-2025 13:45:30 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 190
+[30-Mar-2025 13:45:30 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 190
+[30-Mar-2025 13:45:45 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 190
+[30-Mar-2025 13:45:45 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 190
+[30-Mar-2025 13:45:45 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 190

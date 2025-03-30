@@ -49,6 +49,18 @@ if (isset($_POST['submit'])) {
 
 
                             $_SESSION['loggedin'] = true;
+                            $stmt = $pdo->prepare("SELECT user_id FROM utilisateurs WHERE email = :email");
+                            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+                            $stmt->execute();
+                            $userIdFromDatabase = $stmt->fetchColumn();
+
+                            if ($userIdFromDatabase !== false) {
+                                $_SESSION['user_id'] = $userIdFromDatabase; // Stockez l'ID en session
+                            } else {
+                                // Gérer le cas où l'ID n'est pas trouvé (devrait rarement arriver si l'email existe)
+                                echo "Erreur : Impossible de récupérer l'ID de l'utilisateur.";
+                                // Vous pourriez envisager de déconnecter l'utilisateur ou d'afficher un message d'erreur.
+                            }
                             header("Location: http://localhost:4000/"); // Remplacez par l'URL de votre page d'accueil
                             exit();
                             // Ici, vous pouvez connecter l'utilisateur (démarrer une session, etc.)

@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 if (isset($_POST['logout'])) {
     // Détruire toutes les variables de session
@@ -23,7 +27,10 @@ if (isset($_POST['logout'])) {
     header("Location: http://localhost:4000"); // Redirige vers la page home
     exit();
 }
+
+
 ?>
+
 
 
 <!DOCTYPE html>
@@ -34,6 +41,10 @@ if (isset($_POST['logout'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>site de co-voiturage ecologique</title>
     <link rel="stylesheet" href="../styles/font.css">
+
+    <link rel="stylesheet" href="../styles/covoiturage.css">
+
+    <link rel="stylesheet" href="../styles/home.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/research.css">
     <link rel="stylesheet" href="../styles/footer.css">
@@ -47,6 +58,19 @@ if (isset($_POST['logout'])) {
 </head>
 
 <header>
+    <div>
+        <nav class="mobile-nav">
+            <a href="/"> </br>
+                <img src="/images/home-icon2.png" alt="logo" class="logo"></a>
+
+            <a href="/covoiturage"></br><img src="/images/vecteezy_location-pointer-pin-icon_22220318.png" class="logo">
+            </a>
+            <a href="/account"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png" class="logo">
+            </a>
+
+        </nav>
+    </div>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="section1">
         <a class="navbar-brand" href="#">ECORIDE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -95,7 +119,7 @@ if (isset($_POST['logout'])) {
         </div>
 
         <div class=" hero-scene-content " id="sectionRecherche">
-            <form action="" method="">
+            <form action="" method="post">
                 <div class="recherche-multicriteres text-black">
                     <label for="depart"></label>
                     <img class="icon" src="/images/location_16138523.png" alt="map" class="map-icon">
@@ -108,7 +132,7 @@ if (isset($_POST['logout'])) {
                     <img class="icon" src="/images/calendar_6057403-2.png" alt="calendar" class="calendar-icon">
                     <input type="date" id="date" name="date">
 
-                    <button type="submit" aria-label="Rechercher">
+                    <button type="submit" name="search" aria-label="Rechercher">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-search" viewBox="0 0 16 16">
                             <path

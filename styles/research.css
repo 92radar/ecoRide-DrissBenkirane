@@ -66,19 +66,7 @@ h1 {
     cursor: pointer;
 }
 
-button {
-    padding: 10px;
-    border: none;
-    background-color: #000000;
-    color: black;
-    border-radius: 15px;
-    cursor: pointer;
-    display: flex;
-    /* Pour centrer l'icône si nécessaire */
-    align-items: center;
-    justify-content: center;
 
-}
 
 button svg {
     width: 24px;
@@ -87,7 +75,6 @@ button svg {
     /* Ajustez la hauteur de l'icône */
     fill: rgb(2, 2, 2);
     /* Couleur de remplissage de l'icône */
-
 }
 
 @media (max-width: 932px) {

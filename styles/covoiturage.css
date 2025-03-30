@@ -2,106 +2,6 @@
     font-family: 'Marianne';
 }
 
-
-.conteneur {
-    display: flex;
-    flex-direction: column 50px;
-    /* Aligne les éléments verticalement */
-    gap: 10px;
-    /* Espace entre les éléments */
-}
-
-/* Style facultatif pour les colonnes */
-.colonne1,
-.colonne2,
-.colonne3,
-.colonne4,
-.colonne5 {
-    background-color: #ffffff;
-    padding: 20px;
-    margin-left: 5px;
-    border: 1px solid #b4b3b7;
-    width: 60%;
-    border-radius: 40px;
-    height: 60%;
-
-}
-
-.conteneur-resultats {
-    display: flex;
-    flex-direction: column;
-    /* Aligne les éléments verticalement */
-    gap: 10px;
-    /* Espace entre les éléments */
-}
-
-
-.colonne7,
-.colonne8,
-.colonne9,
-.colonne10 {
-
-    background-color: #ffffff;
-    padding: 20px;
-    margin-left: 50px;
-    border: 1px solid #b4b3b7;
-    width: 90%;
-    border-radius: 30px;
-    height: auto;
-
-}
-
-
-
-.bouton-rond {
-    width: 50px;
-    /* Ajustez la taille selon vos besoins */
-    height: 50px;
-    border-radius: 50%;
-    /* Rend le bouton rond */
-    background-color: #f8f8f8;
-    /* Couleur de fond */
-    color: rgb(0, 0, 0);
-    /* Couleur du signe + */
-    font-size: 30px;
-
-    /* Taille du signe + */
-    border: solid 1px #010509;
-    /* Supprime la bordure par défaut */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    float: right;
-    margin: 30px;
-
-}
-
-.bouton-rond:hover {
-    background-color: #149947;
-    /* Couleur au survol */
-    cursor: pointer;
-    /* Change le curseur en main */
-}
-
-.conteneur-bouton {
-    display: flex;
-    /* Aligne les éléments côte à côte */
-    align-items: center;
-    /* Centre verticalement les éléments */
-    float: right;
-    right: 40px;
-    top: 6 0px;
-    margin-right: 10px;
-    bottom: auto;
-    margin: 30px;
-}
-
-.texte-bouton {
-    font-size: 20px;
-
-    /* Taille du texte */
-}
-
 p {
     font-size: 20px;
     position: relative;
@@ -127,126 +27,133 @@ p1 {
     margin-top: 50px;
 }
 
-.form-check {
-    position: relative;
-    left: 50px;
-    top: 50px;
-    bottom: 20px;
-}
-
-
-
-#prixmini {
-    left: 0px;
-    width: 30%;
-    /* Largeur du champ de recherche */
-    display: inline-block;
-    /* Affiche en ligne */
-    border: 1px solid #ccc;
-    /* Bordure */
-    border-radius: 30px;
-
-
-
-}
-
-
-
-
-.recherche-multiple input[type="text"] {
-    padding: 8px;
-    width: 30%;
-    margin-right: 0px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    margin-left: 5px;
-
-
-}
-
-#duree {
-    width: 60%;
-    top: 10px;
-    margin: 0px;
-
-    /* Affiche en ligne */
-    border: 1px solid #ccc;
-    /* Bordure */
-    border-radius: 30px;
-
-
-
-}
-
-#resultat {
-    left: 50px;
-    top: 0px;
-
-}
-
-.resultats-covoiturage {
-    width: 800px;
-    /* Ajustez la largeur selon vos besoins */
-    margin: 20px auto;
-    top: 0px;
-
-}
-
-.trajet {
-    border: 1px solid #ccc;
+.sidebar {
+    width: 200px;
+    /* Adjust width as needed */
     padding: 20px;
-    margin-bottom: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.infos-trajet {
-    display: flex;
-    align-items: center;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
     margin-right: 20px;
+    /* Space between sidebar and content */
 }
 
-.heure-depart,
-.ville-depart,
-.heure-arrivee,
-.ville-arrivee {
-    margin-right: 10px;
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.place-disponible,
-.non-fumeur,
-.voiture-electrique {
-    margin-right: 20px;
+.filter-group {
+    margin-bottom: 15px;
 }
 
-.conducteur {
+.price-range input[type="number"],
+.duration-filter input[type="text"] {
+    width: 80%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.rating-filter {
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    margin-bottom: 5px;
 }
 
-.photo-conducteur {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.evaluation {
+.star {
     color: gold;
+    font-size: 1.2em;
+    margin-right: 2px;
 }
 
-.participer {
-    background-color: #4CAF50;
+.star:last-child {
+    margin-right: 0;
+}
+
+.apply-filters-button {
+    padding: 10px 15px;
+    background-color: #607c9a;
     color: white;
-    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 20px;
+    font-size: 1em;
 }
 
-.credits {
+.apply-filters-button:hover {
+    border: solid 2px #080808;
+}
+
+.publication-cadre {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.publication-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.utilisateur {
     font-weight: bold;
+}
+
+.publication-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.trajet h3,
+.dates h3,
+.informations h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.lieu-depart,
+.lieu-arrivee,
+.date-depart,
+.date-arrivee,
+.places-disponibles,
+.prix {
+    font-weight: bold;
+    color: #007bff;
+    /* Couleur bleue pour mettre en évidence */
+}
+
+.publication-actions {
+    text-align: right;
+    /* Aligner le bouton à droite (optionnel) */
+}
+
+.participer-btn {
+    background-color: #28a745;
+    /* Couleur verte pour l'action */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.participer-btn:hover {
+    background-color: #1e7e34;
 }
