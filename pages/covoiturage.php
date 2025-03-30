@@ -112,7 +112,7 @@ if (isset($_POST['search'])) {
 
 
     try {
-        $researchStmt = $pdo->prepare("SELECT COUNT(*) FROM covoiturages WHERE lieu_depart = :lieu_depart AND lieu_arrivee = :lieu_arrivee OR date_depart =
+        $researchStmt = $pdo->prepare("SELECT COUNT(*) FROM covoiturages WHERE lieu_depart = :lieu_depart AND lieu_arrivee = :lieu_arrivee AND date_depart =
 :date_depart");
         $researchStmt->bindParam(':lieu_depart', $depart, PDO::PARAM_STR);
         $researchStmt->bindParam(':lieu_arrivee', $arrivee, PDO::PARAM_STR);
