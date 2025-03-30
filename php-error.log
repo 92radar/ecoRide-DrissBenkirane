@@ -144,3 +144,186 @@ Stack trace:
 [30-Mar-2025 13:45:45 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 190
 [30-Mar-2025 13:45:45 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 190
 [30-Mar-2025 13:45:45 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 190
+[30-Mar-2025 17:27:31 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 230
+[30-Mar-2025 17:29:30 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 187
+[30-Mar-2025 17:29:30 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 187
+[30-Mar-2025 17:31:46 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 187
+[30-Mar-2025 17:31:46 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 187
+[30-Mar-2025 17:32:07 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 187
+[30-Mar-2025 17:32:07 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 187
+[30-Mar-2025 17:32:24 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 187
+[30-Mar-2025 17:32:24 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 187
+[30-Mar-2025 17:33:07 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 189
+[30-Mar-2025 17:33:07 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 189
+[30-Mar-2025 17:33:20 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 189
+[30-Mar-2025 17:33:20 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 189
+[30-Mar-2025 18:06:27 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such column: v.type in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:209
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(209): PDO->prepare('SELECT c.*, u.n...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 209
+[30-Mar-2025 18:08:05 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such column: v.type in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:209
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(209): PDO->prepare('SELECT c.*, u.n...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 209
+[30-Mar-2025 18:08:14 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 302
+[30-Mar-2025 18:08:14 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 302
+[30-Mar-2025 18:08:15 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 302
+[30-Mar-2025 18:08:15 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 302
+[30-Mar-2025 18:11:19 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 308
+[30-Mar-2025 18:11:19 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 308
+[30-Mar-2025 18:22:33 Europe/Berlin] PHP Warning:  Undefined variable $countSuccess in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 347
+[30-Mar-2025 18:22:48 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:106) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 154
+[30-Mar-2025 18:33:50 Europe/Berlin] PHP Warning:  Undefined array key "depart" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 150
+[30-Mar-2025 18:33:50 Europe/Berlin] PHP Warning:  Undefined array key "arrivee" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 151
+[30-Mar-2025 18:33:50 Europe/Berlin] PHP Warning:  Undefined array key "date" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 152
+[30-Mar-2025 18:33:50 Europe/Berlin] PHP Warning:  Undefined array key "energie" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 153
+[30-Mar-2025 18:33:50 Europe/Berlin] PHP Warning:  Undefined array key "rating" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 157
+[30-Mar-2025 18:33:50 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such column: c.rating in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:158
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(158): PDO->prepare('SELECT c.*, u.n...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 158
+[30-Mar-2025 18:34:08 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 270
+[30-Mar-2025 18:34:08 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 270
+[30-Mar-2025 18:35:34 Europe/Berlin] PHP Warning:  Undefined array key "energie" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 150
+[30-Mar-2025 18:35:34 Europe/Berlin] PHP Warning:  Undefined array key "rating" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 154
+[30-Mar-2025 18:35:34 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such column: c.rating in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:155
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(155): PDO->prepare('SELECT c.*, u.n...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 155
+[30-Mar-2025 18:37:56 Europe/Berlin] PHP Warning:  Undefined array key "rating" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 154
+[30-Mar-2025 18:37:56 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such column: c.rating in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:155
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(155): PDO->prepare('SELECT c.*, u.n...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 155
+[30-Mar-2025 18:39:38 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such column: c.rating in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:156
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(156): PDO->prepare('SELECT c.*, u.n...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 156
+[30-Mar-2025 18:42:12 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 25 column index out of range in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:169
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(169): PDOStatement->execute()
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 169
+[30-Mar-2025 18:48:33 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 17 near "(": syntax error in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:156
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(156): PDO->prepare('SELECT c.COUNT(...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 156
+[30-Mar-2025 18:50:29 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 17 near "(": syntax error in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:156
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(156): PDO->prepare('SELECT c.COUNT(...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 156
+[30-Mar-2025 18:50:43 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 17 near "(": syntax error in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:156
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(156): PDO->prepare('SELECT c.COUNT(...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 156
+[30-Mar-2025 18:51:08 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 271
+[30-Mar-2025 18:51:08 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 271
+[30-Mar-2025 18:52:35 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 275
+[30-Mar-2025 18:52:35 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 275
+[30-Mar-2025 18:57:21 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 25 column index out of range in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:172
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(172): PDOStatement->execute()
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 172
+[30-Mar-2025 18:59:24 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 near "FROM": syntax error in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:157
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(157): PDO->prepare('SELECT COUNT(*)...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 157
+[30-Mar-2025 18:59:43 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such column: v.energie in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:157
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(157): PDO->prepare('SELECT COUNT(*)...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 157
+[30-Mar-2025 19:00:14 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 25 column index out of range in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:166
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(166): PDOStatement->execute()
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 166
+[30-Mar-2025 19:01:44 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 25 column index out of range in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:166
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(166): PDOStatement->execute()
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 166
+[30-Mar-2025 19:04:18 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 25 column index out of range in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:166
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(166): PDOStatement->execute()
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 166
+[30-Mar-2025 19:04:28 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 269
+[30-Mar-2025 19:04:28 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 269
+[30-Mar-2025 19:10:23 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such column: prix in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:178
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(178): PDO->prepare('SELECT COUNT(*)...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 178
+[30-Mar-2025 19:11:13 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such column: energie in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:178
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(178): PDO->prepare('SELECT COUNT(*)...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 178
+[30-Mar-2025 19:15:12 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such column: voitures_id in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:185
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(185): PDO->prepare('\n        SELECT...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 185
+[30-Mar-2025 19:16:01 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 ambiguous column name: voiture_id in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:185
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(185): PDO->prepare('\n        SELECT...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 185
+[30-Mar-2025 19:17:37 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such table: LEFT in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:185
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(185): PDO->prepare('\n        SELECT...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 185
+[30-Mar-2025 19:18:06 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 ambiguous column name: voiture_id in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:185
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(185): PDO->prepare('\n        SELECT...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 185
+[30-Mar-2025 19:30:02 Europe/Berlin] PHP Warning:  Undefined variable $countSuccess in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 277
+[30-Mar-2025 19:31:10 Europe/Berlin] PHP Warning:  Undefined variable $countSuccess in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 277
+[30-Mar-2025 19:53:53 Europe/Berlin] PHP Warning:  Undefined array key "total" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 203
+[30-Mar-2025 20:24:26 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_values(): Argument #1 ($array) must be of type array, string given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:202
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(202): array_values('Electrique')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 202
+[30-Mar-2025 20:30:02 Europe/Berlin] PHP Warning:  Undefined variable $energie in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 175
+[30-Mar-2025 20:30:02 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 near ")": syntax error in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:184
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(184): PDO->prepare('\n        SELECT...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 184
+[30-Mar-2025 20:30:47 Europe/Berlin] PHP Warning:  Array to string conversion in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 175
+[30-Mar-2025 20:30:47 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such column: Array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:184
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(184): PDO->prepare('\n        SELECT...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 184
+[30-Mar-2025 20:31:22 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such column: Electrique in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:184
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(184): PDO->prepare('\n        SELECT...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 184
+[30-Mar-2025 20:31:47 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 25 column index out of range in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php:202
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php(202): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 202
+[30-Mar-2025 20:39:11 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 348
+[30-Mar-2025 20:39:11 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 349
+[30-Mar-2025 20:58:51 Europe/Berlin] PHP Warning:  Undefined array key "depart" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 151
+[30-Mar-2025 20:58:51 Europe/Berlin] PHP Warning:  Undefined array key "arrivee" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 152
+[30-Mar-2025 20:58:51 Europe/Berlin] PHP Warning:  Undefined array key "date" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 153
+[30-Mar-2025 20:58:51 Europe/Berlin] PHP Warning:  Undefined array key "date" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 154

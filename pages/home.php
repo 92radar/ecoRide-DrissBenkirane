@@ -4,6 +4,8 @@ session_start();
 
 if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true) {
 
+
+
     echo "Bienvenue, utilisateur connecté !";
 }
 
@@ -123,7 +125,7 @@ if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true) {
 
 <div class="first-container container-bottom">
     <h2>OU ALLEZ VOUS ?</h2>
-    <form action=" /resultats-covoiturage" method="get" class="form">
+    <form action="" method="post" class="form">
         <div class="recherche-multicriteres text-black">
 
             <img src="/images/location_16138523.png" alt="map" class="search-icon"></br>
@@ -136,7 +138,7 @@ if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true) {
             <img src="/images/calendar_6057403-2.png" alt="calendar" class="search-icon">
             <input type="date" id="date" name="date">
 
-            <button type="submit" aria-label="Rechercher">
+            <button type="submit" name="search" aria-label="Rechercher">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
                     viewBox="0 0 16 16">
                     <path

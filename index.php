@@ -30,7 +30,7 @@ if (isset($_POST['search'])) {
     $arrivee = $_POST['arrivee'];
     $date = $_POST['date'];
 
-    header("Location: /pages/covoiturage.php?depart=$depart&arrivee=$arrivee&date=$date");
+    header("Location: ./pages/covoiturage.php?depart=$depart&arrivee=$arrivee&date=$date");
     exit();
 }
 
@@ -124,7 +124,7 @@ if (isset($_POST['search'])) {
         </div>
 
         <div class="hero-scene-content" id="sectionRecherche">
-            <form action="" method="">
+            <form action="" method="post">
                 <div class="recherche-multicriteres text-black">
                     <label for="depart"></label>
                     <img class="icon" src="/images/location_16138523.png" alt="map" class="map-icon">
@@ -137,7 +137,7 @@ if (isset($_POST['search'])) {
                     <img class="icon" src="/images/calendar_6057403-2.png" alt="calendar" class="calendar-icon">
                     <input type="date" id="date" name="date">
 
-                    <button type="submit" aria-label="Rechercher">
+                    <button type="submit" name="search" aria-label="Rechercher">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-search" viewBox="0 0 16 16">
                             <path
