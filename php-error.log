@@ -327,3 +327,7 @@ Stack trace:
 [30-Mar-2025 20:58:51 Europe/Berlin] PHP Warning:  Undefined array key "arrivee" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 152
 [30-Mar-2025 20:58:51 Europe/Berlin] PHP Warning:  Undefined array key "date" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 153
 [30-Mar-2025 20:58:51 Europe/Berlin] PHP Warning:  Undefined array key "date" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 154
+[30-Mar-2025 21:02:15 Europe/Berlin] PHP Warning:  Undefined array key "depart" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 151
+[30-Mar-2025 21:02:15 Europe/Berlin] PHP Warning:  Undefined array key "arrivee" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 152
+[30-Mar-2025 21:02:15 Europe/Berlin] PHP Warning:  Undefined array key "date" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 153
+[30-Mar-2025 21:02:15 Europe/Berlin] PHP Warning:  Undefined array key "date" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 154

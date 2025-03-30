@@ -148,10 +148,7 @@ if (isset($_POST['search'])) {
 }
 
 if (isset($_POST['applyFilters'])) {
-    $depart = $_GET['depart'];
-    $arrivee = $_GET['arrivee'];
-    $date = $_GET['date'];
-    var_dump($_GET['date']);
+
 
 
     $researcheResult = [];
