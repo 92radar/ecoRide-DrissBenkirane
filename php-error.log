@@ -331,3 +331,53 @@ Stack trace:
 [30-Mar-2025 21:02:15 Europe/Berlin] PHP Warning:  Undefined array key "arrivee" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 152
 [30-Mar-2025 21:02:15 Europe/Berlin] PHP Warning:  Undefined array key "date" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 153
 [30-Mar-2025 21:02:15 Europe/Berlin] PHP Warning:  Undefined array key "date" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 154
+[01-Apr-2025 08:47:43 Europe/Berlin] PHP Warning:  Undefined variable $researcheResult in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 241
+[01-Apr-2025 08:47:43 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 241
+[01-Apr-2025 10:17:37 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such table: users in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php:41
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php(41): PDO->prepare('SELECT * FROM u...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 41
+[01-Apr-2025 10:18:04 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such column: id in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php:41
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php(41): PDO->prepare('SELECT * FROM u...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 41
+[01-Apr-2025 10:18:24 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php on line 6
+[01-Apr-2025 10:18:24 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 79
+[01-Apr-2025 10:18:32 Europe/Berlin] PHP Warning:  Undefined global variable $_SESSION in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 38
+[01-Apr-2025 10:18:32 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 38
+[01-Apr-2025 10:18:32 Europe/Berlin] PHP Warning:  Undefined variable $userInfo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 72
+[01-Apr-2025 10:18:32 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 72
+[01-Apr-2025 10:20:23 Europe/Berlin] PHP Warning:  Undefined global variable $_SESSION in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 38
+[01-Apr-2025 10:20:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 38
+[01-Apr-2025 10:20:23 Europe/Berlin] PHP Warning:  Undefined variable $userInfos in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 73
+[01-Apr-2025 10:20:23 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 73
+[01-Apr-2025 10:21:30 Europe/Berlin] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 28
+[01-Apr-2025 10:28:21 Europe/Berlin] PHP Warning:  Undefined global variable $_SESSION in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 38
+[01-Apr-2025 10:28:21 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 38
+[01-Apr-2025 10:28:21 Europe/Berlin] PHP Warning:  Undefined variable $userInfos in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 73
+[01-Apr-2025 10:28:21 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 73
+[01-Apr-2025 10:29:51 Europe/Berlin] PHP Warning:  Undefined global variable $_SESSION in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 38
+[01-Apr-2025 10:29:51 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 38
+[01-Apr-2025 10:29:51 Europe/Berlin] PHP Warning:  Undefined variable $userInfos in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 74
+[01-Apr-2025 10:29:51 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 74
+[01-Apr-2025 10:30:09 Europe/Berlin] PHP Warning:  Undefined global variable $_SESSION in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 38
+[01-Apr-2025 10:30:09 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 38
+[01-Apr-2025 10:30:09 Europe/Berlin] PHP Warning:  Undefined variable $userInfos in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 74
+[01-Apr-2025 10:30:09 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 74
+[01-Apr-2025 10:30:10 Europe/Berlin] PHP Warning:  Undefined global variable $_SESSION in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 38
+[01-Apr-2025 10:30:10 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 38
+[01-Apr-2025 10:30:10 Europe/Berlin] PHP Warning:  Undefined variable $userInfos in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 74
+[01-Apr-2025 10:30:10 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 74
+[01-Apr-2025 10:30:33 Europe/Berlin] PHP Warning:  Undefined global variable $_SESSION in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 38
+[01-Apr-2025 10:30:33 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 38
+[01-Apr-2025 10:30:33 Europe/Berlin] PHP Warning:  Undefined variable $userInfos in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 74
+[01-Apr-2025 10:30:33 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 74
+[01-Apr-2025 10:31:59 Europe/Berlin] PHP Warning:  Undefined global variable $_SESSION in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 38
+[01-Apr-2025 10:31:59 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 38
+[01-Apr-2025 10:31:59 Europe/Berlin] PHP Warning:  Undefined variable $userInfos in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 74
+[01-Apr-2025 10:31:59 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 74
+[01-Apr-2025 10:32:37 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php on line 6
+[01-Apr-2025 10:32:37 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 87
+[01-Apr-2025 10:33:30 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php on line 6

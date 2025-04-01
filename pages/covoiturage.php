@@ -16,7 +16,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
 $pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecorideDatabase.db");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true && isset($_SESSION['user_id'])) {
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SESSION['user_id'])) {
     $userId = $_SESSION['user_id'];
 
 
@@ -53,7 +53,7 @@ if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true && isset($_SES
 
 
 
-$research = [];
+$researcheResult = [];
 
 $success = null;
 $error = null;
@@ -76,7 +76,7 @@ if (isset($_GET['depart']) && isset($_GET['arrivee']) && isset($_GET['date'])) {
 
 
             if ($count > 0) {
-                $researchStmt = $pdo->prepare("SELECT c.*, u.nom AS nom, u.prenom AS prenom,
+                $researchStmt = $pdo->prepare("SELECT *, u.nom AS nom, u.prenom AS prenom,
                 v.energie AS energie FROM covoiturages c LEFT JOIN utilisateurs u ON c.user_id = u.user_id LEFT JOIN voitures v ON c.voiture_id = v.voiture_id
          WHERE c.lieu_depart = :lieu_depart
             OR c.lieu_arrivee = :lieu_arrivee
@@ -147,73 +147,6 @@ if (isset($_POST['search'])) {
     }
 }
 
-if (isset($_POST['applyFilters'])) {
-
-
-
-    $researcheResult = [];
-
-    // Filtrage des énergies disponibles
-    $energies = [];
-    if (!empty($_POST['Electrique'])) $energies[] = 'Electrique';
-    if (!empty($_POST['Hybride'])) $energies[] = 'Hybride';
-    if (!empty($_POST['Essence'])) $energies[] = 'Essence';
-
-    $prixmini = $_POST['prixmini'] ?? 0;
-    $prixmaxi = $_POST['prixmaxi'] ?? 999999;
-    $dureeMax = $_POST['dureeMax'] ?? null;
-    $evaluation = $_POST['evaluation'] ?? null;
-
-    // Début de la requête avec un JOIN
-    $sql = "
-        SELECT COUNT(*) 
-        FROM covoiturages 
-        JOIN voitures ON covoiturages.voiture_id = voitures.voiture_id
-        WHERE covoiturages.prix_personne BETWEEN :prixmini AND :prixmaxi
-    ";
-
-    // Ajout du filtre énergie si nécessaire
-    if (!empty($energies)) {
-        $placeholders = implode(", ", array_fill(0, count($energies), "?")); // ?, ?, ?
-        $sql .= " OR voitures.energie IN ($placeholders)";
-    }
-
-
-
-    if (!empty($evaluation)) {
-        $sql .= " OR covoiturages.evaluation >= :evaluation";
-    }
-
-    $researchStmt = $pdo->prepare($sql);
-
-    // Liaison des paramètres
-    $params = [':prixmini' => $prixmini, ':prixmaxi' => $prixmaxi];
-
-
-
-    if (!empty($evaluation)) {
-        $params[':evaluation'] = $evaluation;
-    }
-
-    // Ajout des valeurs des énergies
-    foreach ($energies as $index => $energie) {
-        $params[$index + 1] = $energie; // Les placeholders "?" sont positionnels
-    }
-
-    // Exécution de la requête
-
-    $researchStmt->execute(array_values($params));
-    $filterNumber = $researchStmt->fetch(PDO::FETCH_ASSOC);
-    $count = $filterNumber['COUNT(*)'];
-
-    $countSuccess = 'Nombre de covoiturages trouvés : ' . $count;
-    $success = 'Filtre appliqué avec succès.';
-
-    var_dump($placeholders);
-
-
-    var_dump($count);
-}
 
 
 ?>
@@ -272,16 +205,16 @@ if (isset($_POST['applyFilters'])) {
                 <div class="filter-group">
                     <label>Evaluations :</label></br>
                     <?php for ($i = 5; $i >= 1; $i--) : ?>
-                    <div class="rating-filter">
-                        <input class="form-check-input" name="evaluation" type="checkbox" value="<?= $i ?>"
-                            id="rating<?= $i ?>">
-                        <?php for ($j = 0; $j < $i; $j++) : ?>
-                        <span class="star">⭐</span>
-                        <?php endfor; ?>
-                        <?php for ($j = $i; $j < 5; $j++) : ?>
-                        <span class="star">☆</span>
-                        <?php endfor; ?>
-                    </div>
+                        <div class="rating-filter">
+                            <input class="form-check-input" name="evaluation" type="checkbox" value="<?= $i ?>"
+                                id="rating<?= $i ?>">
+                            <?php for ($j = 0; $j < $i; $j++) : ?>
+                                <span class="star">⭐</span>
+                            <?php endfor; ?>
+                            <?php for ($j = $i; $j < 5; $j++) : ?>
+                                <span class="star">☆</span>
+                            <?php endfor; ?>
+                        </div>
                     <?php endfor; ?>
                 </div>
                 <button id="applyFiltersBtn" type="submit" name="applyFilters" class="apply-filters-button">Appliquer
@@ -294,72 +227,75 @@ if (isset($_POST['applyFilters'])) {
     <div style="flex-grow: 1;">
         <div class="ligne-horizontale"></div></br>
         <?php if (isset($error)) : ?>
-        <div class="alert alert-danger" role="alert">
-            <?= $error ?>
-        </div>
+            <div class="alert alert-danger" role="alert">
+                <?= $error ?>
+            </div>
         <?php endif; ?>
         <?php if (isset($success)) : ?>
-        <div class="alert alert-success container" role="alert">
-            <?= $success ?></br>
-            <?= $countSuccess ?>
-        </div>
+            <div class="alert alert-success container" role="alert">
+                <?= $success ?></br>
+                <?= $countSuccess ?>
+            </div>
         <?php endif; ?></br>
 
         <?php foreach ($researcheResult as $result): ?>
-        <div class="publication-cadre">
-            <div class="publication-header">
-                <div class="utilisateur-info">
-                    <img src="https://via.placeholder.com/40" alt="Photo de <?= htmlspecialchars($result->nom) ?>"
-                        class="photo-utilisateur">
-                    <span
-                        class="utilisateur"><?= htmlspecialchars($result->nom) ?></br><?= htmlspecialchars($result->prenom) ?></span>
+            <div class="publication-cadre">
+                <div class="publication-header">
+                    <div class="utilisateur-info">
+                        <img src="https://via.placeholder.com/40" alt="Photo de <?= htmlspecialchars($result->nom) ?>"
+                            class="photo-utilisateur">
+                        <span class="utilisateur"><?= htmlspecialchars($result->nom) ?>
+                            <?= htmlspecialchars($result->prenom) ?></span></br>
+                        <span class="evaluation"><?= htmlspecialchars($result->evaluation) ?>⭐</span></br>
+                    </div>
+                    <span class="date-creation">**Publié le :**
+                    </span>
                 </div>
-                <span class="date-creation">**Publié le :**
-                </span>
+
+                <div class="publication-details">
+                    <div class="trajet">
+                        <h3>Trajet</h3>
+                        <p>
+                            <strong>Départ :</strong> <?= htmlspecialchars($result->lieu_depart) ?> <span
+                                class="lieu-depart"></span>
+                            <br>
+                            <strong>Arrivée :</strong> <?= htmlspecialchars($result->lieu_arrivee) ?> <span
+                                class="lieu-arrivee"></span>
+                        </p>
+                    </div>
+
+                    <div class="dates">
+                        <h3>Dates et Horaires</h3>
+                        <p>
+                            <strong>Départ :</strong>
+                            <?= htmlspecialchars(date('d/m/Y', strtotime($result->date_depart))) ?> à
+                            <?= htmlspecialchars(date('H:i', strtotime($result->heure_depart))) ?> h<span
+                                class="date-depart"></span>
+                            <br>
+                            <strong>Arrivée :</strong>
+                            <?= htmlspecialchars(date('d/m/Y', strtotime($result->date_arrivee))) ?> à
+                            <?= htmlspecialchars(date('H:i', strtotime($result->heure_arrivee))) ?> h <span
+                                class="date-arrivee"></span>
+                        </p>
+                    </div>
+
+                    <div class="informations">
+                        <h3>Informations</h3>
+                        <p>
+                            <strong>Type de voiture : <?= htmlspecialchars($result->energie) ?></strong></br>
+                            <strong>Places disponibles :</strong> <?= htmlspecialchars($result->nb_place) ?> <span
+                                class="places-disponibles"></span>
+                            <br>
+                            <strong>Prix par place :</strong><?= htmlspecialchars($result->prix_personne) ?> <span
+                                class="prix">Credits</span>
+                        </p>
+                    </div>
+                    <div class="publication-actions">
+                        <button class="participer-btn">Participer</button>
+                    </div>
+                </div></br>
             </div>
-
-            <div class="publication-details">
-                <div class="trajet">
-                    <h3>Trajet</h3>
-                    <p>
-                        <strong>Départ :</strong> <?= htmlspecialchars($result->lieu_depart) ?> <span
-                            class="lieu-depart"></span>
-                        <br>
-                        <strong>Arrivée :</strong> <?= htmlspecialchars($result->lieu_arrivee) ?> <span
-                            class="lieu-arrivee"></span>
-                    </p>
-                </div>
-
-                <div class="dates">
-                    <h3>Dates et Horaires</h3>
-                    <p>
-                        <strong>Départ :</strong>
-                        <?= htmlspecialchars(date('d/m/Y', strtotime($result->date_depart))) ?> à
-                        <?= htmlspecialchars(date('H:i', strtotime($result->heure_depart))) ?> h<span
-                            class="date-depart"></span>
-                        <br>
-                        <strong>Arrivée :</strong>
-                        <?= htmlspecialchars(date('d/m/Y', strtotime($result->date_arrivee))) ?> à
-                        <?= htmlspecialchars(date('H:i', strtotime($result->heure_arrivee))) ?> h <span
-                            class="date-arrivee"></span>
-                    </p>
-                </div>
-
-                <div class="informations">
-                    <h3>Informations</h3>
-                    <p>
-                        <strong>Type de voiture : <?= htmlspecialchars($result->energie) ?></strong></br>
-                        <strong>Places disponibles :</strong> <?= htmlspecialchars($result->nb_place) ?> <span
-                            class="places-disponibles"></span>
-                        <br>
-                        <strong>Prix par place :</strong><?= htmlspecialchars($result->prix_personne) ?> <span
-                            class="prix">Credits</span>
-                    </p>
-                </div>
-                <div class="publication-actions">
-                    <button class="participer-btn">Participer</button>
-                </div>
-            </div></br>
-        </div>
         <?php endforeach; ?>
     </div>
+
+    <script src="/JS/filter_script"></script>

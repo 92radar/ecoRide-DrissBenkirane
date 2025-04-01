@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="../styles/login.css">
-
 <?php
 
 ini_set('display_errors', 1);
