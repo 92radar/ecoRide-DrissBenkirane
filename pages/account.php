@@ -7,6 +7,8 @@ error_reporting(E_ALL);
 ini_set('log_errors', 'On');
 ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
 
+
+
 // Start the session to access session variables
 
 if (isset($_POST['logout'])) {
@@ -48,7 +50,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SE
     // var_dump($userInfos); // Keep this for debugging if needed
 } else {
     // Redirect to login page if not logged in
-    header("Location: http://localhost:4000/login.php"); // Adjust the path to your login page
+    header("Location: http://localhost:4000/pages/login.php"); // Adjust the path to your login page
     exit();
 }
 

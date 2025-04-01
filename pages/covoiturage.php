@@ -16,7 +16,8 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
 $pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecorideDatabase.db");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SESSION['user_id'])) {
+$_SESSION['loggedin'] = null;
+if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true && isset($_SESSION['user_id'])) {
     $userId = $_SESSION['user_id'];
 
 
@@ -76,7 +77,7 @@ if (isset($_GET['depart']) && isset($_GET['arrivee']) && isset($_GET['date'])) {
 
 
             if ($count > 0) {
-                $researchStmt = $pdo->prepare("SELECT *, u.nom AS nom, u.prenom AS prenom,
+                $researchStmt = $pdo->prepare("SELECT c.*, u.nom AS nom, u.prenom AS prenom,
                 v.energie AS energie FROM covoiturages c LEFT JOIN utilisateurs u ON c.user_id = u.user_id LEFT JOIN voitures v ON c.voiture_id = v.voiture_id
          WHERE c.lieu_depart = :lieu_depart
             OR c.lieu_arrivee = :lieu_arrivee
@@ -147,6 +148,73 @@ if (isset($_POST['search'])) {
     }
 }
 
+if (isset($_POST['applyFilters'])) {
+
+
+
+    $researcheResult = [];
+
+    // Filtrage des énergies disponibles
+    $energies = [];
+    if (!empty($_POST['Electrique'])) $energies[] = 'Electrique';
+    if (!empty($_POST['Hybride'])) $energies[] = 'Hybride';
+    if (!empty($_POST['Essence'])) $energies[] = 'Essence';
+
+    $prixmini = $_POST['prixmini'] ?? 0;
+    $prixmaxi = $_POST['prixmaxi'] ?? 999999;
+    $dureeMax = $_POST['dureeMax'] ?? null;
+    $evaluation = $_POST['evaluation'] ?? null;
+
+    // Début de la requête avec un JOIN
+    $sql = "
+        SELECT COUNT(*) 
+        FROM covoiturages 
+        JOIN voitures ON covoiturages.voiture_id = voitures.voiture_id
+        WHERE covoiturages.prix_personne BETWEEN :prixmini AND :prixmaxi
+    ";
+
+    // Ajout du filtre énergie si nécessaire
+    if (!empty($energies)) {
+        $placeholders = implode(", ", array_fill(0, count($energies), "?")); // ?, ?, ?
+        $sql .= " OR voitures.energie IN ($placeholders)";
+    }
+
+
+
+    if (!empty($evaluation)) {
+        $sql .= " OR covoiturages.evaluation >= :evaluation";
+    }
+
+    $researchStmt = $pdo->prepare($sql);
+
+    // Liaison des paramètres
+    $params = [':prixmini' => $prixmini, ':prixmaxi' => $prixmaxi];
+
+
+
+    if (!empty($evaluation)) {
+        $params[':evaluation'] = $evaluation;
+    }
+
+    // Ajout des valeurs des énergies
+    foreach ($energies as $index => $energie) {
+        $params[$index + 1] = $energie; // Les placeholders "?" sont positionnels
+    }
+
+    // Exécution de la requête
+
+    $researchStmt->execute(array_values($params));
+    $filterNumber = $researchStmt->fetch(PDO::FETCH_ASSOC);
+    $count = $filterNumber['COUNT(*)'];
+
+    $countSuccess = 'Nombre de covoiturages trouvés : ' . $count;
+    $success = 'Filtre appliqué avec succès.';
+
+    var_dump($placeholders);
+
+
+    var_dump($count);
+}
 
 
 ?>
@@ -244,9 +312,8 @@ if (isset($_POST['search'])) {
                     <div class="utilisateur-info">
                         <img src="https://via.placeholder.com/40" alt="Photo de <?= htmlspecialchars($result->nom) ?>"
                             class="photo-utilisateur">
-                        <span class="utilisateur"><?= htmlspecialchars($result->nom) ?>
-                            <?= htmlspecialchars($result->prenom) ?></span></br>
-                        <span class="evaluation"><?= htmlspecialchars($result->evaluation) ?>⭐</span></br>
+                        <span
+                            class="utilisateur"><?= htmlspecialchars($result->nom) ?></br><?= htmlspecialchars($result->prenom) ?></span>
                     </div>
                     <span class="date-creation">**Publié le :**
                     </span>
@@ -297,5 +364,3 @@ if (isset($_POST['search'])) {
             </div>
         <?php endforeach; ?>
     </div>
-
-    <script src="/JS/filter_script"></script>

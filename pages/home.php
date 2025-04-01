@@ -1,7 +1,14 @@
 <link rel="stylesheet" href="styles/home.css">
 <?php
-session_start();
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+ini_set('log_errors', 'On');
+ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
+require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
+
+$_SESSION['loggedin'] = null;
 if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true) {
 
 

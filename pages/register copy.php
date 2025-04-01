@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="../styles/register.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
 <?php
 
 
@@ -56,8 +60,7 @@ try {
 ?>
 
 
-<link rel="stylesheet" href="../styles/register.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <section class="vh-100 gradient-custom">
     <div class="container py-5 h-100">
         <div class="row justify-content-center align-items-center h-100">

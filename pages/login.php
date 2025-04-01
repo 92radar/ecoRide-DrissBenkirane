@@ -1,21 +1,13 @@
-<link rel="stylesheet" href="../styles/login.css">
 <?php
-
+require '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
-
-
-
-
-
-
-
+ini_set('log_errors', 'On');
+ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
 $pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecorideDatabase.db");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+$_SESSION['loggedin'] = null;
 if (isset($_POST['submit'])) {
 
 
@@ -51,16 +43,19 @@ if (isset($_POST['submit'])) {
                             $stmt = $pdo->prepare("SELECT user_id FROM utilisateurs WHERE email = :email");
                             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
                             $stmt->execute();
+
                             $userIdFromDatabase = $stmt->fetchColumn();
+
 
                             if ($userIdFromDatabase !== false) {
                                 $_SESSION['user_id'] = $userIdFromDatabase; // Stockez l'ID en session
                             } else {
                                 // Gérer le cas où l'ID n'est pas trouvé (devrait rarement arriver si l'email existe)
                                 echo "Erreur : Impossible de récupérer l'ID de l'utilisateur.";
+
                                 // Vous pourriez envisager de déconnecter l'utilisateur ou d'afficher un message d'erreur.
                             }
-                            header("Location: http://localhost:4000/"); // Remplacez par l'URL de votre page d'accueil
+                            header("Location: http://localhost:4000/pages/account.php");
                             exit();
                             // Ici, vous pouvez connecter l'utilisateur (démarrer une session, etc.)
                         } else {
@@ -80,24 +75,8 @@ if (isset($_POST['submit'])) {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
-
-
+<link rel="stylesheet" href="../styles/login.css">
 <section class="vh-100">
     <div class="container-fluid">
         <div class="row">

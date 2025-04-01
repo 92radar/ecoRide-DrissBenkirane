@@ -1,9 +1,10 @@
 <?php
-
+session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+ini_set('log_errors', 'On');
+ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
 if (isset($_POST['logout'])) {
     // Détruire toutes les variables de session
     $_SESSION = array();
@@ -24,15 +25,10 @@ if (isset($_POST['logout'])) {
     session_destroy();
 
     // Rediriger vers la page de connexion ou la page actuelle (pour rafraîchir l'affichage)
-    header("Location: http://localhost:4000"); // Redirige vers la page home
+    header("Location: http://localhost:4000/pages/login.php"); // Redirige vers la page home
     exit();
 }
-
-
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,6 +39,7 @@ if (isset($_POST['logout'])) {
     <link rel="stylesheet" href="../styles/font.css">
 
     <link rel="stylesheet" href="../styles/covoiturage.css">
+
 
     <link rel="stylesheet" href="../styles/home.css">
     <link rel="stylesheet" href="../styles/header.css">
@@ -60,12 +57,14 @@ if (isset($_POST['logout'])) {
 <header>
     <div>
         <nav class="mobile-nav">
-            <a href="/"> </br>
+            <a href="/pages/home.php"> </br>
                 <img src="/images/home-icon2.png" alt="logo" class="logo"></a>
 
-            <a href="/covoiturage"></br><img src="/images/vecteezy_location-pointer-pin-icon_22220318.png" class="logo">
+            <a href="/pages/covoiturage.php"></br><img src="/images/vecteezy_location-pointer-pin-icon_22220318.png"
+                    class="logo">
             </a>
-            <a href="/account"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png" class="logo">
+            <a href="/pages/account.php"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png"
+                    class="logo">
             </a>
 
         </nav>
@@ -81,10 +80,10 @@ if (isset($_POST['logout'])) {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/pages/home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/covoiturage">Co-voiturage</a>
+                    <a class="nav-link" href="/pages/covoiturage.php">Co-voiturage</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -94,7 +93,7 @@ if (isset($_POST['logout'])) {
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <?php
                         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-                            echo '<a class="dropdown-item" href="/account">Profil</a>';
+                            echo '<a class="dropdown-item" href="/pages/account.php">Profil</a>';
                             echo '<a class="dropdown-item" href="/account">Publier un trajet</a>';
                             echo '<form method="post"><button class="dropdown-item" name="logout">Déconnexion</button></form>';
                         } else {
