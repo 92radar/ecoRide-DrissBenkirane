@@ -1,5 +1,5 @@
 <?php
-require '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
+session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -7,7 +7,7 @@ ini_set('log_errors', 'On');
 ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
 $pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecorideDatabase.db");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$_SESSION['loggedin'] = null;
+
 if (isset($_POST['submit'])) {
 
 
@@ -44,7 +44,9 @@ if (isset($_POST['submit'])) {
                             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
                             $stmt->execute();
 
+
                             $userIdFromDatabase = $stmt->fetchColumn();
+                            $_SESSION['user_id'] = $userIdFromDatabase; // Stockez l'ID en session
 
 
                             if ($userIdFromDatabase !== false) {
@@ -55,7 +57,7 @@ if (isset($_POST['submit'])) {
 
                                 // Vous pourriez envisager de déconnecter l'utilisateur ou d'afficher un message d'erreur.
                             }
-                            header("Location: http://localhost:4000/pages/account.php");
+                            header("Location: http://localhost:4000/pages/home.php");
                             exit();
                             // Ici, vous pouvez connecter l'utilisateur (démarrer une session, etc.)
                         } else {
@@ -75,6 +77,7 @@ if (isset($_POST['submit'])) {
         }
     }
 }
+require '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
 ?>
 <link rel="stylesheet" href="../styles/login.css">
 <section class="vh-100">
