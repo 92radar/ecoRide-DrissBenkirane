@@ -39,10 +39,15 @@ body {
 
 
 .photo-utilisateur {
+
     width: 100px;
     height: 100px;
+
     border-radius: 50%;
-    object-fit: cover;
     border: 2px solid #ddd;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    width: 50%;
 }

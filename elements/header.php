@@ -28,6 +28,14 @@ if (isset($_POST['logout'])) {
     header("Location: http://localhost:4000/pages/login.php"); // Redirige vers la page home
     exit();
 }
+
+if (isset($_POST['search'])) {
+    $depart = $_POST['depart'];
+    $arrivee = $_POST['arrivee'];
+    $date = $_POST['date'];
+    header("Location: http://localhost:4000/pages/covoiturage.php?depart=$depart&arrivee=$arrivee&date=$date");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
