@@ -2666,3 +2666,4 @@ Stack trace:
 [02-Apr-2025 19:56:45 Europe/Berlin] PHP Warning:  Undefined global variable $_SESSION in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/home.php on line 10
 [02-Apr-2025 19:56:45 Europe/Berlin] PHP Warning:  Undefined global variable $_SESSION in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/home.php on line 12
 [02-Apr-2025 19:56:45 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/home.php on line 12
+[02-Apr-2025 22:22:55 Europe/Berlin] PHP Warning:  Undefined array key "loggedin" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/home.php on line 12

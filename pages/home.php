@@ -9,7 +9,7 @@ ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ph
 
 
 
-if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true) {
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 
 
