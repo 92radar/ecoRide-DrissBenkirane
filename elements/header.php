@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -102,7 +102,6 @@ if (isset($_POST['search'])) {
                         <?php
                         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] = true) {
                             echo '<a class="dropdown-item" href="/pages/account.php">Profil</a>';
-                            echo '<a class="dropdown-item" href="/account">Publier un trajet</a>';
                             echo '<form method="post"><button class="dropdown-item" name="logout">Déconnexion</button></form>';
                         } else {
                             // L'utilisateur n'est pas connecté, afficher les liens de connexion/inscription

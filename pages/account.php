@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 // Démarrer la session pour accéder aux variables de session et les modifier
 ini_set('display_errors', 1);
@@ -42,12 +41,27 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SE
     } catch (PDOException $e) {
         $error = "vous n'avez pas de voiture enregistrée";
     }
+    try {
+        $stmt = $pdo->prepare("SELECT *, v.modele AS voiture_modele,
+                v.couleur AS voiture_couleur,
+                v.immatriculation AS voiture_immatriculation,
+                v.energie AS voiture_energie
+            FROM covoiturages c
+            INNER JOIN voitures v ON c.voiture_id = v.voiture_id
+            WHERE c.user_id = :user_id
+            ORDER BY c.created_at DESC");
+        $stmt->bindParam(':user_id', $userId);
+        $stmt->execute();
+        $covoituragesEnCours = $stmt->fetchAll(PDO::FETCH_OBJ);
+    } catch (PDOException $e) {
+        $error = "Erreur lors de la récupération des covoiturages en cours : " . $e->getMessage();
+    }
 } else {
     header("Location: http://localhost:4000/pages/login.php");
     exit();
 }
 
-require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
+
 
 
 
@@ -108,7 +122,6 @@ if (isset($_FILES["photo_profil"]) && $_FILES["photo_profil"]["error"] == 0) {
                 $stmt->bindParam(':id', $userId);
                 $stmt->execute();
                 $userInfos = $stmt->fetchAll(PDO::FETCH_OBJ);
-                var_dump($userInfos);
             } catch (PDOException $e) {
                 $error = "Erreur lors de la mise à jour du chemin de la photo de profil : " . $e->getMessage();
             }
@@ -149,6 +162,52 @@ if (isset($_POST['modifier'])) {
     }
 }
 
+if (isset($_POST['publier_trajet'])) {
+    $depart = $_POST['lieu_depart'];
+    $arrivee = $_POST['lieu_arrivee'];
+    $date = $_POST['date_depart'];
+    $heure = $_POST['heure_depart'];
+    $date_arrivee = $_POST['date_arrivee'];
+    $heure_arrivee = $_POST['heure_arrivee'];
+    $prix = $_POST['prix_personne'];
+    $places = $_POST['nb_place'];
+    $commentaire = $_POST['commentaire'];
+    $timeStamp = date('Y-m-d H:i:s');
+    $voitureId = $_POST['voiture_id'];
+
+    try {
+        $stmt = $pdo->prepare('SELECT voiture_id FROM voitures WHERE user_id = :id');
+        $stmt->bindParam(':id', $userId);
+        $stmt->execute();
+        $voitureId = $stmt->fetchColumn();
+    } catch (PDOException $e) {
+        $error = "vous n'avez pas de voiture enregistrée";
+    } {
+
+        try {
+            $stmt = $pdo->prepare("INSERT INTO covoiturages(lieu_depart, lieu_arrivee, date_depart, heure_depart, date_arrivee, heure_arrivee, prix_personne, nb_place, commentaire, user_id, created_at, voiture_id) VALUES (:lieu_depart, :lieu_arrivee, :date_depart, :heure_depart, :date_arrivee, :heure_arrivee, :prix_personne, :nb_place, :commentaire, :user_id, :created_at, :voiture_id)");
+            $stmt->bindParam(':lieu_depart', $depart);
+            $stmt->bindParam(':lieu_arrivee', $arrivee);
+            $stmt->bindParam(':date_depart', $date);
+            $stmt->bindParam(':heure_depart', $heure);
+            $stmt->bindParam(':date_arrivee', $date_arrivee);
+            $stmt->bindParam(':heure_arrivee', $heure_arrivee);
+            $stmt->bindParam(':prix_personne', $prix);
+            $stmt->bindParam(':nb_place', $places);
+            $stmt->bindParam(':commentaire', $commentaire);
+            $stmt->bindParam(':user_id', $userId);
+            $stmt->bindParam(':created_at', $timeStamp);
+            $stmt->bindParam(':voiture_id', $voitureId);
+            $stmt->execute();
+            $success = "Trajet publié avec succès!";
+
+            header("Location: http://localhost:4000/pages/account.php");
+        } catch (PDOException $e) {
+            $error_trajet = "Erreur lors de la publication du trajet : " . $e->getMessage();
+        }
+    }
+}
+
 
 if (isset($_POST['ajouter_vehicule'])) {
     $modele = $_POST['modele'];
@@ -168,60 +227,65 @@ if (isset($_POST['ajouter_vehicule'])) {
         $stmt->bindParam(':user_id', $userId);
         $stmt->execute();
         $success = "Véhicule ajouté avec succès!";
+
+        header("Location: http://localhost:4000/pages/account.php");
         // Récupérer les informations utilisateur mises à jour
 
     } catch (PDOException $e) {
         $error_chauffeur = "Erreur lors de l'ajout des informations véhicule : " . $e->getMessage();
     }
 }
-if (isset($_POST['publier_trajet'])) {
-    $depart = $_POST['lieu_depart'];
-    $arrivee = $_POST['lieu_arrivee'];
-    $date = $_POST['date_depart'];
-    $heure = $_POST['heure_depart'];
-    $date_arrivee = $_POST['date_arrivee'];
-    $heure_arrivee = $_POST['heure_arrivee'];
-    $prix = $_POST['prix_personne'];
-    $places = $_POST['nb_place'];
-    $commentaire = $_POST['commentaire'];
-    $timeStamp = date('Y-m-d H:i:s');
-    $voitureId = $_POST['voiture_id'];
-}
-try {
-    $stmt = $pdo->prepare('SELECT voiture_id FROM voitures WHERE user_id = :id');
-    $stmt->bindParam(':id', $userId);
-    $stmt->execute();
-    $voitureId = $stmt->fetchColumn();
-} catch (PDOException $e) {
-    $error = "vous n'avez pas de voiture enregistrée";
-} {
+
+if (isset($_POST['annuler_trajet'])) {
+    $covoiturageId = $_POST['covoiturage_id'];
 
     try {
-        $stmt = $pdo->prepare("INSERT INTO covoiturages(lieu_depart, lieu_arrivee, date_depart, heure_depart, date_arrivee, heure_arrivee, prix_personne, nb_place, commentaire, user_id, created_at, voiture_id) VALUES (:lieu_depart, :lieu_arrivee, :date_depart, :heure_depart, :date_arrivee, :heure_arrivee, :prix_personne, :nb_place, :commentaire, :user_id, :created_at, :voiture_id)");
-        $stmt->bindParam(':lieu_depart', $depart);
-        $stmt->bindParam(':lieu_arrivee', $arrivee);
-        $stmt->bindParam(':date_depart', $date);
-        $stmt->bindParam(':heure_depart', $heure);
-        $stmt->bindParam(':date_arrivee', $date_arrivee);
-        $stmt->bindParam(':heure_arrivee', $heure_arrivee);
-        $stmt->bindParam(':prix_personne', $prix);
-        $stmt->bindParam(':nb_place', $places);
-        $stmt->bindParam(':commentaire', $commentaire);
-        $stmt->bindParam(':user_id', $userId);
-        $stmt->bindParam(':created_at', $timeStamp);
-        $stmt->bindParam(':voiture_id', $voitureId);
+        $stmt = $pdo->prepare("DELETE FROM covoiturages WHERE covoiturage_id = :covoiturage_id");
+        $stmt->bindParam(':covoiturage_id', $covoiturageId);
         $stmt->execute();
+        $success = "Trajet annulé avec succès!";
+
+        header("Location: http://localhost:4000/pages/account.php");
     } catch (PDOException $e) {
-        $error_trajet = "Erreur lors de la publication du trajet : " . $e->getMessage();
+        $error = "Erreur lors de l'annulation du trajet : " . $e->getMessage();
     }
 }
+if (isset($_POST['demarrer_trajet'])) { // Correction de la faute de frappe dans le nom du bouton
+    $covoiturageId = $_POST['covoiturage_id'];
 
+    try {
+        $stmt = $pdo->prepare("UPDATE covoiturages SET statut = 'en_cours' WHERE covoiturage_id = :covoiturage_id");
+        $stmt->bindParam(':covoiturage_id', $covoiturageId);
+        $stmt->execute();
+        $success = "Trajet démarré avec succès!";
 
-// Récupérer les informations utilisateur mises à jou
+        header("Location: http://localhost:4000/pages/account.php");
+        exit(); // Ajout de exit() après la redirection
+    } catch (PDOException $e) {
+        $error = "Erreur lors du démarrage du trajet : " . $e->getMessage();
+    }
+}
+if (isset($_POST['terminer_trajet'])) { // Correction de la faute de frappe dans le nom du bouton
+    $covoiturageId = $_POST['covoiturage_id'];
+
+    try {
+        $stmt = $pdo->prepare("UPDATE covoiturages SET statut = 'terminer' WHERE covoiturage_id = :covoiturage_id");
+        $stmt->bindParam(':covoiturage_id', $covoiturageId);
+        $stmt->execute();
+        $success = "Trajet démarré avec succès!";
+
+        header("Location: http://localhost:4000/pages/account.php");
+        exit(); // Ajout de exit() après la redirection
+    } catch (PDOException $e) {
+        $error = "Erreur lors du démarrage du trajet : " . $e->getMessage();
+    }
+}
+require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
 
 
 ?>
 <link rel="stylesheet" href="styles/account.css">
+
 
 <div style="display: flex;">
     <div class="sidebar">
@@ -357,9 +421,9 @@ try {
 
                                     <label for="energie">Type de voiture :</label></br>
                                     <select class="form-control" name="energie" id="energie">
-                                        <option value="essence">Essence</option>
-                                        <option value="diesel">Diesel</option>
-                                        <option value="electrique">Electrique</option>
+                                        <option value="Essence">Essence</option>
+                                        <option value="Diesel">Diesel</option>
+                                        <option value="Electrique">Electrique</option>
                                     </select></br>
                                 </div>
 
@@ -470,14 +534,103 @@ try {
                     </div></br>
                     <div class="ligne-horizontale"></div></br>
                     <h1 id="section4">Historique des trajets</h1>
-                    <p>Section pour afficher l'historique des trajets.</p>
+
+                    <?php if (!empty($covoituragesEnCours)) : ?>
+                        <?php foreach ($covoituragesEnCours as $covoiturage): ?>
+                            <strong>Départ :</strong> <?= htmlspecialchars($covoiturage->lieu_depart) ?>
+                            <br>
+                            <strong>Arrivée :</strong> <?= htmlspecialchars($covoiturage->lieu_arrivee) ?>
+                            <br>
+                            <strong>Date :</strong><?= htmlspecialchars($covoiturage->date_depart) ?>
+                            </br>
+                            <strong>Statut :</strong><?= htmlspecialchars($covoiturage->statut) ?>
+                            <br>
+                            <div class="ligne-horizontale"></div></br>
+
+                        <?php endforeach; ?>
+                    <?php else : ?>
+                        <p>Vous n'avez pas de covoiturage en cours.</p>
+                    <?php endif; ?>
+
                     <div class="ligne-horizontale"></div></br>
                     <h1 id="section5">Co-voiturage en cours</h1>
-                    <p>Section pour afficher les co-voiturages en cours.</p>
-        </div>
-    </div>
-</div>
-</div>
-</body>
+                    <?php if (!empty($covoituragesEnCours)) : ?>
+                        <?php foreach ($covoituragesEnCours as $covoiturage): ?>
+                            <div class="publication-cadre">
+                                <div class="publication-header">
+                                    <div class="utilisateur-info">
+                                        <span class="date-creation">**Publié le :
+                                            <?= htmlspecialchars($covoiturage->created_at) ?>**</span>
+                                        </span>
+                                    </div>
+                                </div>
 
-</html>
+                                <div class="publication-details">
+                                    <div class="trajet">
+                                        <h3>Trajet</h3>
+                                        <p>
+                                            <strong>Départ :</strong> <?= htmlspecialchars($covoiturage->lieu_depart) ?>
+                                            <br>
+                                            <strong>Arrivée :</strong> <?= htmlspecialchars($covoiturage->lieu_arrivee) ?>
+                                        </p>
+                                    </div>
+
+                                    <div class="dates">
+                                        <h3>Dates et Horaires</h3>
+                                        <p>
+                                            <strong>Départ :</strong>
+                                            <?= htmlspecialchars(date('d/m/Y', strtotime($covoiturage->date_depart))) ?> à
+                                            <?= htmlspecialchars(date('H:i', strtotime($covoiturage->heure_depart))) ?> h
+                                            <br>
+                                            <strong>Arrivée (approx.) :</strong>
+                                            <?= htmlspecialchars(date('d/m/Y', strtotime($covoiturage->date_arrivee))) ?> à
+                                            <?= htmlspecialchars(date('H:i', strtotime($covoiturage->heure_arrivee))) ?> h
+                                        </p>
+                                    </div>
+
+                                    <div class="informations">
+                                        <h3>Informations</h3>
+                                        <p>
+                                            <strong>Type de voiture :</strong> <?= htmlspecialchars($covoiturage->energie) ?>
+                                            <br>
+                                            <strong>Places disponibles :</strong> <?= htmlspecialchars($covoiturage->nb_place) ?>
+                                            <br>
+                                            <strong>Prix par place :</strong> <?= htmlspecialchars($covoiturage->prix_personne) ?>
+                                            Credits
+                                        </p>
+                                    </div>
+
+                                    <div class="publication-actions">
+                                        <form method="post">
+                                            <input type="hidden" name="covoiturage_id"
+                                                value="<?= htmlspecialchars($covoiturage->covoiturage_id) ?>">
+                                            <button type="submit" name="demarrer_trajet" class="btn btn-success"
+                                                <?= ($covoiturage->statut !== 'en_attente') ? 'disabled' : '' ?>>
+                                                Démarrer le trajet
+                                            </button>
+                                            <button type="submit" name="terminer_trajet" class="btn btn-danger"
+                                                <?= ($covoiturage->statut !== 'en_cours') ? 'disabled' : '' ?>>
+                                                Terminer le trajet
+                                            </button>
+                                            <button type="submit" name="annuler_trajet" class="btn btn-warning"
+                                                <?= ($covoiturage->statut !== 'en_attente') ? 'disabled' : '' ?>>
+                                                Annuler le trajet
+                                            </button>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else : ?>
+                        <p>Vous n'avez pas de covoiturage en cours.</p>
+                    <?php endif; ?>
+
+
+
+
+
+        </div>
+        </body>
+
+        </html>

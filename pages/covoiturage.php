@@ -1,13 +1,9 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-ini_set('log_errors', 'On');
-ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
+session_start();
 
 
 
-require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
+
 
 
 
@@ -16,7 +12,6 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
 $pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecorideDatabase.db");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$_SESSION['loggedin'] = null;
 if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true && isset($_SESSION['user_id'])) {
     $userId = $_SESSION['user_id'];
 
@@ -211,6 +206,7 @@ if (isset($_POST['applyFilters'])) {
     $success = 'Filtre appliqué avec succès.';
 }
 
+require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
 
 ?>
 
