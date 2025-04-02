@@ -126,7 +126,7 @@ if (isset($_POST['search'])) {
 
 
         if ($count > 0) {
-            $researchStmt = $pdo->prepare("SELECT c.*, u.nom AS nom, u.prenom AS prenom,
+            $researchStmt = $pdo->prepare("SELECT *, u.nom AS nom, u.prenom AS prenom,
             v.energie AS energie FROM covoiturages c LEFT JOIN utilisateurs u ON c.user_id = u.user_id LEFT JOIN voitures v ON c.voiture_id = v.voiture_id
      WHERE c.lieu_depart = :lieu_depart
         AND c.lieu_arrivee = :lieu_arrivee
@@ -209,11 +209,6 @@ if (isset($_POST['applyFilters'])) {
 
     $countSuccess = 'Nombre de covoiturages trouvés : ' . $count;
     $success = 'Filtre appliqué avec succès.';
-
-    var_dump($placeholders);
-
-
-    var_dump($count);
 }
 
 
@@ -310,12 +305,12 @@ if (isset($_POST['applyFilters'])) {
             <div class="publication-cadre">
                 <div class="publication-header">
                     <div class="utilisateur-info">
-                        <img src="https://via.placeholder.com/40" alt="Photo de <?= htmlspecialchars($result->nom) ?>"
-                            class="photo-utilisateur">
+                        <span><img src="<?= $result->photo ?>" alt="Photo de <?= htmlspecialchars($result->nom) ?>"
+                                class="photo-utilisateur" height="50" width="50"></span>
                         <span
                             class="utilisateur"><?= htmlspecialchars($result->nom) ?></br><?= htmlspecialchars($result->prenom) ?></span>
                     </div>
-                    <span class="date-creation">**Publié le :**
+                    <span class="date-creation">**Publié le : <?= htmlspecialchars($result->created_at) ?>**</span>
                     </span>
                 </div>
 

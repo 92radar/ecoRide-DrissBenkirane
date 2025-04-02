@@ -32,27 +32,17 @@ body {
     padding: 20px;
 
 
+
 }
 
-.profil-photo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
 
-.photo-profil {
-    width: 120px;
-    height: 120px;
+
+
+.photo-utilisateur {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #ddd;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 15px;
 }

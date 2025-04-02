@@ -109,6 +109,7 @@ p1 {
 
 .utilisateur {
     font-weight: bold;
+
 }
 
 .publication-details {
@@ -156,4 +157,16 @@ p1 {
 
 .participer-btn:hover {
     background-color: #1e7e34;
+}
+
+.photo-utilisateur {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    float: left;
+    /* Pour gérer l'alignement avec le texte */
+    vertical-align: middle;
 }

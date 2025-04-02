@@ -6,7 +6,9 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
+ini_set('log_errors', 'On');
+ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
+
 
 
 
@@ -16,13 +18,14 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
 $error = null;
+$success = null;
 
 
 
 
 try {
-    $stmt = $pdo->prepare("INSERT INTO utilisateurs (nom, prenom, date_naissance, email, password, telephone, adresse, ville)
-    VALUES (:nom, :prenom, :date_naissance, :email, :password, :telephone, :adresse, :ville)");
+    $stmt = $pdo->prepare("INSERT INTO utilisateurs (nom, prenom, date_naissance, email, password, telephone, adresse, ville, pseudo)
+    VALUES (:nom, :prenom, :date_naissance, :email, :password, :telephone, :adresse, :ville, :pseudo)");
 
     if (isset($_POST['submit'])) {
         $nom = $_POST['nom'];
@@ -33,6 +36,8 @@ try {
         $telephone = $_POST['telephone'];
         $adresse = $_POST['adresse'];
         $ville = $_POST['ville'];
+        $pseudo = $_POST['pseudo'];
+
 
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
@@ -44,107 +49,83 @@ try {
             'password' => $hashedPassword,
             'telephone' => $telephone,
             'adresse' => $adresse,
-            'ville' => $ville
+            'ville' => $ville,
+            'pseudo' => $pseudo
+
         ]);
+        $success = "Votre compte a été créé avec succès";
     }
 } catch (PDOException $e) {
-    echo $e->getMessage();
+    $error = $e->getMessage();
 }
 
 
-
+require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/second_header.php';
 ?>
 
 
-<link rel="stylesheet" href="../styles/register.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<section class="vh-100 gradient-custom">
-    <div class="container py-5 h-100">
-        <div class="row justify-content-center align-items-center h-100">
-            <div class="col-12 col-lg-9 col-xl-7">
-                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
-                    <div class="card-body p-4 p-md-5">
-                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Formulaire d'inscription</h3>
-                        <form action="" method="post">
-
-                            <div class="row">
-                                <div class="col-md-6 mb-4">
-                                    <div data-mdb-input-init class="form-outline">
-                                        <input type="text" name="nom" id="nom_input" placeholder="Nom"
-                                            class="form-control form-control-lg" />
-                                        <label class="form-label" for="nom_input">Nom</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <div data-mdb-input-init class="form-outline">
-                                        <input type="text" name="prenom" id="prenom_input" placeholder="Prenom"
-                                            class="form-control form-control-lg" />
-                                        <label class="form-label" for="prenom_input">Prenom</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6 mb-4 d-flex align-items-center">
-                                    <div data-mdb-input-init class="form-outline datepicker w-100">
-                                        <input type="date" name="date_naissance" class="form-control form-control-lg"
-                                            id="date_naissance_input" />
-                                        <label for="date_naissance_input" class="form-label">Date de
-                                            naissance</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6 mb-4 pb-2">
-                                    <div data-mdb-input-init class="form-outline">
-                                        <input type="email" name="email" id="emailAddress_input" placeholder="Email"
-                                            class="form-control form-control-lg" />
-                                        <label class="form-label" for="emailAddress_input">Email</label>
-                                    </div>
-                                    <div data-mdb-input-init class="form-outline">
-                                        <input type="password" name="password" id="password_input"
-                                            class="form-control form-control-lg" placeholder="Mot de passe" />
-                                        <label class="form-label" for="password_input">Mot de passe</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 pb-2">
-                                    <div data-mdb-input-init class="form-outline">
-                                        <input type="tel" name="telephone" id="telephone_input"
-                                            class="form-control form-control-lg" placeholder="Numero de tel" />
-                                        <label class="form-label" for="telephone_input">Numero de telephone</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 pb-2">
-                                    <div data-mdb-input-init class="form-outline">
-                                        <input type="text" name="adresse" id="adresse_input"
-                                            class="form-control form-control-lg" placeholder="Adresse" />
-                                        <label class="form-label" for="adresse_input">Adresse</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 pb-2">
-                                    <div data-mdb-input-init class="form-outline">
-                                        <input type="text" name="ville" id="ville_input"
-                                            class="form-control form-control-lg" placeholder="Ville" />
-                                        <label class="form-label" for="ville_input">Ville</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-4 pt-2">
-                                <input data-mdb-ripple-init class="btn btn-primary btn-lg" name="submit" type="submit"
-                                    value="Sign up" />
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
+<body>
+    <?php if ($error) : ?>
+        <div class="alert alert-danger" role="alert">
+            <?= $error ?>
         </div>
+    <?php endif; ?>
+    <?php if ($success) : ?>
+        <div class="alert alert-success" role="alert">
+            <?= $success ?>
+        </div>
+    <?php endif; ?>
+    <div class="container">
+        <h2>Inscription</h2>
+        <form action="#" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom:</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Pseudo:</label>
+                <input type="text" id="pseudo" name="pseudo" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mot_de_passe">Mot de passe:</label>
+                <input type="password" id="mot_de_passe" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="verif_mot_de_passe">Vérifiez le mot de passe:</label>
+                <input type="password" id="verif_mot_de_passe" name="verif_mot_de_passe" required>
+                <div id="password_error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="ville">Ville:</label>
+                <input type="text" id="ville" name="ville" required>
+            </div>
+            <div class="form-group">
+                <label for="adresse">Adresse:</label>
+                <input type="text" id="adresse" name="adresse" required>
+            </div>
+            <div class="form-group">
+                <label for="telephone">Numéro de téléphone:</label>
+                <input type="text" id="telephone" name="telephone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date_naissance">Date de naissance:</label>
+                <input type="date" id="date_naissance" name="date_naissance" required>
+            </div>
+            <button type="submit" name="submit">S'inscrire</button>
+        </form>
     </div>
-</section>
+    <script src="/JS/passwordverify.js"></script>
+</body>
+
 <?php
 require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/footer.php';
 ?>
