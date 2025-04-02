@@ -19,6 +19,7 @@ $success = null;
 $voitureId = null;
 
 
+
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SESSION['user_id'])) {
     $userId = $_SESSION['user_id'];
 
@@ -85,7 +86,7 @@ if (isset($_POST['logout'])) {
     session_destroy();
 
     // Rediriger vers la page de connexion ou la page d'accueil
-    header("Location: http://localhost:4000"); // Redirige vers la page home
+    header("Location: http://localhost:4000/pages/login.php"); // Redirige vers la page home
     exit();
 }
 
