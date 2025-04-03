@@ -9,7 +9,7 @@ ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ph
 
 
 
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+if (isset($_SESSION['loggedin']) &&  $_SESSION['loggedin'] == true) {
 
 
 
@@ -85,19 +85,19 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
         <div class="card">
             <img src="/images/paris-6510643_640.jpg" alt="Image 1">
             <h3>Lyon - Paris</h3>
-            <p>Prix du voyage: 2 credits</p>
+            <p>Prix du voyage: 2 credits</p></br>
             <a href="#">En savoir plus</a>
         </div>
         <div class="card">
             <img src="/images/nice-4625662_640.jpg" alt="Image 2">
             <h3>Montpellier - Nice</h3>
-            <p>Prix du voyage: 2 credits</p>
+            <p>Prix du voyage: 2 credits</p></br>
             <a href="#">En savoir plus</a>
         </div>
         <div class="card">
             <img src="/images/lyon-4392678_640.jpg" alt="Image 3">
             <h3>Marseille-Lyon</h3>
-            <p>Prix du voyage: 2 credits</p>
+            <p>Prix du voyage: 2 credits</p></br>
             <a href="#">En savoir plus</a>
         </div>
     </div>

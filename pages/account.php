@@ -140,9 +140,10 @@ if (isset($_POST['modifier'])) {
     $adresse = $_POST['adresse'];
     $ville = $_POST['ville'];
     $telephone = $_POST['telephone'];
+    $pseudo = $_POST['pseudo'];
 
     try {
-        $stmt = $pdo->prepare("UPDATE utilisateurs SET nom = :nom, prenom = :prenom, date_naissance = :date_naissance, email = :email, adresse = :adresse, ville = :ville, telephone = :telephone WHERE user_id = :id");
+        $stmt = $pdo->prepare("UPDATE utilisateurs SET nom = :nom, prenom = :prenom, date_naissance = :date_naissance, email = :email, adresse = :adresse, ville = :ville, telephone = :telephone, pseudo = :pseudo WHERE user_id = :id");
         $stmt->bindParam(':nom', $nom);
         $stmt->bindParam(':prenom', $prenom);
         $stmt->bindParam(':date_naissance', $date_naissance);
@@ -150,6 +151,7 @@ if (isset($_POST['modifier'])) {
         $stmt->bindParam(':adresse', $adresse);
         $stmt->bindParam(':ville', $ville);
         $stmt->bindParam(':telephone', $telephone);
+        $stmt->bindParam(':pseudo', $pseudo);
         $stmt->bindParam(':id', $userId);
         $stmt->execute();
         $success = "Informations mises à jour avec succès!";
@@ -350,6 +352,8 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                                     value="<?= htmlspecialchars($userInfo->nom) ?>" required></br>
                                 <strong>Prénom :</strong></br><input class="form-control" type="text" name="prenom"
                                     value="<?= htmlspecialchars($userInfo->prenom) ?>" required></br>
+                                <strong>Pseudo :</strong></br><input class="form-control" type="text" name="pseudo"
+                                    value="<?= htmlspecialchars($userInfo->pseudo) ?>" required></br>
                                 <strong>Date de naissance :</strong></br><input class="form-control" type="date"
                                     name="date_naissance" value="<?= htmlspecialchars($userInfo->date_naissance) ?>"
                                     required></br>
@@ -583,7 +587,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                                             <?= htmlspecialchars(date('d/m/Y', strtotime($covoiturage->date_depart))) ?> à
                                             <?= htmlspecialchars(date('H:i', strtotime($covoiturage->heure_depart))) ?> h
                                             <br>
-                                            <strong>Arrivée (approx.) :</strong>
+                                            <strong>Arrivée :</strong>
                                             <?= htmlspecialchars(date('d/m/Y', strtotime($covoiturage->date_arrivee))) ?> à
                                             <?= htmlspecialchars(date('H:i', strtotime($covoiturage->heure_arrivee))) ?> h
                                         </p>

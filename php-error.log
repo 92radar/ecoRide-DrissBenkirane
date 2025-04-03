@@ -2667,3 +2667,106 @@ Stack trace:
 [02-Apr-2025 19:56:45 Europe/Berlin] PHP Warning:  Undefined global variable $_SESSION in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/home.php on line 12
 [02-Apr-2025 19:56:45 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/home.php on line 12
 [02-Apr-2025 22:22:55 Europe/Berlin] PHP Warning:  Undefined array key "loggedin" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/home.php on line 12
+[03-Apr-2025 16:38:23 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:38:23 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:43:40 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:43:40 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:45:50 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:45:50 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:46:58 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:46:58 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:46:59 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:46:59 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:47:01 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:47:01 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:47:18 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:47:18 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:47:50 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:47:50 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:47:57 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:47:57 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:48:18 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:48:18 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:48:24 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:48:24 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:48:38 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:48:38 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 304
+[03-Apr-2025 16:54:09 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 356
+[03-Apr-2025 17:29:48 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 314
+[03-Apr-2025 17:29:48 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 314
+[03-Apr-2025 17:31:02 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 315
+[03-Apr-2025 17:31:02 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 315
+[03-Apr-2025 17:32:10 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:32:10 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:33:31 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:33:31 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:36:37 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:36:37 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:36:39 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:36:39 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:37:57 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:37:57 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:37:58 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:37:58 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:37:58 Europe/Berlin] PHP Warning:  Undefined variable $pdo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 12
+[03-Apr-2025 17:37:58 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php:12
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 12
+[03-Apr-2025 17:38:52 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:38:52 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:38:52 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such table: covoiturage in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php:17
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php(17): PDO->prepare('SELECT * FROM c...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 17
+[03-Apr-2025 17:41:53 Europe/Berlin] PHP Warning:  Undefined variable $result in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 35
+[03-Apr-2025 17:41:53 Europe/Berlin] PHP Warning:  Attempt to read property "photo" on null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 35
+[03-Apr-2025 17:41:53 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$nom in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 35
+[03-Apr-2025 17:41:53 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 35
+[03-Apr-2025 17:41:53 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$nom in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 39
+[03-Apr-2025 17:41:53 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 39
+[03-Apr-2025 17:41:53 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$prenom in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 39
+[03-Apr-2025 17:41:53 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 39
+[03-Apr-2025 17:41:53 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$energie in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 73
+[03-Apr-2025 17:41:53 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 73
+[03-Apr-2025 17:44:11 Europe/Berlin] PHP Warning:  Undefined variable $stmt in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 20
+[03-Apr-2025 17:44:11 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function bindParam() on null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php:20
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 20
+[03-Apr-2025 17:44:25 Europe/Berlin] PHP Warning:  Undefined variable $result in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 37
+[03-Apr-2025 17:44:25 Europe/Berlin] PHP Warning:  Attempt to read property "photo" on null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 37
+[03-Apr-2025 17:45:46 Europe/Berlin] PHP Warning:  Undefined variable $result in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 37
+[03-Apr-2025 17:45:46 Europe/Berlin] PHP Warning:  Attempt to read property "photo" on null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 37
+[03-Apr-2025 17:47:13 Europe/Berlin] PHP Warning:  Undefined variable $result in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 37
+[03-Apr-2025 17:47:13 Europe/Berlin] PHP Warning:  Attempt to read property "photo" on null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 37
+[03-Apr-2025 17:47:40 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:47:40 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:48:35 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:48:35 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:48:41 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:48:41 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$photo in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/covoiturage.php on line 312
+[03-Apr-2025 17:48:41 Europe/Berlin] PHP Warning:  Undefined variable $result in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 43
+[03-Apr-2025 17:48:41 Europe/Berlin] PHP Warning:  Attempt to read property "photo" on null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 43
+[03-Apr-2025 18:02:15 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 125
+[03-Apr-2025 18:08:58 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$note_chauffeur in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 153
+[03-Apr-2025 18:08:58 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 153
+[03-Apr-2025 18:08:58 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$nb_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 156
+[03-Apr-2025 18:08:58 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 156
+[03-Apr-2025 18:10:45 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$note_chauffeur in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 153
+[03-Apr-2025 18:10:45 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 153
+[03-Apr-2025 18:10:45 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$nb_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 156
+[03-Apr-2025 18:10:45 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 156
+[03-Apr-2025 18:11:23 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$note in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 153
+[03-Apr-2025 18:11:23 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 153
+[03-Apr-2025 18:11:23 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$nb_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 156
+[03-Apr-2025 18:11:23 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 156
+[03-Apr-2025 18:12:08 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$note in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 137
+[03-Apr-2025 18:12:08 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 137
+[03-Apr-2025 18:12:08 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$nb_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 140
+[03-Apr-2025 18:12:08 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 140
+[03-Apr-2025 18:12:48 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$note in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 139
+[03-Apr-2025 18:12:48 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 139
+[03-Apr-2025 18:12:48 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$nb_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 142
+[03-Apr-2025 18:12:48 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 142

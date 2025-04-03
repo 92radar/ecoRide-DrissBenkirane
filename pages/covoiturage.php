@@ -206,6 +206,12 @@ if (isset($_POST['applyFilters'])) {
     $success = 'Filtre appliqué avec succès.';
 }
 
+if (isset($_POST['participer'])) {
+
+    $covoiturage_id = $_POST['covoiturage_id'];
+    header("Location: http://localhost:4000/pages/participer.php?covoiturage_id=$covoiturage_id");
+}
+
 require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
 
 ?>
@@ -298,60 +304,64 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
         <?php endif; ?></br>
 
         <?php foreach ($researcheResult as $result): ?>
-            <div class="publication-cadre">
-                <div class="publication-header">
-                    <div class="utilisateur-info">
-                        <span><img src="<?= $result->photo ?>" alt="Photo de <?= htmlspecialchars($result->nom) ?>"
-                                class="photo-utilisateur" height="50" width="50"></span>
-                        <span
-                            class="utilisateur"><?= htmlspecialchars($result->nom) ?></br><?= htmlspecialchars($result->prenom) ?></span>
+            <form method="post">
+                <div class="publication-cadre">
+                    <div class="publication-header">
+                        <div class="utilisateur-info">
+                            <span>
+                                <img src="<?= $result->photo ?>" alt="Photo de <?= htmlspecialchars($result->nom) ?>"
+                                    class="photo-utilisateur" height="50" width="50">
+                            </span>
+                            <span class="utilisateur" name="nom">
+                                <?= htmlspecialchars($result->nom) ?></br><?= htmlspecialchars($result->prenom) ?>
+                            </span>
+                        </div>
+                        <span class="date-creation" name="created_at">
+                            **Publié le : <?= htmlspecialchars($result->created_at) ?>**
+                        </span>
                     </div>
-                    <span class="date-creation">**Publié le : <?= htmlspecialchars($result->created_at) ?>**</span>
-                    </span>
+
+                    <div class="publication-details">
+                        <div class="trajet">
+                            <h3>Trajet</h3>
+                            <p>
+                                <strong>Départ :</strong> <?= htmlspecialchars($result->lieu_depart) ?>
+                                <br>
+                                <strong>Arrivée :</strong> <?= htmlspecialchars($result->lieu_arrivee) ?>
+                            </p>
+                        </div>
+
+                        <div class="dates">
+                            <h3>Dates et Horaires</h3>
+                            <p>
+                                <strong>Départ :</strong>
+                                <?= htmlspecialchars(date('d/m/Y', strtotime($result->date_depart))) ?> à
+                                <?= htmlspecialchars(date('H:i', strtotime($result->heure_depart))) ?> h
+                                <br>
+                                <strong>Arrivée :</strong>
+                                <?= htmlspecialchars(date('d/m/Y', strtotime($result->date_arrivee))) ?> à
+                                <?= htmlspecialchars(date('H:i', strtotime($result->heure_arrivee))) ?> h
+                            </p>
+                        </div>
+
+                        <div class="informations">
+                            <h3>Informations</h3>
+                            <p>
+                                <strong>Type de voiture :</strong> <?= htmlspecialchars($result->energie) ?>
+                                <br>
+                                <strong>Places disponibles :</strong> <?= htmlspecialchars($result->nb_place) ?>
+                                <br>
+                                <strong>Prix par place :</strong> <?= htmlspecialchars($result->prix_personne) ?> Credits
+                            </p>
+                        </div>
+
+                        <div class="publication-actions">
+                            <input type="hidden" name="covoiturage_id"
+                                value="<?= htmlspecialchars($result->covoiturage_id) ?>">
+                            <button class="participer-btn" type="submit" name="participer">Participer</button>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="publication-details">
-                    <div class="trajet">
-                        <h3>Trajet</h3>
-                        <p>
-                            <strong>Départ :</strong> <?= htmlspecialchars($result->lieu_depart) ?> <span
-                                class="lieu-depart"></span>
-                            <br>
-                            <strong>Arrivée :</strong> <?= htmlspecialchars($result->lieu_arrivee) ?> <span
-                                class="lieu-arrivee"></span>
-                        </p>
-                    </div>
-
-                    <div class="dates">
-                        <h3>Dates et Horaires</h3>
-                        <p>
-                            <strong>Départ :</strong>
-                            <?= htmlspecialchars(date('d/m/Y', strtotime($result->date_depart))) ?> à
-                            <?= htmlspecialchars(date('H:i', strtotime($result->heure_depart))) ?> h<span
-                                class="date-depart"></span>
-                            <br>
-                            <strong>Arrivée :</strong>
-                            <?= htmlspecialchars(date('d/m/Y', strtotime($result->date_arrivee))) ?> à
-                            <?= htmlspecialchars(date('H:i', strtotime($result->heure_arrivee))) ?> h <span
-                                class="date-arrivee"></span>
-                        </p>
-                    </div>
-
-                    <div class="informations">
-                        <h3>Informations</h3>
-                        <p>
-                            <strong>Type de voiture : <?= htmlspecialchars($result->energie) ?></strong></br>
-                            <strong>Places disponibles :</strong> <?= htmlspecialchars($result->nb_place) ?> <span
-                                class="places-disponibles"></span>
-                            <br>
-                            <strong>Prix par place :</strong><?= htmlspecialchars($result->prix_personne) ?> <span
-                                class="prix">Credits</span>
-                        </p>
-                    </div>
-                    <div class="publication-actions">
-                        <button class="participer-btn">Participer</button>
-                    </div>
-                </div></br>
-            </div>
+            </form>
         <?php endforeach; ?>
     </div>

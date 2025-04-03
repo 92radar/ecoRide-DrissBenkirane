@@ -39,6 +39,7 @@ if (isset($_POST['logout'])) {
     <link rel="stylesheet" href="../styles/font.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/register.css">
+    <link rel="stylesheet" href="../styles/second_header.css">
 
     <link rel="stylesheet" href="../styles/footer.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -108,7 +109,7 @@ if (isset($_POST['logout'])) {
 
     <div class="hero-scene text-center text-white">
         <div></br>
-            <h1>Soyez green, voyagez et engagez vous pour la planete.</h1>
+            <h1>Soyez green, voyagez et engagez vous pour la planete.</h1></br>
 
 
         </div>
