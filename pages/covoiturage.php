@@ -59,7 +59,7 @@ if (isset($_GET['depart']) && isset($_GET['arrivee']) && isset($_GET['date'])) {
     $arrivee = $_GET['arrivee'];
     $date = $_GET['date']; {
         try {
-            $researchStmt = $pdo->prepare("SELECT COUNT(*) FROM covoiturages WHERE lieu_depart = :lieu_depart OR lieu_arrivee = :lieu_arrivee OR date_depart =
+            $researchStmt = $pdo->prepare("SELECT COUNT(*) FROM covoiturages WHERE lieu_depart = :lieu_depart AND lieu_arrivee = :lieu_arrivee OR date_depart =
     :date_depart");
             $researchStmt->bindParam(':lieu_depart', $depart, PDO::PARAM_STR);
             $researchStmt->bindParam(':lieu_arrivee', $arrivee, PDO::PARAM_STR);
@@ -75,8 +75,8 @@ if (isset($_GET['depart']) && isset($_GET['arrivee']) && isset($_GET['date'])) {
                 $researchStmt = $pdo->prepare("SELECT c.*, u.nom AS nom, u.prenom AS prenom,
                 v.energie AS energie FROM covoiturages c LEFT JOIN utilisateurs u ON c.user_id = u.user_id LEFT JOIN voitures v ON c.voiture_id = v.voiture_id
          WHERE c.lieu_depart = :lieu_depart
-            OR c.lieu_arrivee = :lieu_arrivee
-            OR c.date_depart LIKE :date_depart");
+            AND c.lieu_arrivee = :lieu_arrivee
+            OR c.date_depart = :date_depart");
 
                 $researchStmt->bindParam(':lieu_depart', $depart, PDO::PARAM_STR);
                 $researchStmt->bindParam(':lieu_arrivee', $arrivee, PDO::PARAM_STR);

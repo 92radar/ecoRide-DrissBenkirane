@@ -57,6 +57,23 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SE
     } catch (PDOException $e) {
         $error = "Erreur lors de la récupération des covoiturages en cours : " . $e->getMessage();
     }
+    try {
+        $stmt = $pdo->prepare("
+            SELECT 
+                c.*, 
+                p.* FROM 
+                participations p 
+            LEFT JOIN 
+                covoiturages c ON p.covoiturage_id = c.covoiturage_id 
+            WHERE 
+                p.user_id = :user_id
+        ");
+        $stmt->bindParam(':user_id', $userId);
+        $stmt->execute();
+        $resultats = $stmt->fetchAll(PDO::FETCH_OBJ);
+    } catch (PDOException $e) {
+        $error = "Erreur lors de la récupération des participations : " . $e->getMessage();
+    }
 } else {
     header("Location: http://localhost:4000/pages/login.php");
     exit();
@@ -265,6 +282,7 @@ if (isset($_POST['demarrer_trajet'])) { // Correction de la faute de frappe dans
         header("Location: http://localhost:4000/pages/account.php");
         exit(); // Ajout de exit() après la redirection
     } catch (PDOException $e) {
+
         $error = "Erreur lors du démarrage du trajet : " . $e->getMessage();
     }
 }
@@ -283,6 +301,42 @@ if (isset($_POST['terminer_trajet'])) { // Correction de la faute de frappe dans
         $error = "Erreur lors du démarrage du trajet : " . $e->getMessage();
     }
 }
+
+if (isset($_POST['poster_avis'])) {
+    $covoiturageId = $_POST['covoiturage_id'];
+    $commentaire = $_POST['commentaire'];
+    $note = $_POST['note'];
+
+    try {
+        $stmt = $pdo->prepare("INSERT INTO avis (covoiturage_id, user_id, commentaire, note) VALUES (:covoiturage_id, :user_id, :commentaire, :note)");
+        $stmt->bindParam(':covoiturage_id', $covoiturageId);
+        $stmt->bindParam(':user_id', $userId);
+        $stmt->bindParam(':commentaire', $commentaire);
+        $stmt->bindParam(':note', $note);
+        $stmt->execute();
+        $success = "Avis posté avec succès!";
+    } catch (PDOException $e) {
+        $error = "Erreur lors de la publication de l'avis : " . $e->getMessage();
+    }
+    try {
+        $stmt = $pdo->prepare("UPDATE Participations SET statut = 'a_verifier' WHERE covoiturage_id = :covoiturage_id AND user_id = :user_id");
+        $stmt->bindParam(':covoiturage_id', $covoiturageId);
+        $stmt->bindParam(':user_id', $userId);
+        $stmt->execute();
+    } catch (PDOException $e) {
+        $error = "Erreur lors de la publication de l'avis : " . $e->getMessage();
+    }
+    try {
+        $stmt = $pdo->prepare('UPDATE avis SET participation_id = (SELECT participation_id FROM participations WHERE covoiturage_id = :covoiturage_id AND user_id = :user_id) WHERE covoiturage_id = :covoiturage_id AND user_id = :user_id');
+        $stmt->bindParam(':covoiturage_id', $covoiturageId);
+        $stmt->bindParam(':user_id', $userId);
+        $stmt->execute();
+        $success = "Avis posté avec succès!";
+    } catch (PDOException $e) {
+        $error = "Erreur lors de la publication de l'avis : " . $e->getMessage();
+    }
+}
+
 require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
 
 
@@ -631,11 +685,72 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                         <p>Vous n'avez pas de covoiturage en cours.</p>
                     <?php endif; ?>
 
+                    <div class="ligne-horizontale"></div></br>
+                    <h1 id="section6">Laisser un avis et une note</h1>
 
 
+                    <?php foreach ($resultats as $resultat) : ?>
+                        <?php if ($resultat->statut === "terminer") : ?>
+                            <div class="publication-cadre">
+                                <div class="publication-header">
+                                    <div class="utilisateur-info">
+                                        <span class="date-creation">**Publié le :
+                                            <?= htmlspecialchars($resultat->created_at) ?>**</span>
+                                    </div>
+                                </div>
 
+                                <div class="publication-details">
+                                    <div class="trajet">
+                                        <h3>Trajet</h3>
+                                        <p>
+                                            <strong>Départ :</strong> <?= htmlspecialchars($resultat->lieu_depart) ?><br>
+                                            <strong>Arrivée :</strong> <?= htmlspecialchars($resultat->lieu_arrivee) ?>
+                                        </p>
+                                    </div>
+
+                                    <div class="dates">
+                                        <h3>Dates et Horaires</h3>
+                                        <p>
+                                            <strong>Départ :</strong>
+                                            <?= htmlspecialchars(date('d/m/Y', strtotime($resultat->date_depart))) ?> à
+                                            <?= htmlspecialchars(date('H:i', strtotime($resultat->heure_depart))) ?> h<br>
+                                            <strong>Arrivée :</strong>
+                                            <?= htmlspecialchars(date('d/m/Y', strtotime($resultat->date_arrivee))) ?> à
+                                            <?= htmlspecialchars(date('H:i', strtotime($resultat->heure_arrivee))) ?> h
+                                        </p>
+                                    </div>
+
+                                </div></br>
+
+                                <div class="avis-form">
+                                    <h1>Laisser un avis :</h1>
+                                    <form method="post">
+                                        <input type="hidden" name="covoiturage_id"
+                                            value="<?= htmlspecialchars($resultat->covoiturage_id) ?>">
+                                        <div class="form-group">
+                                            <label for="note">Note (sur 5) :</label>
+                                            <select class="form-control" name="note" id="note">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="commentaire">Commentaire :</label>
+                                            <textarea class="form-control" name="commentaire" id="commentaire" rows="3"></textarea>
+                                        </div>
+                                        <button type="submit" name="poster_avis" class="btn btn-success">Poster votre avis</button>
+                                    </form>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
 
         </div>
-        </body>
+    </div>
+</div>
+</body>
 
-        </html>
+</html>
