@@ -66,9 +66,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SE
             LEFT JOIN 
                 covoiturages c ON p.covoiturage_id = c.covoiturage_id 
             WHERE 
-                p.user_id = :user_id
+                p.voyageur_id = :voyageur_id
         ");
-        $stmt->bindParam(':user_id', $userId);
+        $stmt->bindParam(':voyageur_id', $userId);
         $stmt->execute();
         $resultats = $stmt->fetchAll(PDO::FETCH_OBJ);
     } catch (PDOException $e) {
@@ -306,30 +306,33 @@ if (isset($_POST['poster_avis'])) {
     $covoiturageId = $_POST['covoiturage_id'];
     $commentaire = $_POST['commentaire'];
     $note = $_POST['note'];
+    $chauffeur_id = $_POST['chauffeur_id'];
 
     try {
-        $stmt = $pdo->prepare("INSERT INTO avis (covoiturage_id, user_id, commentaire, note) VALUES (:covoiturage_id, :user_id, :commentaire, :note)");
+        $stmt = $pdo->prepare("INSERT INTO avis (covoiturage_id, voyageur_id, commentaire, note, chauffeur_id) VALUES (:covoiturage_id, :voyageur_id, :commentaire, :note, :chauffeur_id)");
         $stmt->bindParam(':covoiturage_id', $covoiturageId);
-        $stmt->bindParam(':user_id', $userId);
+        $stmt->bindParam(':voyageur_id', $userId);
         $stmt->bindParam(':commentaire', $commentaire);
+        $stmt->bindParam(':chauffeur_id', $chauffeur_id);
         $stmt->bindParam(':note', $note);
+
         $stmt->execute();
         $success = "Avis posté avec succès!";
     } catch (PDOException $e) {
         $error = "Erreur lors de la publication de l'avis : " . $e->getMessage();
     }
     try {
-        $stmt = $pdo->prepare("UPDATE Participations SET statut = 'a_verifier' WHERE covoiturage_id = :covoiturage_id AND user_id = :user_id");
+        $stmt = $pdo->prepare("UPDATE Participations SET statut = 'a_verifier' WHERE covoiturage_id = :covoiturage_id AND voyageur_id = :voyageur_id");
         $stmt->bindParam(':covoiturage_id', $covoiturageId);
-        $stmt->bindParam(':user_id', $userId);
+        $stmt->bindParam(':voyageur_id', $userId);
         $stmt->execute();
     } catch (PDOException $e) {
         $error = "Erreur lors de la publication de l'avis : " . $e->getMessage();
     }
     try {
-        $stmt = $pdo->prepare('UPDATE avis SET participation_id = (SELECT participation_id FROM participations WHERE covoiturage_id = :covoiturage_id AND user_id = :user_id) WHERE covoiturage_id = :covoiturage_id AND user_id = :user_id');
+        $stmt = $pdo->prepare('UPDATE avis SET participation_id = (SELECT participation_id FROM participations WHERE covoiturage_id = :covoiturage_id AND voyageur_id = :voyageur_id) WHERE covoiturage_id = :covoiturage_id AND voyageur_id = :voyageur_id');
         $stmt->bindParam(':covoiturage_id', $covoiturageId);
-        $stmt->bindParam(':user_id', $userId);
+        $stmt->bindParam(':voyageur_id', $userId);
         $stmt->execute();
         $success = "Avis posté avec succès!";
     } catch (PDOException $e) {
@@ -694,6 +697,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                             <div class="publication-cadre">
                                 <div class="publication-header">
                                     <div class="utilisateur-info">
+
                                         <span class="date-creation">**Publié le :
                                             <?= htmlspecialchars($resultat->created_at) ?>**</span>
                                     </div>
@@ -727,6 +731,8 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                                     <form method="post">
                                         <input type="hidden" name="covoiturage_id"
                                             value="<?= htmlspecialchars($resultat->covoiturage_id) ?>">
+                                        <input type="hidden" name="chauffeur_id"
+                                            value="<?= htmlspecialchars($resultat->chauffeur_id) ?>">
                                         <div class="form-group">
                                             <label for="note">Note (sur 5) :</label>
                                             <select class="form-control" name="note" id="note">
