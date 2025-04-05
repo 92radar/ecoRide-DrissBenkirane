@@ -31,7 +31,7 @@ if (isset($_GET['covoiturage_id'])) {
 
     try {
         $stmt = $pdo->prepare("
-            SELECT c.*, u.nom AS nom, u.prenom AS prenom, u.date_naissance, u.photo,
+            SELECT c.*, u.nom AS nom, u.average_note AS average_note, u.prenom AS prenom, u.date_naissance, u.photo,
                    v.modele, v.couleur, v.immatriculation, v.energie
             FROM covoiturages c
             LEFT JOIN utilisateurs u ON c.user_id = u.user_id
@@ -81,7 +81,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
 ?>
 
 <div class="container">
-    <h1>Information sur le chauffeur</h1>
+    <h1>Informations sur le chauffeur</h1>
     <div class="ligne-horizontale"></div>
     <p class="description">
         Voici les informations sur le chauffeur du trajet que vous avez choisi. Si vous souhaitez participer à ce
@@ -102,20 +102,23 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                         <?= htmlspecialchars($covoiturage->prenom) ?>
                     </span>
                     <span class="utilisateur" name="nom">
-                        <?= htmlspecialchars($covoiturage->nom) ?><br><br><br><br>
+                        <?= htmlspecialchars($covoiturage->nom) ?></span><br><br><br><br>
 
-                        <span class="utilisateur" name="date_naissance">Date de naissance :
-                            <?= htmlspecialchars($covoiturage->date_naissance) ?><br>
-                        </span>
-                        <span class="utilisateur" name="voiture">Modèle de la voiture :
-                            <?= htmlspecialchars($covoiturage->modele) ?><br>
-                        </span>
-                        <span class="utilisateur" name="couleur">Couleur de la voiture :
-                            <?= htmlspecialchars($covoiturage->couleur) ?><br>
-                        </span>
-                        <span class="utilisateur" name="nom">Immatriculation du véhicule :
-                            <?= htmlspecialchars($covoiturage->immatriculation) ?><br>
-                        </span>
+                    <span class="utilisateur" name="date_naissance">Date de naissance :
+                        <?= htmlspecialchars($covoiturage->date_naissance) ?><br>
+                    </span>
+                    <span class="utilisateur" name="voiture">Modèle de la voiture :
+                        <?= htmlspecialchars($covoiturage->modele) ?><br>
+                    </span>
+                    <span class="utilisateur" name="couleur">Couleur de la voiture :
+                        <?= htmlspecialchars($covoiturage->couleur) ?><br>
+                    </span>
+                    <span class="utilisateur" name="nom">Immatriculation du véhicule :
+                        <?= htmlspecialchars($covoiturage->immatriculation) ?><br>
+
+                    </span>
+                    <span class="utilisateur" name="note">Note moyenne :
+                        <?= htmlspecialchars($covoiturage->average_note) ?> ⭐</span><br>
 
                 </div>
             </div>

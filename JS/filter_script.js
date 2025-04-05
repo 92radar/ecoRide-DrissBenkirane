@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .map(input => parseInt(input.value));
 
         resultsContainer.forEach(result => {
-            const carType = result.querySelector(".informations strong").textContent.split(': ')[1];
+            const carType = result.querySelector(".energie").textContent.split(': ')[1];
             const price = parseFloat(result.querySelector(".prix").previousSibling.nodeValue);
-            const duration = result.querySelector(".date-arrivee").textContent;
+            const duration = result.querySelector(".dates").textContent;
             const rating = result.dataset.rating ? parseInt(result.dataset.rating) : 0;
 
             let show = true;

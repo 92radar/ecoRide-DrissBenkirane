@@ -74,6 +74,8 @@ if (isset($_GET['depart']) && isset($_GET['arrivee']) && isset($_GET['date'])) {
                 $researchStmt = $pdo->prepare("SELECT 
                 c.*, 
                 u.nom AS nom, 
+                u.average_note AS average_note,
+                u.photo AS photo,
                 u.prenom AS prenom, 
                 v.energie AS energie, 
                 c.statut AS statut
@@ -139,7 +141,6 @@ if (isset($_POST['search'])) {
             $researchStmt->execute();
             $researcheResult = $researchStmt->fetchAll(PDO::FETCH_OBJ);
             $success = 'Recherche effectuée avec succès. ';
-            var_dump($researcheResult);
         } else {
             $error = 'Aucun covoiturage trouvé';
             $researcheResult = [];
@@ -294,14 +295,21 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
 
                             <div class="informations">
                                 <h3>Informations</h3>
-                                <p>
-                                    <strong class="energie">Type de voiture :</strong>
-                                    <?= htmlspecialchars($result->energie) ?>
+                                <p><span class="energie">
+                                        <strong>Type de voiture :</strong>
+                                        <?= htmlspecialchars($result->energie) ?>
+                                    </span>
                                     <br>
                                     <strong>Places disponibles :</strong> <?= htmlspecialchars($result->nb_place) ?>
                                     <br>
-                                    <strong class="prix">Prix par place :</strong>
-                                    <?= htmlspecialchars($result->prix_personne) ?> Credits
+                                    <span class="prix">
+                                        <strong>Prix par place :</strong>
+                                        <?= htmlspecialchars($result->prix_personne) ?> Credits
+                                    </span>
+                                    <br>
+                                    <strong> Note : </strong><?= htmlspecialchars($result->average_note) ?> ⭐</strong>
+
+                                    <br>
                                 </p>
                             </div>
 
