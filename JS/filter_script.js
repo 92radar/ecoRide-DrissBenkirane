@@ -17,10 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
             .map(input => parseInt(input.value));
 
         resultsContainer.forEach(result => {
-            const carType = result.querySelector(".energie").textContent.split(': ')[1];
-            const price = parseFloat(result.querySelector(".prix").previousSibling.nodeValue);
-            const duration = result.querySelector(".dates").textContent;
-            const rating = result.dataset.rating ? parseInt(result.dataset.rating) : 0;
+            const carType = result.querySelector(".energie").textContent.trim();
+            const price = parseFloat(result.querySelector(".prix").textContent.replace(/[^0-9.-]+/g, ""));
+            const duration = parseInt(result.querySelector(".duree").textContent.trim());
+
+            const rating = result.querySelector(".note").textContent.trim();
+            const ratingValue = parseInt(rating);
+
 
             let show = true;
 
@@ -39,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 show = false;
             }
 
-            if (selectedRatings.length > 0 && !selectedRatings.includes(rating)) {
+            if (selectedRatings.length > 0 && !selectedRatings.includes(ratingValue)) {
                 show = false;
             }
 

@@ -78,14 +78,15 @@ if (isset($_GET['depart']) && isset($_GET['arrivee']) && isset($_GET['date'])) {
                 u.photo AS photo,
                 u.prenom AS prenom, 
                 v.energie AS energie, 
-                c.statut AS statut
+                c.statut AS statut,
+                c.duree_heures_minutes AS duree
             FROM covoiturages c
             INNER JOIN utilisateurs u ON c.user_id = u.user_id
             INNER JOIN voitures v ON c.voiture_id = v.voiture_id
             WHERE c.nb_place > 0
               AND c.lieu_depart = :lieu_depart
               AND c.lieu_arrivee = :lieu_arrivee
-              AND c.date_depart LIKE :date_depart
+              AND c.date_depart LIKE :date_depart ORDER BY c.date_depart ASC
         ");
 
                 $researchStmt->bindParam(':lieu_depart', $depart, PDO::PARAM_STR);
@@ -277,6 +278,8 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                                     <strong>Départ :</strong> <?= htmlspecialchars($result->lieu_depart) ?>
                                     <br>
                                     <strong>Arrivée :</strong> <?= htmlspecialchars($result->lieu_arrivee) ?>
+                                    <strong>Durée du trajet :</strong> <span
+                                        class="duree"><?= htmlspecialchars($result->duree) ?></span>
                                 </p>
                             </div>
 
@@ -285,29 +288,35 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                                 <p>
                                     <strong>Départ :</strong>
                                     <?= htmlspecialchars(date('d/m/Y', strtotime($result->date_depart))) ?> à
-                                    <?= htmlspecialchars(date('H:i', strtotime($result->heure_depart))) ?> h
+                                    <span class="h_depart">
+                                        <?= htmlspecialchars(date('H:i', strtotime($result->heure_depart))) ?></span> h
                                     <br>
                                     <strong>Arrivée :</strong>
                                     <?= htmlspecialchars(date('d/m/Y', strtotime($result->date_arrivee))) ?> à
-                                    <?= htmlspecialchars(date('H:i', strtotime($result->heure_arrivee))) ?> h
+                                    <span
+                                        class="h_arrivee"><?= htmlspecialchars(date('H:i', strtotime($result->heure_arrivee))) ?></span>
+                                    h
                                 </p>
                             </div>
 
                             <div class="informations">
                                 <h3>Informations</h3>
-                                <p><span class="energie">
-                                        <strong>Type de voiture :</strong>
-                                        <?= htmlspecialchars($result->energie) ?>
+                                <p>
+                                    <strong>Type de voiture :</strong>
+                                    <span class="energie"> <?= htmlspecialchars($result->energie) ?></span>
                                     </span>
                                     <br>
                                     <strong>Places disponibles :</strong> <?= htmlspecialchars($result->nb_place) ?>
                                     <br>
-                                    <span class="prix">
-                                        <strong>Prix par place :</strong>
-                                        <?= htmlspecialchars($result->prix_personne) ?> Credits
-                                    </span>
+
+                                    <strong>Prix par place :</strong>
+                                    <span class="prix"> <?= htmlspecialchars($result->prix_personne) ?>
+                                    </span><span>¢</span>
+
+
                                     <br>
-                                    <strong> Note : </strong><?= htmlspecialchars($result->average_note) ?> ⭐</strong>
+                                    <strong> Note : </strong><span
+                                        class="note"><?= htmlspecialchars($result->average_note) ?> </span>⭐</strong>
 
                                     <br>
                                 </p>

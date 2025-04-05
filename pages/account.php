@@ -43,7 +43,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SE
         $error = "vous n'avez pas de voiture enregistrée";
     }
     try {
-        $stmt = $pdo->prepare("SELECT *, v.modele AS voiture_modele,
+        $stmt = $pdo->prepare("SELECT *, c.duree_heures_minutes AS duree, v.modele AS voiture_modele,
                 v.couleur AS voiture_couleur,
                 v.immatriculation AS voiture_immatriculation,
                 v.energie AS voiture_energie
@@ -185,8 +185,8 @@ if (isset($_POST['modifier'])) {
 if (isset($_POST['publier_trajet'])) {
     $depart = $_POST['lieu_depart'];
     $arrivee = $_POST['lieu_arrivee'];
-    $date = $_POST['date_depart'];
-    $heure = $_POST['heure_depart'];
+    $date_depart = $_POST['date_depart'];
+    $heure_depart = $_POST['heure_depart'];
     $date_arrivee = $_POST['date_arrivee'];
     $heure_arrivee = $_POST['heure_arrivee'];
     $prix = $_POST['prix_personne'];
@@ -195,38 +195,76 @@ if (isset($_POST['publier_trajet'])) {
     $timeStamp = date('Y-m-d H:i:s');
     $voitureId = $_POST['voiture_id'];
 
+    $duree_secondes = null;
+    $duree_heures_minutes = null; // Variable pour stocker la durée formatée
+
     try {
-        $stmt = $pdo->prepare('SELECT voiture_id FROM voitures WHERE user_id = :id');
-        $stmt->bindParam(':id', $userId);
+        $date_depart_str = $date_depart . ' ' . $heure_depart;
+        $date_arrivee_str = $date_arrivee . ' ' . $heure_arrivee;
+
+        $depart_dt = new DateTime($date_depart_str);
+        $arrivee_dt = new DateTime($date_arrivee_str);
+
+        $diff = $depart_dt->diff($arrivee_dt);
+
+        $duree_secondes = ($diff->d * 24 * 3600) + ($diff->h * 3600) + ($diff->i * 60) + $diff->s;
+
+        $heures = floor($duree_secondes / 3600);
+        $minutes = floor(($duree_secondes % 3600) / 60);
+        $duree_heures_minutes = sprintf('%dh%02d', $heures, $minutes); // Formatage en "XhYY"
+
+        $stmt = $pdo->prepare("
+            INSERT INTO covoiturages(
+                lieu_depart,
+                lieu_arrivee,
+                date_depart,
+                heure_depart,
+                date_arrivee,
+                heure_arrivee,
+                prix_personne,
+                nb_place,
+                commentaire,
+                user_id,
+                created_at,
+                voiture_id,
+                duree_heures_minutes
+            ) VALUES (
+                :lieu_depart,
+                :lieu_arrivee,
+                :date_depart,
+                :heure_depart,
+                :date_arrivee,
+                :heure_arrivee,
+                :prix_personne,
+                :nb_place,
+                :commentaire,
+                :user_id,
+                :created_at,
+                :voiture_id,
+                :duree_heures_minutes
+            )
+        ");
+        $stmt->bindParam(':lieu_depart', $depart);
+        $stmt->bindParam(':lieu_arrivee', $arrivee);
+        $stmt->bindParam(':date_depart', $date_depart);
+        $stmt->bindParam(':heure_depart', $heure_depart);
+        $stmt->bindParam(':date_arrivee', $date_arrivee);
+        $stmt->bindParam(':heure_arrivee', $heure_arrivee);
+        $stmt->bindParam(':prix_personne', $prix);
+        $stmt->bindParam(':nb_place', $places, PDO::PARAM_INT);
+        $stmt->bindParam(':commentaire', $commentaire);
+        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $stmt->bindParam(':created_at', $timeStamp);
+        $stmt->bindParam(':voiture_id', $voitureId, PDO::PARAM_INT);
+        $stmt->bindParam(':duree_heures_minutes', $duree_heures_minutes); // Lie la durée formatée
         $stmt->execute();
-        $voitureId = $stmt->fetchColumn();
+
+        $success_message = "Votre trajet a été publié avec succès !";
     } catch (PDOException $e) {
-        $error = "vous n'avez pas de voiture enregistrée";
-    } {
-
-        try {
-            $stmt = $pdo->prepare("INSERT INTO covoiturages(lieu_depart, lieu_arrivee, date_depart, heure_depart, date_arrivee, heure_arrivee, prix_personne, nb_place, commentaire, user_id, created_at, voiture_id) VALUES (:lieu_depart, :lieu_arrivee, :date_depart, :heure_depart, :date_arrivee, :heure_arrivee, :prix_personne, :nb_place, :commentaire, :user_id, :created_at, :voiture_id)");
-            $stmt->bindParam(':lieu_depart', $depart);
-            $stmt->bindParam(':lieu_arrivee', $arrivee);
-            $stmt->bindParam(':date_depart', $date);
-            $stmt->bindParam(':heure_depart', $heure);
-            $stmt->bindParam(':date_arrivee', $date_arrivee);
-            $stmt->bindParam(':heure_arrivee', $heure_arrivee);
-            $stmt->bindParam(':prix_personne', $prix);
-            $stmt->bindParam(':nb_place', $places);
-            $stmt->bindParam(':commentaire', $commentaire);
-            $stmt->bindParam(':user_id', $userId);
-            $stmt->bindParam(':created_at', $timeStamp);
-            $stmt->bindParam(':voiture_id', $voitureId);
-            $stmt->execute();
-            $success = "Trajet publié avec succès!";
-
-            header("Location: http://localhost:4000/pages/account.php");
-        } catch (PDOException $e) {
-            $error_trajet = "Erreur lors de la publication du trajet : " . $e->getMessage();
-        }
+        $error_message = "Erreur lors de la publication du trajet : " . $e->getMessage();
     }
 }
+
 
 
 if (isset($_POST['ajouter_vehicule'])) {
@@ -659,6 +697,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                                             <strong>Départ :</strong> <?= htmlspecialchars($covoiturage->lieu_depart) ?>
                                             <br>
                                             <strong>Arrivée :</strong> <?= htmlspecialchars($covoiturage->lieu_arrivee) ?>
+                                            <strong>Durée du trajet :</strong> <?= htmlspecialchars($covoiturage->duree) ?>
                                         </p>
                                     </div>
 
