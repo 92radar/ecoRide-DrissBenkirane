@@ -50,7 +50,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SE
             FROM covoiturages c
             INNER JOIN voitures v ON c.voiture_id = v.voiture_id
             WHERE c.user_id = :user_id
-            ORDER BY c.created_at DESC");
+            ORDER BY c.created_at DESC LIMIT 1");
         $stmt->bindParam(':user_id', $userId);
         $stmt->execute();
         $covoituragesEnCours = $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -194,6 +194,7 @@ if (isset($_POST['publier_trajet'])) {
     $commentaire = $_POST['commentaire'];
     $timeStamp = date('Y-m-d H:i:s');
     $voitureId = $_POST['voiture_id'];
+    $prix_publication = $_POST['prix_publication'];
 
     $duree_secondes = null;
     $duree_heures_minutes = null; // Variable pour stocker la durée formatée
@@ -263,6 +264,16 @@ if (isset($_POST['publier_trajet'])) {
     } catch (PDOException $e) {
         $error_message = "Erreur lors de la publication du trajet : " . $e->getMessage();
     }
+    try {
+        $stmt = $pdo->prepare("UPDATE utilisateurs SET credits = credits - :prix WHERE user_id = :user_id");
+        $stmt->bindParam(':prix', $prix_publication, PDO::PARAM_INT);
+        $stmt->bindParam(':user_id', $_SESSION['user_id']);
+        $stmt->execute();
+        var_dump($prix_publication);
+        $success = "Crédits mis à jour avec succès!";
+    } catch (PDOException $e) {
+        $error = "Erreur lors de la mise à jour des crédits : " . $e->getMessage();
+    }
 }
 
 
@@ -296,6 +307,7 @@ if (isset($_POST['ajouter_vehicule'])) {
 
 if (isset($_POST['annuler_trajet'])) {
     $covoiturageId = $_POST['covoiturage_id'];
+    $prix_publication = $_POST['prix_publication'];
 
     try {
         $stmt = $pdo->prepare("DELETE FROM covoiturages WHERE covoiturage_id = :covoiturage_id");
@@ -306,6 +318,16 @@ if (isset($_POST['annuler_trajet'])) {
         header("Location: http://localhost:4000/pages/account.php");
     } catch (PDOException $e) {
         $error = "Erreur lors de l'annulation du trajet : " . $e->getMessage();
+    }
+    try {
+        $stmt = $pdo->prepare("UPDATE utilisateurs SET credits = credits + :prix WHERE user_id = :user_id");
+        $stmt->bindParam(':prix', $prix_publication, PDO::PARAM_INT);
+        $stmt->bindParam(':user_id', $_SESSION['user_id']);
+        $stmt->execute();
+        var_dump($prix_publication);
+        $success = "Crédits mis à jour avec succès!";
+    } catch (PDOException $e) {
+        $error = "Erreur lors de la mise à jour des crédits : " . $e->getMessage();
     }
 }
 if (isset($_POST['demarrer_trajet'])) { // Correction de la faute de frappe dans le nom du bouton
@@ -345,6 +367,7 @@ if (isset($_POST['poster_avis'])) {
     $commentaire = $_POST['commentaire'];
     $note = $_POST['note'];
     $chauffeur_id = $_POST['chauffeur_id'];
+    $prix_personne = $_POST['prix_personne'];
 
     try {
         $stmt = $pdo->prepare("INSERT INTO avis (covoiturage_id, voyageur_id, commentaire, note, chauffeur_id) VALUES (:covoiturage_id, :voyageur_id, :commentaire, :note, :chauffeur_id)");
@@ -392,12 +415,24 @@ if (isset($_POST['poster_avis'])) {
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         $moyenne_note = $result['moyenne_note'];
+        $moyenne_note_arrondi = round($moyenne_note, 1);
+
         $stmt = $pdo->prepare('UPDATE utilisateurs SET average_note = :moyenne_note WHERE user_id = :chauffeur_id');
-        $stmt->bindParam(':moyenne_note', $moyenne_note);
+        $stmt->bindParam(':moyenne_note', $moyenne_note_arrondi);
         $stmt->bindParam(':chauffeur_id', $chauffeur_id);
         $stmt->execute();
     } catch (PDOException $e) {
         $error = "Erreur lors de la publication de l'avis : " . $e->getMessage();
+    }
+    try {
+        $stmt = $pdo->prepare("UPDATE utilisateurs SET credits = credits + :prix WHERE user_id = :chauffeur_id");
+        $stmt->bindParam(':prix', $prix_personne, PDO::PARAM_INT);
+        $stmt->bindParam(':chauffeur_id', $chauffeur_id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $success = "Crédits mis à jour avec succès!";
+    } catch (PDOException $e) {
+        $error = "Erreur lors de la mise à jour des crédits : " . $e->getMessage();
     }
 }
 
@@ -614,14 +649,14 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="date_arrivee">Date d'arrivée (approximative) :</label>
+                                    <label for="date_arrivee">Date d'arrivée :</label>
                                     <input type="date" class="form-control" name="date_arrivee" id="date_arrivee"
                                         placeholder="Date d'arrivée">
                                     <small class="form-text text-muted">Facultatif.</small>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="heure_arrivee">Heure d'arrivée (approximative) :</label>
+                                    <label for="heure_arrivee">Heure d'arrivée :</label>
                                     <input type="time" class="form-control" name="heure_arrivee" id="heure_arrivee"
                                         placeholder="Heure d'arrivée">
                                     <small class="form-text text-muted">Facultatif.</small>
@@ -644,6 +679,12 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                                     <textarea class="form-control" name="commentaire" id="commentaire" rows="3"
                                         placeholder="Ajoutez un commentaire (ex: détails sur le point de rencontre, etc.)"></textarea>
                                 </div>
+                                <div class="form-group">
+                                    <label for="prix_publication">Nombre de credit prelevé pour publication d'un trajet
+                                        :</label>
+                                    <strong type="number" class="form-control" id="prix_publication">2</strong>
+                                    <input type="hidden" type="number" name="prix_publication" id="prix_publication" value="2">
+                                </div></br>
 
                                 <div class="publier-trajet-actions">
                                     <button type="submit" class="btn btn-primary publier-trajet-btn" name="publier_trajet"
@@ -738,6 +779,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                                                 <?= ($covoiturage->statut !== 'en_cours') ? 'disabled' : '' ?>>
                                                 Terminer le trajet
                                             </button>
+                                            <input type="hidden" type="number" name="prix_publication" id="prix_publication" value="2">
                                             <button type="submit" name="annuler_trajet" class="btn btn-warning"
                                                 <?= ($covoiturage->statut !== 'en_attente') ? 'disabled' : '' ?>>
                                                 Annuler le trajet
@@ -795,6 +837,8 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                                     <form method="post">
                                         <input type="hidden" name="covoiturage_id"
                                             value="<?= htmlspecialchars($resultat->covoiturage_id) ?>">
+                                        <input type="hidden" type="number" name="prix_personne"
+                                            value="<?= htmlspecialchars($resultat->prix_personne) ?>">
                                         <input type="hidden" name="chauffeur_id"
                                             value="<?= htmlspecialchars($resultat->chauffeur_id) ?>">
                                         <div class="form-group">
