@@ -8,7 +8,7 @@ ini_set('memory_limit', '256M');
 ini_set('log_errors', 'On');
 ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
 
-$pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecorideDatabase.db");
+$pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecoride.db");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $userInfos = []; // Initialisation de $userInfos comme un tableau vide
@@ -50,7 +50,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SE
             FROM covoiturages c
             INNER JOIN voitures v ON c.voiture_id = v.voiture_id
             WHERE c.user_id = :user_id
-            ORDER BY c.created_at DESC LIMIT 1");
+            ORDER BY c.created_at DESC LIMIT 3");
         $stmt->bindParam(':user_id', $userId);
         $stmt->execute();
         $covoituragesEnCours = $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -113,7 +113,7 @@ if (isset($_FILES["photo_profil"]) && $_FILES["photo_profil"]["error"] == 0) {
     $filetype = $_FILES["photo_profil"]["type"];
     $filesize = $_FILES["photo_profil"]["size"];
     $ext = pathinfo($filename, PATHINFO_EXTENSION);
-    var_dump($ext);
+
 
 
     if (array_key_exists($ext, $allowed) && in_array($filetype, $allowed) && $filesize <= (5 * 1024 * 1024)) { // Exemple de validation
@@ -279,6 +279,7 @@ if (isset($_POST['publier_trajet'])) {
 
 
 if (isset($_POST['ajouter_vehicule'])) {
+    $marque = $_POST['marque'];
     $modele = $_POST['modele'];
     $couleur = $_POST['couleur'];
     $immatriculation = $_POST['immatriculation'];
@@ -287,13 +288,14 @@ if (isset($_POST['ajouter_vehicule'])) {
 
 
     try {
-        $stmt = $pdo->prepare("INSERT INTO voitures (modele, couleur, immatriculation, date_premiere_immatriculation, energie, user_id) VALUES (:modele, :couleur, :immatriculation, :date_premiere_immatriculation, :energie, :user_id)");
+        $stmt = $pdo->prepare("INSERT INTO voitures (modele, couleur, immatriculation, date_premiere_immatriculation, energie, user_id, marque) VALUES (:modele, :couleur, :immatriculation, :date_premiere_immatriculation, :energie, :user_id, :marque)");
         $stmt->bindParam(':modele', $modele);
         $stmt->bindParam(':couleur', $couleur);
         $stmt->bindParam(':immatriculation', $immatriculation);
         $stmt->bindParam(':date_premiere_immatriculation', $date_immatriculation);
         $stmt->bindParam(':energie', $energie);
         $stmt->bindParam(':user_id', $userId);
+        $stmt->bindParam(':marque', $marque);
         $stmt->execute();
         $success = "Véhicule ajouté avec succès!";
 
@@ -392,14 +394,7 @@ if (isset($_POST['poster_avis'])) {
     } catch (PDOException $e) {
         $error = "Erreur lors de la publication de l'avis : " . $e->getMessage();
     }
-    try {
-        $stmt = $pdo->prepare("UPDATE participations SET statut = 'a_verifier' WHERE covoiturage_id = :covoiturage_id AND voyageur_id = :voyageur_id");
-        $stmt->bindParam(':covoiturage_id', $covoiturageId);
-        $stmt->bindParam(':voyageur_id', $userId);
-        $stmt->execute();
-    } catch (PDOException $e) {
-        $error = "Erreur lors de la publication de l'avis : " . $e->getMessage();
-    }
+
     try {
         $stmt = $pdo->prepare('UPDATE avis SET participation_id = (SELECT participation_id FROM participations WHERE covoiturage_id = :covoiturage_id AND voyageur_id = :voyageur_id) WHERE covoiturage_id = :covoiturage_id AND voyageur_id = :voyageur_id');
         $stmt->bindParam(':covoiturage_id', $covoiturageId);
@@ -431,6 +426,14 @@ if (isset($_POST['poster_avis'])) {
         $stmt->execute();
 
         $success = "Crédits mis à jour avec succès!";
+    } catch (PDOException $e) {
+        $error = "Erreur lors de la mise à jour des crédits : " . $e->getMessage();
+    }
+    try {
+        $stmt = $pdo->prepare("UPDATE utilisateurs SET credits = credits - :prix WHERE user_id = :user_id");
+        $stmt->bindParam(':prix', $prix_personne, PDO::PARAM_INT);
+        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $stmt->execute();
     } catch (PDOException $e) {
         $error = "Erreur lors de la mise à jour des crédits : " . $e->getMessage();
     }
@@ -523,6 +526,8 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                                 <strong class="form-control">Nombre de credit restant :
                                     <?= htmlspecialchars($userInfo->credits) ?></strong></br>
                                 <strong class="form-control">Note moyenne :
+
+
                                     <?= htmlspecialchars($userInfo->average_note) ?>⭐</strong></br>
 
                             <?php endforeach; ?>
@@ -554,7 +559,10 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                             <form action="" method="post">
                                 <legend>Informations</legend>
                                 <div class="form-group">
-                                    <label for="depart">Véhicule :</label>
+                                    <label for="marque_vehicule">Marque du véhicule :</label>
+                                    <input type="text" class="form-control" name="marque" id="marque"
+                                        placeholder="Marque de la voiture" required>
+                                    <label for="vehicule">Modele du véhicule :</label>
                                     <input type="text" class="form-control" name="modele" id="modele"
                                         placeholder="modele de la voiture" required>
                                 </div>
@@ -737,7 +745,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                                         <p>
                                             <strong>Départ :</strong> <?= htmlspecialchars($covoiturage->lieu_depart) ?>
                                             <br>
-                                            <strong>Arrivée :</strong> <?= htmlspecialchars($covoiturage->lieu_arrivee) ?>
+                                            <strong>Arrivée :</strong> <?= htmlspecialchars($covoiturage->lieu_arrivee) ?></br>
                                             <strong>Durée du trajet :</strong> <?= htmlspecialchars($covoiturage->duree) ?>
                                         </p>
                                     </div>

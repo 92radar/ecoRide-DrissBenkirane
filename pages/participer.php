@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 ini_set('log_errors', 'On');
 ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
 
-$pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecorideDatabase.db");
+$pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecoride.db");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $covoiturage = null; // Initialisation de $covoiturage
@@ -32,7 +32,7 @@ if (isset($_GET['covoiturage_id'])) {
     try {
         $stmt = $pdo->prepare("
             SELECT c.*, u.nom AS nom, u.average_note AS average_note, u.prenom AS prenom, u.date_naissance, u.photo,
-                   v.modele, v.couleur, v.immatriculation, v.energie
+                   v.marque, v.modele, v.couleur, v.immatriculation, v.energie
             FROM covoiturages c
             LEFT JOIN utilisateurs u ON c.user_id = u.user_id
             LEFT JOIN voitures v ON c.voiture_id = v.voiture_id
@@ -60,6 +60,7 @@ if (isset($_GET['covoiturage_id'])) {
             JOIN avis a ON p.voyageur_id = a.voyageur_id
             JOIN utilisateurs u ON a.voyageur_id = u.user_id
             WHERE p.chauffeur_id = :chauffeur_id
+            AND a.statut_avis = 'validé'
         ");
 
         $stmt->bindParam(':chauffeur_id', $userId, PDO::PARAM_INT);
@@ -106,6 +107,8 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
 
                     <span class="utilisateur" name="date_naissance">Date de naissance :
                         <?= htmlspecialchars($covoiturage->date_naissance) ?><br>
+                    </span> <span class="utilisateur" name="marque">Marque de la voiture :
+                        <?= htmlspecialchars($covoiturage->marque) ?><br>
                     </span>
                     <span class="utilisateur" name="voiture">Modèle de la voiture :
                         <?= htmlspecialchars($covoiturage->modele) ?><br>

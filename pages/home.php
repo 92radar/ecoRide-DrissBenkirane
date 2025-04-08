@@ -11,16 +11,39 @@ ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ph
 
 if (isset($_SESSION['loggedin']) &&  $_SESSION['loggedin'] == true) {
 
+    try {
+        $pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecoride.db");
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $stmt = $pdo->prepare("SELECT nom, prenom FROM utilisateurs WHERE user_id = :user_id");
+        $stmt->bindParam(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
+        $stmt->execute();
+        $welcome = $stmt->fetchAll(PDO::FETCH_OBJ);
+        if ($welcome) {
+            $welcomeInfo = $welcome[0]; // Récupérer le premier élément
+        }
 
 
-    echo "Bienvenue, utilisateur connecté !";
+
+        $success = "Bienvenue "  . $welcomeInfo->prenom  . " ,vous etes connecté";
+    } catch (PDOException $e) {
+        $error = "Erreur de connexion à la base de données : " . $e->getMessage();
+    }
 }
+
 require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
 ?>
 
 
 
-
+<?php if (isset($success)) : ?>
+    <div class="alert alert-success">
+        <?= $success ?>
+    </div>
+<?php elseif (isset($error)) : ?>
+    <div class="alert alert-danger">
+        <?= $error ?>
+    </div>
+<?php endif; ?>
 <div class="row">
     <div class="column">
 

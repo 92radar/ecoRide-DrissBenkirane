@@ -101,13 +101,18 @@ if (isset($_POST['search'])) {
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <?php
-                        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] = true) {
+                        if (isset($_SESSION['role']) && $_SESSION['role'] === 'employee') {
+                            echo '<a class="dropdown-item" href="/pages/employee.php">Espace employés</a>';
+                            echo '<form method="post"><button class="dropdown-item" name="logout">Déconnexion</button></form>';
+                        } elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'user') {
                             echo '<a class="dropdown-item" href="/pages/account.php">Profil</a>';
                             echo '<form method="post"><button class="dropdown-item" name="logout">Déconnexion</button></form>';
+                        } elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+                            echo '<a class="dropdown-item" href="/pages/admin.php"> Espace admin</a>';
+                            echo '<form method="post"><button class="dropdown-item" name="logout">Déconnexion</button></form>';
                         } else {
-                            // L'utilisateur n'est pas connecté, afficher les liens de connexion/inscription
                             echo '<a class="dropdown-item" href="/pages/login.php">Connexion</a>';
-                            echo '<a class="dropdown-item" href="/pages/register.php">S\'inscrire</a>';
+                            echo '<a class="dropdown-item" href="/pages/register.php">Inscription</a>';
                         }
                         ?>
                 </li>

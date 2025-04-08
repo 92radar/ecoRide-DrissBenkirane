@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ini_set('log_errors', 'On');
 ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
-$pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecorideDatabase.db");
+$pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecoride.db");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if (isset($_POST['submit'])) {
@@ -57,20 +57,35 @@ if (isset($_POST['submit'])) {
 
                                 // Vous pourriez envisager de déconnecter l'utilisateur ou d'afficher un message d'erreur.
                             }
+                            try {
+                                $stmt = $pdo->prepare('SELECT role FROM roles WHERE user_id = :user_id');
+                                $stmt->bindParam(':user_id', $_SESSION['user_id']);
+                                $stmt->execute();
+                                $role = $stmt->fetchColumn();
+                                if ($role == 'employee') {
+                                    $_SESSION['role'] = 'employee';
+                                } elseif ($role == 'admin') {
+                                    $_SESSION['role'] = 'admin';
+                                } elseif ($role == 'user') {
+                                    $_SESSION['role'] = 'user';
+                                }
+                            } catch (PDOException $e) {
+                                echo "Erreur lors de la récupération du rôle : " . $e->getMessage();
+                            }
                             header("Location: http://localhost:4000/pages/home.php");
                             exit();
                             // Ici, vous pouvez connecter l'utilisateur (démarrer une session, etc.)
                         } else {
-                            echo "Mot de passe incorrect.";
+                            $error = "Mot de passe incorrect";
                         }
                     } else {
-                        echo "Le champ mot de passe n'a pas été soumis.";
+                        $error = "Veuillez entrer un mot de passe";
                     }
                 } else {
-                    echo "Erreur : Impossible de récupérer le mot de passe hashé.";
+                    $error = "Aucun mot de passe trouvé pour cet utilisateur";
                 }
             } else {
-                echo "Email non trouvé";
+                $error = "Aucun utilisateur trouvé avec cet email";
             }
         } catch (PDOException $e) {
             echo $e->getMessage();
@@ -80,6 +95,11 @@ if (isset($_POST['submit'])) {
 require '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
 ?>
 <link rel="stylesheet" href="../styles/login.css">
+<?php if (isset($error)) : ?>
+    <div class="alert alert-danger" role="alert">
+        <?php echo $error; ?>
+    </div>
+<?php endif; ?>
 <section class="vh-100">
     <div class="container-fluid">
         <div class="row">

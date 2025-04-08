@@ -9,7 +9,7 @@ session_start();
 
 
 
-$pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecorideDatabase.db");
+$pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecoride.db");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true && isset($_SESSION['user_id'])) {
@@ -59,7 +59,7 @@ if (isset($_GET['depart']) && isset($_GET['arrivee']) && isset($_GET['date'])) {
     $arrivee = $_GET['arrivee'];
     $date = $_GET['date']; {
         try {
-            $researchStmt = $pdo->prepare("SELECT COUNT(*) FROM covoiturages WHERE lieu_depart = :lieu_depart AND lieu_arrivee = :lieu_arrivee AND nb_place > 0 ");
+            $researchStmt = $pdo->prepare("SELECT COUNT(*) FROM covoiturages WHERE lieu_depart = :lieu_depart AND lieu_arrivee = :lieu_arrivee AND nb_place > 0 AND statut = 'en_attente'");
             $researchStmt->bindParam(':lieu_depart', $depart, PDO::PARAM_STR);
             $researchStmt->bindParam(':lieu_arrivee', $arrivee, PDO::PARAM_STR);
 
@@ -84,6 +84,7 @@ if (isset($_GET['depart']) && isset($_GET['arrivee']) && isset($_GET['date'])) {
             INNER JOIN utilisateurs u ON c.user_id = u.user_id
             INNER JOIN voitures v ON c.voiture_id = v.voiture_id
             WHERE c.nb_place > 0
+            AND c.statut = 'en_attente'
               AND c.lieu_depart = :lieu_depart
               AND c.lieu_arrivee = :lieu_arrivee
               AND c.date_depart LIKE :date_depart ORDER BY c.date_depart ASC
@@ -114,7 +115,7 @@ if (isset($_POST['search'])) {
     $date = $_POST['date'];
     try {
         $researchStmt = $pdo->prepare("SELECT COUNT(*) FROM covoiturages WHERE lieu_depart = :lieu_depart AND lieu_arrivee = :lieu_arrivee AND date_depart =
-:date_depart AND nb_place > 0 ");
+:date_depart AND nb_place > 0 AND statut = 'en_attente' ");
         $researchStmt->bindParam(':lieu_depart', $depart, PDO::PARAM_STR);
         $researchStmt->bindParam(':lieu_arrivee', $arrivee, PDO::PARAM_STR);
         $researchStmt->bindParam(':date_depart', $date, PDO::PARAM_STR);
@@ -130,9 +131,11 @@ if (isset($_POST['search'])) {
             $researchStmt = $pdo->prepare("SELECT c.*, u.nom AS nom, u.prenom AS prenom, 
             v.energie AS energie, c.statut AS statut FROM covoiturages c LEFT JOIN utilisateurs u ON c.user_id = u.user_id LEFT JOIN voitures v ON c.voiture_id = v.voiture_id
      WHERE c.nb_place > 0
+        AND c.statut = 'en_attente'
      AND c.lieu_depart = :lieu_depart
         AND c.lieu_arrivee = :lieu_arrivee
         AND c.date_depart LIKE :date_depart
+
                 ");
 
             $researchStmt->bindParam(':lieu_depart', $depart, PDO::PARAM_STR);
@@ -277,7 +280,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                                 <p>
                                     <strong>Départ :</strong> <?= htmlspecialchars($result->lieu_depart) ?>
                                     <br>
-                                    <strong>Arrivée :</strong> <?= htmlspecialchars($result->lieu_arrivee) ?>
+                                    <strong>Arrivée :</strong> <?= htmlspecialchars($result->lieu_arrivee) ?></br>
                                     <strong>Durée du trajet :</strong> <span
                                         class="duree"><?= htmlspecialchars($result->duree) ?></span>
                                 </p>
