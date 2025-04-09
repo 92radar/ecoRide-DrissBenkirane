@@ -5397,3 +5397,72 @@ Stack trace:
 [07-Apr-2025 17:48:04 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 288
 [08-Apr-2025 10:55:17 Europe/Berlin] PHP Warning:  Array to string conversion in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/home.php on line 24
 [08-Apr-2025 10:55:42 Europe/Berlin] PHP Warning:  Array to string conversion in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/home.php on line 24
+[08-Apr-2025 16:23:15 Europe/Berlin] PHP Warning:  Undefined array key "password" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 101
+[08-Apr-2025 16:23:15 Europe/Berlin] PHP Deprecated:  password_hash(): Passing null to parameter #1 ($password) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 109
+[08-Apr-2025 16:23:16 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 136
+[08-Apr-2025 16:27:04 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 136
+[08-Apr-2025 16:49:23 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$statut_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:23 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:23 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$statut_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:23 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:23 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$statut_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:23 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:23 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$statut_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:23 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:23 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$statut_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:23 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:56 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$statut_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:56 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:56 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$statut_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:56 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:56 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$statut_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:56 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:56 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$statut_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:56 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:56 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$statut_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:49:56 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:50:15 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$statut_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:50:15 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:50:15 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$statut_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:50:15 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:50:15 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$statut_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:50:15 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:50:15 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$statut_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:50:15 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:50:15 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$statut_avis in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[08-Apr-2025 16:50:15 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 269
+[09-Apr-2025 11:35:01 Europe/Berlin] PHP Warning:  Undefined variable $employe in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 282
+[09-Apr-2025 11:35:01 Europe/Berlin] PHP Warning:  Attempt to read property "nom" on null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 282
+[09-Apr-2025 11:35:01 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 282
+[09-Apr-2025 11:35:01 Europe/Berlin] PHP Warning:  Undefined variable $employe in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 282
+[09-Apr-2025 11:35:01 Europe/Berlin] PHP Warning:  Attempt to read property "nom" on null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 282
+[09-Apr-2025 11:35:01 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 282
+[09-Apr-2025 11:43:35 Europe/Berlin] PHP Warning:  Undefined variable $stmtAvisDetails in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 145
+[09-Apr-2025 11:43:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php:145
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 145
+[09-Apr-2025 11:43:44 Europe/Berlin] PHP Warning:  Undefined variable $userDetails in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 312
+[09-Apr-2025 11:43:46 Europe/Berlin] PHP Warning:  Undefined variable $userDetails in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 312
+[09-Apr-2025 11:43:51 Europe/Berlin] PHP Warning:  Undefined variable $stmtAvisDetails in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 145
+[09-Apr-2025 11:43:51 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php:145
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 145
+[09-Apr-2025 11:43:54 Europe/Berlin] PHP Warning:  Undefined variable $userDetails in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 312
+[09-Apr-2025 11:44:17 Europe/Berlin] PHP Warning:  Undefined variable $userDetails in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 312
+[09-Apr-2025 11:44:19 Europe/Berlin] PHP Warning:  Undefined variable $stmtAvisDetails in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 145
+[09-Apr-2025 11:44:19 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php:145
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 145
+[09-Apr-2025 14:14:04 Europe/Berlin] PHP Warning:  Undefined variable $userDetails in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 312
+[09-Apr-2025 14:18:31 Europe/Berlin] PHP Warning:  Undefined variable $userDetails in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 325
+[09-Apr-2025 14:19:23 Europe/Berlin] PHP Warning:  Undefined variable $userDetails in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 325
+[09-Apr-2025 14:19:41 Europe/Berlin] PHP Warning:  Undefined variable $userDetails in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 325
+[09-Apr-2025 14:20:44 Europe/Berlin] PHP Warning:  Undefined variable $userDetails in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 334
+[09-Apr-2025 14:48:35 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1 no such column: date_arrivee in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php:104
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php(104): PDO->prepare('SELECT DATE(dat...')
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 104

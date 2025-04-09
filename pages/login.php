@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
                                 // Vous pourriez envisager de déconnecter l'utilisateur ou d'afficher un message d'erreur.
                             }
                             try {
-                                $stmt = $pdo->prepare('SELECT role FROM roles WHERE user_id = :user_id');
+                                $stmt = $pdo->prepare('SELECT role FROM utilisateurs WHERE user_id = :user_id');
                                 $stmt->bindParam(':user_id', $_SESSION['user_id']);
                                 $stmt->execute();
                                 $role = $stmt->fetchColumn();
