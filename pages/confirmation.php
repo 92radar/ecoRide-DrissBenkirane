@@ -35,6 +35,8 @@ if (isset($_GET['covoiturage_id'])) {
 if (isset($_POST['confirmer_participation'])) {
     $covoiturage_id = $_POST['covoiturage_id'];
     $nb_place = $_POST['nb_place'];
+    $credit_depense = $covoiturageInfo->prix_personne * $nb_place;
+    $date_depart = $covoiturageInfo->date_depart;
 
     try {
         $stmt = $pdo->prepare("SELECT nb_place FROM covoiturages WHERE covoiturage_id = :covoiturage_id");
@@ -50,11 +52,13 @@ if (isset($_POST['confirmer_participation'])) {
             $update_stmt->bindParam(':covoiturage_id', $covoiturage_id, PDO::PARAM_INT);
             $update_stmt->execute();
             try {
-                $stmt = $pdo->prepare("INSERT INTO Participations (covoiturage_id, voyageur_id, nb_place, statut, chauffeur_id)  VALUES (:covoiturage_id, :voyageur_id, :nb_place, 'en attente', :chauffeur_id)");
+                $stmt = $pdo->prepare("INSERT INTO Participations (covoiturage_id, voyageur_id, nb_place, statut, chauffeur_id, date_depart, credit_depense)  VALUES (:covoiturage_id, :voyageur_id, :nb_place, 'en attente', :chauffeur_id, :date_depart, :credit_depense)");
                 $stmt->bindParam(':nb_place', $nb_place, PDO::PARAM_INT);
                 $stmt->bindParam(':covoiturage_id', $covoiturage_id, PDO::PARAM_INT);
                 $stmt->bindParam(':voyageur_id', $_SESSION['user_id'], PDO::PARAM_INT);
                 $stmt->bindParam(':chauffeur_id', $covoiturageInfo->user_id, PDO::PARAM_INT);
+                $stmt->bindParam(':date_depart', $date_depart, PDO::PARAM_STR);
+                $stmt->bindParam(':credit_depense', $credit_depense, PDO::PARAM_INT);
 
                 $stmt->execute();
                 $success_message = "Participation confirmée avec succès !";

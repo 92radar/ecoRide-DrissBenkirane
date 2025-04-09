@@ -190,7 +190,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                 <li><a href="#section2">Verifier les Avis</a></li>
                 <li><a href="#section3">Avis verifié</a></li>
                 <li><a href="#section4">Historique des trajets</a></li>
-                <li><a href="#section5">Co-voiturage en cours</a></li>
+
             </ul>
         </div>
         <form method="post">

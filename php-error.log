@@ -5466,3 +5466,138 @@ Stack trace:
 #0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php(104): PDO->prepare('SELECT DATE(dat...')
 #1 {main}
   thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 104
+[09-Apr-2025 15:33:37 Europe/Berlin] PHP Warning:  Undefined variable $optionsSemaines in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 473
+[09-Apr-2025 15:33:37 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 473
+[09-Apr-2025 15:33:37 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 528
+[09-Apr-2025 15:33:37 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 529
+[09-Apr-2025 15:35:40 Europe/Berlin] PHP Warning:  Undefined variable $optionsSemaines in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 473
+[09-Apr-2025 15:35:40 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 473
+[09-Apr-2025 15:35:40 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 528
+[09-Apr-2025 15:35:40 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 529
+[09-Apr-2025 15:35:44 Europe/Berlin] PHP Warning:  Undefined variable $optionsSemaines in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 473
+[09-Apr-2025 15:35:44 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 473
+[09-Apr-2025 15:35:44 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 528
+[09-Apr-2025 15:35:44 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 529
+[09-Apr-2025 15:35:48 Europe/Berlin] PHP Warning:  Undefined variable $optionsSemaines in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 473
+[09-Apr-2025 15:35:48 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 473
+[09-Apr-2025 15:35:48 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 528
+[09-Apr-2025 15:35:48 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 529
+[09-Apr-2025 15:41:29 Europe/Berlin] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php:80
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 80
+[09-Apr-2025 15:59:40 Europe/Berlin] PHP Warning:  Undefined variable $datesSemaineListe in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 92
+[09-Apr-2025 15:59:40 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 92
+[09-Apr-2025 16:01:29 Europe/Berlin] PHP Warning:  Undefined variable $joursPeriode in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 92
+[09-Apr-2025 16:01:29 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 92
+[09-Apr-2025 16:05:49 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:49 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:49 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:49 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:49 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:49 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:49 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:58 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:58 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:58 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:58 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:58 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:58 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:58 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:59 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:59 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:59 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:59 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:59 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:59 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:59 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:59 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:59 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:59 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:59 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:59 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:59 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:05:59 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaineCovoiturages in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 88
+[09-Apr-2025 16:11:58 Europe/Berlin] PHP Warning:  Undefined variable $optionsSemaines in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 456
+[09-Apr-2025 16:11:58 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 456
+[09-Apr-2025 16:11:58 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaine in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 463
+[09-Apr-2025 16:11:58 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 463
+[09-Apr-2025 16:11:58 Europe/Berlin] PHP Warning:  Undefined variable $finSemaine in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 464
+[09-Apr-2025 16:11:58 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 464
+[09-Apr-2025 16:11:58 Europe/Berlin] PHP Warning:  Undefined variable $nombres in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 478
+[09-Apr-2025 16:11:58 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 512
+[09-Apr-2025 16:11:58 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 513
+[09-Apr-2025 16:13:12 Europe/Berlin] PHP Warning:  Undefined variable $nombres in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 467
+[09-Apr-2025 16:13:12 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 501
+[09-Apr-2025 16:13:12 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 502
+[09-Apr-2025 16:16:24 Europe/Berlin] PHP Warning:  Undefined variable $optionsSemaines in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 459
+[09-Apr-2025 16:16:24 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 459
+[09-Apr-2025 16:16:24 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaine in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 466
+[09-Apr-2025 16:16:24 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 466
+[09-Apr-2025 16:16:24 Europe/Berlin] PHP Warning:  Undefined variable $finSemaine in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 467
+[09-Apr-2025 16:16:24 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 467
+[09-Apr-2025 16:16:24 Europe/Berlin] PHP Warning:  Undefined variable $jours in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 478
+[09-Apr-2025 16:16:24 Europe/Berlin] PHP Warning:  Undefined variable $nombres in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 481
+[09-Apr-2025 16:16:24 Europe/Berlin] PHP Warning:  Undefined variable $debutPeriode in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 515
+[09-Apr-2025 16:16:24 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 515
+[09-Apr-2025 16:16:24 Europe/Berlin] PHP Warning:  Undefined variable $finPeriode in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 516
+[09-Apr-2025 16:16:24 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 516
+[09-Apr-2025 16:16:24 Europe/Berlin] PHP Warning:  Undefined variable $jours in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 527
+[09-Apr-2025 16:16:24 Europe/Berlin] PHP Warning:  Undefined variable $credits in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 530
+[09-Apr-2025 16:19:38 Europe/Berlin] PHP Warning:  Undefined variable $optionsSemaines in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 459
+[09-Apr-2025 16:19:38 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 459
+[09-Apr-2025 16:19:38 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaine in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 466
+[09-Apr-2025 16:19:38 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 466
+[09-Apr-2025 16:19:38 Europe/Berlin] PHP Warning:  Undefined variable $finSemaine in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 467
+[09-Apr-2025 16:19:38 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 467
+[09-Apr-2025 16:19:38 Europe/Berlin] PHP Warning:  Undefined variable $jours in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 478
+[09-Apr-2025 16:19:38 Europe/Berlin] PHP Warning:  Undefined variable $nombres in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 481
+[09-Apr-2025 16:19:38 Europe/Berlin] PHP Warning:  Undefined variable $debutPeriode in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 515
+[09-Apr-2025 16:19:38 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 515
+[09-Apr-2025 16:19:38 Europe/Berlin] PHP Warning:  Undefined variable $finPeriode in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 516
+[09-Apr-2025 16:19:38 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 516
+[09-Apr-2025 16:19:38 Europe/Berlin] PHP Warning:  Undefined variable $jours in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 527
+[09-Apr-2025 16:19:38 Europe/Berlin] PHP Warning:  Undefined variable $credits in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 530
+[09-Apr-2025 16:22:22 Europe/Berlin] PHP Warning:  Undefined variable $optionsSemaines in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 466
+[09-Apr-2025 16:22:22 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 466
+[09-Apr-2025 16:22:22 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaine in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 473
+[09-Apr-2025 16:22:22 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 473
+[09-Apr-2025 16:22:22 Europe/Berlin] PHP Warning:  Undefined variable $finSemaine in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 474
+[09-Apr-2025 16:22:22 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 474
+[09-Apr-2025 16:22:22 Europe/Berlin] PHP Warning:  Undefined variable $nombres in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 488
+[09-Apr-2025 16:22:22 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 522
+[09-Apr-2025 16:22:22 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 523
+[09-Apr-2025 16:22:32 Europe/Berlin] PHP Warning:  Undefined variable $optionsSemaines in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 466
+[09-Apr-2025 16:22:32 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 466
+[09-Apr-2025 16:22:32 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaine in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 473
+[09-Apr-2025 16:22:32 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 473
+[09-Apr-2025 16:22:32 Europe/Berlin] PHP Warning:  Undefined variable $finSemaine in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 474
+[09-Apr-2025 16:22:32 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 474
+[09-Apr-2025 16:22:32 Europe/Berlin] PHP Warning:  Undefined variable $nombres in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 488
+[09-Apr-2025 16:22:32 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 522
+[09-Apr-2025 16:22:32 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 523
+[09-Apr-2025 16:22:42 Europe/Berlin] PHP Warning:  Undefined variable $optionsSemaines in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 466
+[09-Apr-2025 16:22:42 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 466
+[09-Apr-2025 16:22:42 Europe/Berlin] PHP Warning:  Undefined variable $debutSemaine in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 473
+[09-Apr-2025 16:22:42 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 473
+[09-Apr-2025 16:22:42 Europe/Berlin] PHP Warning:  Undefined variable $finSemaine in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 474
+[09-Apr-2025 16:22:42 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 474
+[09-Apr-2025 16:22:42 Europe/Berlin] PHP Warning:  Undefined variable $nombres in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 488
+[09-Apr-2025 16:22:42 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 522
+[09-Apr-2025 16:22:42 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 523
+[09-Apr-2025 16:24:31 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 510
+[09-Apr-2025 16:24:31 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 511
+[09-Apr-2025 16:28:27 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 510
+[09-Apr-2025 16:28:27 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 511
+[09-Apr-2025 16:28:29 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 510
+[09-Apr-2025 16:28:29 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 511
+[09-Apr-2025 16:28:50 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 510
+[09-Apr-2025 16:28:50 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 511
+[09-Apr-2025 16:29:43 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 510
+[09-Apr-2025 16:29:43 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 511
+[09-Apr-2025 16:30:34 Europe/Berlin] PHP Warning:  Undefined variable $joursPeriodeCredits in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 103
+[09-Apr-2025 16:30:34 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 103
+[09-Apr-2025 16:30:34 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 512
+[09-Apr-2025 16:30:34 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 513
+[09-Apr-2025 16:32:19 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 502
+[09-Apr-2025 16:32:19 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 503

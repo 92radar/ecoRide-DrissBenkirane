@@ -28,102 +28,82 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
     } catch (PDOException $e) {
         echo "Erreur lors de la récupération des informations de l'utilisateur : " . $e->getMessage();
     }
-    function getDebutFinSemaine($annee, $numeroSemaine)
-    {
-        $dateTime = new DateTime();
-        $dateTime->setISODate($annee, $numeroSemaine);
-        $debutSemaine = $dateTime->format('Y-m-d');
-        $dateTime->modify('+6 days');
-        $finSemaine = $dateTime->format('Y-m-d');
-        return ['debut' => $debutSemaine, 'fin' => $finSemaine];
-    }
 
-    // Récupérer l'année actuelle
-    $anneeActuelle = date('Y');
 
-    // Générer la liste des semaines disponibles (vous pouvez adapter cette logique)
-    $nombreSemainesAAfficher = 5; // Nombre de semaines à afficher dans la liste
-    $optionsSemaines = [];
-    for ($i = 0; $i < $nombreSemainesAAfficher; $i++) {
-        $numeroSemaine = date('W', strtotime("-$i week"));
-        $anneeSemaine = date('Y', strtotime("-$i week"));
-        $optionsSemaines[$anneeSemaine . '-' . $numeroSemaine] = "Semaine $numeroSemaine ($anneeSemaine)";
-    }
-    krsort($optionsSemaines); // Trier les semaines par ordre décroissant
+    $debutPeriodeCovoit = date('Y-m-d', strtotime('-6 days'));
+    $finPeriodeCovoit = date('Y-m-d');
 
-    // Récupérer la semaine sélectionnée depuis le formulaire
-    $semaineSelectionnee = $_GET['semaine'] ?? date('Y') . '-' . date('W'); // Semaine actuelle par défaut
-    list($anneeSelectionnee, $numeroSemaineSelectionnee) = explode('-', $semaineSelectionnee);
 
-    // Obtenir les dates de début et de fin de la semaine sélectionnée
-    $datesSemaineSelectionnee = getDebutFinSemaine($anneeSelectionnee, $numeroSemaineSelectionnee);
-    $debutSemaine = $datesSemaineSelectionnee['debut'];
-    $finSemaine = $datesSemaineSelectionnee['fin'];
-
-    // Requête SQL pour compter le nombre de covoiturages par jour pour la semaine sélectionnée
-    $sql = "SELECT DATE(date_depart) AS jour, COUNT(*) AS nombre_covoiturages
+    try { // Requête SQL pour compter le nombre de covoiturages par jour pour les 7 derniers jours
+        $sqlCovoit = "SELECT DATE(date_depart) AS jour, COUNT(*) AS nombre_covoiturages
             FROM covoiturages
-            WHERE date_depart >= :debut AND date_arrivee <= :fin
+            WHERE date_depart >= :debut AND date_depart <= :fin
             GROUP BY DATE(date_depart)
             ORDER BY DATE(date_depart)";
 
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':debut', $debutSemaine);
-    $stmt->bindParam(':fin', $finSemaine);
-    $stmt->execute();
-    $resultats = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmtCovoit = $pdo->prepare($sqlCovoit);
+        $stmtCovoit->bindParam(':debut', $debutPeriodeCovoit);
+        $stmtCovoit->bindParam(':fin', $finPeriodeCovoit);
+        $stmtCovoit->execute();
+        $resultatsCovoit = $stmtCovoit->fetchAll(PDO::FETCH_ASSOC);
 
-    $jours = [];
-    $nombres = [];
-    $covoituragesParJour = [];
-    foreach ($resultats as $row) {
-        $covoituragesParJour[$row['jour']] = $row['nombre_covoiturages'];
+        $joursCovoiturages = [];
+        $nombresCovoiturages = [];
+        $covoituragesParJour = [];
+        foreach ($resultatsCovoit as $row) {
+            $covoituragesParJour[$row['jour']] = $row['nombre_covoiturages'];
+        }
+
+        // Générer un tableau des 7 derniers jours pour s'assurer qu'ils sont tous présents
+        $joursPeriodeCovoit = [];
+        for ($i = 0; $i < 7; $i++) {
+            $joursPeriodeCovoit[] = date('Y-m-d', strtotime("-$i days"));
+        }
+        $joursPeriodeCovoit = array_reverse($joursPeriodeCovoit); // Inverser pour avoir l'ordre chronologique
+
+        foreach ($joursPeriodeCovoit as $date) {
+            $joursCovoiturages[] = date('d/m', strtotime($date)); // Format d'affichage du jour
+            $nombresCovoiturages[] = isset($covoituragesParJour[$date]) ? $covoituragesParJour[$date] : 0;
+        }
+    } catch (PDOException $e) {
+        echo "Erreur lors de la récupération des covoiturages : " . $e->getMessage();
     }
-
-    $joursSemaine = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
-    $datesSemaine = [];
-    for ($i = 0; $i < 7; $i++) {
-        $datesSemaine[] = date('Y-m-d', strtotime("$debutSemaine + $i days"));
-    }
-
-    foreach ($datesSemaine as $date) {
-        $jours[] = date('l', strtotime($date));
-        $nombres[] = isset($covoituragesParJour[$date]) ? $covoituragesParJour[$date] : 0;
-    }
-
     $debutPeriode = date('Y-m-d', strtotime('-6 days'));
     $finPeriode = date('Y-m-d');
 
     // Requête SQL pour calculer le total des crédits gagnés par jour
-    $sql = "SELECT DATE(date_depart) AS jour, SUM(credit_depense) AS total_credit
+
+    try {
+        $stmt = $pdo->prepare("SELECT DATE(date_depart) AS jour, SUM(credit_depense) AS total_credit
         FROM participations
         WHERE date_depart >= :debut AND date_depart <= :fin
         GROUP BY DATE(date_depart)
-        ORDER BY DATE(date_depart)";
+        ORDER BY DATE(date_depart)");
+        $stmt->bindParam(':debut', $debutPeriode);
+        $stmt->bindParam(':fin', $finPeriode);
+        $stmt->execute();
+        $resultats = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':debut', $debutPeriode);
-    $stmt->bindParam(':fin', $finPeriode);
-    $stmt->execute();
-    $resultats = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $jours = [];
+        $credits = [];
+        $creditsParJour = [];
+        foreach ($resultats as $row) {
+            $creditsParJour[$row['jour']] = $row['total_credit'];
+        }
 
-    $jours = [];
-    $credits = [];
-    $creditsParJour = [];
-    foreach ($resultats as $row) {
-        $creditsParJour[$row['jour']] = $row['total_credit'];
-    }
+        // Générer un tableau des 7 derniers jours pour s'assurer qu'ils sont tous présents
+        $joursPeriode = [];
+        for ($i = 0; $i < 7; $i++) {
+            $joursPeriode[] = date('Y-m-d', strtotime("-$i days"));
+        }
+        $joursPeriode = array_reverse($joursPeriode); // Inverser pour avoir l'ordre chronologique
 
-    // Générer un tableau des 7 derniers jours pour s'assurer qu'ils sont tous présents
-    $joursPeriode = [];
-    for ($i = 0; $i < 7; $i++) {
-        $joursPeriode[] = date('Y-m-d', strtotime("-$i days"));
-    }
-    $joursPeriode = array_reverse($joursPeriode); // Inverser pour avoir l'ordre chronologique
-
-    foreach ($joursPeriode as $date) {
-        $jours[] = date('d/m', strtotime($date)); // Format d'affichage du jour
-        $credits[] = isset($creditsParJour[$date]) ? floatval($creditsParJour[$date]) : 0; // Assurer un type numérique
+        foreach ($joursPeriode as $date) {
+            $jours[] = date('d/m', strtotime($date)); // Format d'affichage du jour
+            $credits[] = isset($creditsParJour[$date]) ? floatval($creditsParJour[$date]) : 0; // Assurer un type numérique
+        }
+    } catch (PDOException $e) {
+        echo "Erreur lors de la récupération des crédits : " . $e->getMessage();
     }
 } else {
     header("Location: http://localhost:4000/pages/home.php"); // Redirige vers la page home
@@ -480,33 +460,21 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
 
         <body>
             <h1>Nombre de covoiturages par jour</h1>
-
-            <form method="get">
-                <label for="semaine">Sélectionner la semaine :</label>
-                <select name="semaine" id="semaine" onchange="this.form.submit()">
-                    <?php foreach ($optionsSemaines as $value => $label): ?>
-                        <option value="<?php echo $value; ?>" <?php if ($value == $semaineSelectionnee) echo 'selected'; ?>>
-                            <?php echo $label; ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </form>
-
-            <h2>Semaine du <?php echo date('d/m/Y', strtotime($debutSemaine)); ?> au
-                <?php echo date('d/m/Y', strtotime($finSemaine)); ?></h2>
-
+            <div class="ligne-horizontale"></div></br>
+            <h3>Graphique des activitées de l'entreprise</h3></br>
+            <h4>Nombre de covoiturages par jour (7 derniers jours)</h4>
             <div>
-                <canvas id="monGraphique"></canvas>
+                <canvas id="monGraphiqueCovoiturages"></canvas>
             </div>
-
             <script>
-                const ctx = document.getElementById('monGraphique').getContext('2d');
-                const monGraphique = new Chart(ctx, {
+                const ctxCovoiturages = document.getElementById('monGraphiqueCovoiturages').getContext('2d');
+                const monGraphiqueCovoiturages = new Chart(ctxCovoiturages, {
                     type: 'bar',
                     data: {
-                        labels: <?php echo json_encode($jours); ?>,
+                        labels: <?php echo json_encode($joursCovoiturages); ?>,
                         datasets: [{
                             label: 'Nombre de covoiturages',
-                            data: <?php echo json_encode($nombres); ?>,
+                            data: <?php echo json_encode($nombresCovoiturages); ?>,
                             backgroundColor: 'rgba(54, 162, 235, 0.8)',
                             borderColor: 'rgba(54, 162, 235, 1)',
                             borderWidth: 1
@@ -524,7 +492,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                             x: {
                                 title: {
                                     display: true,
-                                    text: 'Jour de la semaine'
+                                    text: 'Jour (JJ/MM)'
                                 }
                             }
                         }
@@ -535,6 +503,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
             <div class="ligne-horizontale"></div></br>
 
             <title>Gains de crédit par jour</title>
+
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
