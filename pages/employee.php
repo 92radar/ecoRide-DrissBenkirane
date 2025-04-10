@@ -27,7 +27,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'employee') {
             FROM Participations p
             INNER JOIN avis a ON p.voyageur_id = a.voyageur_id
             INNER JOIN utilisateurs u ON a.voyageur_id = u.user_id
-            WHERE statut_avis = 'validé'
+            
         ");
 
 
@@ -137,33 +137,50 @@ if (isset($_GET['avis_id']) && !empty($_GET['avis_id'])) {
         $stmtAvisDetails->bindParam(':avis_id', $selectedAvisId, PDO::PARAM_INT);
         $stmtAvisDetails->execute();
         $avisDetails = $stmtAvisDetails->fetchAll(PDO::FETCH_OBJ);
-        if ($avisDetails) {
-            $avisDetails = $avisDetails[0]; // Récupérer le premier élément
+    } catch (PDOException $e) {
+        $error = "Erreur lors de la récupération des détails de l'avis : " . $e->getMessage();
+    }
+    if ($avisDetails) {
+        $avisDetails = $avisDetails[0]; // Récupérer le premier élément
+    }
+
+
+    if (isset($_POST['changer_statut'])) {
+        $statutAvis = $_POST['statut_avis'];
+        $commentaire = $_POST['commentaire'];
+
+
+        try {
+            $stmt = $pdo->prepare("UPDATE avis SET statut_avis = :statut_avis, commentaire = :commentaire WHERE avis_id = :avis_id");
+            $stmt->bindParam(':statut_avis', $statutAvis);
+            $stmt->bindParam(':commentaire', $commentaire);
+
+            $stmt->bindParam(':avis_id', $selectedAvisId, PDO::PARAM_INT);
+            $stmt->execute();
+            $success = "Statut de l'avis mis à jour avec succès.";
+            // Redirection après la mise à jour
+            header("Location: http://localhost:4000/pages/employee.php");
+            exit();
+        } catch (PDOException $e) {
+            $error = "Erreur lors de la mise à jour du statut de l'avis : " . $e->getMessage();
         }
-
-
-        if (isset($_POST['changer_statut'])) {
-            $statutAvis = $_POST['statut_avis'];
-            $commentaire = $_POST['commentaire'];
-
-
+        if (isset($statutAvis) && $statutAvis == 'validé') {
             try {
-                $stmt = $pdo->prepare("UPDATE avis SET statut_avis = :statut_avis, commentaire = :commentaire WHERE avis_id = :avis_id");
-                $stmt->bindParam(':statut_avis', $statutAvis);
-                $stmt->bindParam(':commentaire', $commentaire);
-
-                $stmt->bindParam(':avis_id', $selectedAvisId, PDO::PARAM_INT);
+                $stmt = $pdo->prepare("UPDATE Participations SET statut = 'validé' WHERE voyageur_id = :voyageur_id");
+                $stmt->bindParam(':voyageur_id', $avisDetails->voyageur_id, PDO::PARAM_INT);
                 $stmt->execute();
-                $success = "Statut de l'avis mis à jour avec succès.";
-                // Redirection après la mise à jour
-                header("Location: http://localhost:4000/pages/employee.php");
-                exit();
+            } catch (PDOException $e) {
+                $error = "Erreur lors de la mise à jour du statut de l'avis : " . $e->getMessage();
+            }
+        } elseif (isset($statutAvis) && $statutAvis == 'refuser') {
+            try {
+                $stmt = $pdo->prepare("UPDATE Participations SET statut = 'refuser' WHERE voyageur_id = :voyageur_id");
+                $stmt->bindParam(':voyageur_id', $avisDetails->voyageur_id, PDO::PARAM_INT);
+                $stmt->execute();
             } catch (PDOException $e) {
                 $error = "Erreur lors de la mise à jour du statut de l'avis : " . $e->getMessage();
             }
         }
-    } catch (PDOException $e) {
-        echo "Erreur lors de la récupération des détails de l'avis : " . $e->getMessage();
     }
 }
 

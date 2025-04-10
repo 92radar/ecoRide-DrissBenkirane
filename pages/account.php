@@ -437,6 +437,16 @@ if (isset($_POST['poster_avis'])) {
     } catch (PDOException $e) {
         $error = "Erreur lors de la mise à jour des crédits : " . $e->getMessage();
     }
+    try {
+        $stmt = $pdo->prepare('UPDATE Participations SET statut = "a_verifier" WHERE covoiturage_id = :covoiturage_id AND voyageur_id = :voyageur_id');
+        $stmt->bindParam(':covoiturage_id', $covoiturageId);
+        $stmt->bindParam(':voyageur_id', $userId);
+        $stmt->execute();
+    } catch (PDOException $e) {
+        $error = "Erreur lors de la publication de l'avis : " . $e->getMessage();
+    }
+    header("Location: http://localhost:4000/pages/account.php");
+    exit();
 }
 
 require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';

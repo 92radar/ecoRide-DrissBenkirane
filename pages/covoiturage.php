@@ -1,14 +1,5 @@
 <?php
 session_start();
-
-
-
-
-
-
-
-
-
 $pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecoride.db");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -42,7 +33,7 @@ if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true && isset($_SES
         session_destroy();
 
         // Rediriger vers la page de connexion ou la page actuelle (pour rafraîchir l'affichage)
-        header("Location: http://localhost:4000"); // Redirige vers la page home
+        header("Location: http://localhost:4000/pages/home.php"); // Redirige vers la page home
         exit();
     }
 }
