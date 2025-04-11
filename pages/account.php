@@ -414,7 +414,7 @@ if (isset($_POST['terminer_trajet'])) {
                     $mail->Subject = 'Confirmation de fin de trajet';
                     $mail->Body = '
                         <p>Bonjour,</p>
-                        <p>Votre trajet est désormais finis. Merci pour votre participation sur <strong>Ecoride</strong> !</p>
+                        <p>Votre trajet est à partir de maintenant finis. Merci pour votre participation sur <strong>Ecoride</strong> !</p>
                         <p>Rendez-vous dans votre espace personnel pour laisser un avis ou consulter les details.</p>
                         <p>Cordialement,<br>L’equipe Ecoride</p>';
                     $mail->AltBody = 'Votre trajet est finis. Rendez-vous sur votre espace personnel Ecoride.';
