@@ -25,7 +25,7 @@ if (isset($_POST['logout'])) {
     session_destroy();
 
     // Rediriger vers la page de connexion ou la page actuelle (pour rafraîchir l'affichage)
-    header("Location: http://localhost:4000/pages/login.php"); // Redirige vers la page home
+    header("Location: http://localhost:4000/public/login.php"); // Redirige vers la page home
     exit();
 }
 
@@ -33,7 +33,7 @@ if (isset($_POST['search'])) {
     $depart = $_POST['depart'];
     $arrivee = $_POST['arrivee'];
     $date = $_POST['date'];
-    header("Location: http://localhost:4000/pages/covoiturage.php?depart=$depart&arrivee=$arrivee&date=$date");
+    header("Location: http://localhost:4000/public/covoiturage.php?depart=$depart&arrivee=$arrivee&date=$date");
     exit();
 }
 ?>
@@ -65,13 +65,13 @@ if (isset($_POST['search'])) {
 <header>
     <div>
         <nav class="mobile-nav">
-            <a href="/pages/home.php"> </br>
+            <a href="/public/index.php"> </br>
                 <img src="/images/home-icon2.png" alt="logo" class="logo"></a>
 
-            <a href="/pages/covoiturage.php"></br><img src="/images/vecteezy_location-pointer-pin-icon_22220318.png"
+            <a href="/public/covoiturage.php"></br><img src="/images/vecteezy_location-pointer-pin-icon_22220318.png"
                     class="logo">
             </a>
-            <a href="/pages/account.php"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png"
+            <a href="/public/account.php"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png"
                     class="logo">
             </a>
 
@@ -89,10 +89,10 @@ if (isset($_POST['search'])) {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/pages/home.php">Home</a>
+                    <a class="nav-link" href="/public/index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/pages/covoiturage.php">Co-voiturage</a>
+                    <a class="nav-link" href="/public/covoiturage.php">Co-voiturage</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -102,17 +102,17 @@ if (isset($_POST['search'])) {
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <?php
                         if (isset($_SESSION['role']) && $_SESSION['role'] === 'employee') {
-                            echo '<a class="dropdown-item" href="/pages/employee.php">Espace employés</a>';
+                            echo '<a class="dropdown-item" href="/public/employee.php">Espace employés</a>';
                             echo '<form method="post"><button class="dropdown-item" name="logout">Déconnexion</button></form>';
                         } elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'user') {
-                            echo '<a class="dropdown-item" href="/pages/account.php">Profil</a>';
+                            echo '<a class="dropdown-item" href="/public/account.php">Profil</a>';
                             echo '<form method="post"><button class="dropdown-item" name="logout">Déconnexion</button></form>';
                         } elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
-                            echo '<a class="dropdown-item" href="/pages/admin.php"> Espace admin</a>';
+                            echo '<a class="dropdown-item" href="/public/admin.php"> Espace admin</a>';
                             echo '<form method="post"><button class="dropdown-item" name="logout">Déconnexion</button></form>';
                         } else {
-                            echo '<a class="dropdown-item" href="/pages/login.php">Connexion</a>';
-                            echo '<a class="dropdown-item" href="/pages/register.php">Inscription</a>';
+                            echo '<a class="dropdown-item" href="/public/login.php">Connexion</a>';
+                            echo '<a class="dropdown-item" href="/public/register.php">Inscription</a>';
                         }
                         ?>
                 </li>

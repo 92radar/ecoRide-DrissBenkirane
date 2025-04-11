@@ -25,7 +25,7 @@ if (isset($_POST['logout'])) {
     session_destroy();
 
     // Rediriger vers la page de connexion ou la page actuelle (pour rafraîchir l'affichage)
-    header("Location: http://localhost:4000/pages/login.php"); // Redirige vers la page home
+    header("Location: http://localhost:4000/public/login.php"); // Redirige vers la page home
     exit();
 }
 ?>

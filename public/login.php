@@ -72,7 +72,7 @@ if (isset($_POST['submit'])) {
                             } catch (PDOException $e) {
                                 echo "Erreur lors de la récupération du rôle : " . $e->getMessage();
                             }
-                            header("Location: http://localhost:4000/pages/home.php");
+                            header("Location: http://localhost:4000/public/index.php");
                             exit();
                             // Ici, vous pouvez connecter l'utilisateur (démarrer une session, etc.)
                         } else {

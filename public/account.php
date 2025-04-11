@@ -514,7 +514,7 @@ if (isset($_POST['poster_avis'])) {
     } catch (PDOException $e) {
         $error = "Erreur lors de la publication de l'avis : " . $e->getMessage();
     }
-    header("Location: http://localhost:4000/pages/account.php");
+    header("Location: http://localhost:4000/public/account.php");
     exit();
 }
 

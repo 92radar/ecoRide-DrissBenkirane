@@ -76,7 +76,7 @@ if (isset($_GET['covoiturage_id'])) {
 
 if (isset($_POST['participer']) && $covoiturage) {
     $covoiturage_id = $covoiturage->covoiturage_id;
-    header("Location: http://localhost:4000/pages/confirmation.php?covoiturage_id=$covoiturage_id");
+    header("Location: http://localhost:4000/public/confirmation.php?covoiturage_id=$covoiturage_id");
     exit();
 }
 
