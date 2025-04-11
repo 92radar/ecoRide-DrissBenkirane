@@ -1,12 +1,26 @@
 <?php
 session_start();
 // Démarrer la session pour accéder aux variables de session et les modifier
+
+
+
+
+
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ini_set('memory_limit', '256M');
 ini_set('log_errors', 'On');
 ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
+
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+$mail = new PHPMailer(true);
 
 $pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecoride.db");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -20,8 +34,10 @@ $voitureId = null;
 
 
 
+
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SESSION['user_id'])) {
     $userId = $_SESSION['user_id'];
+
 
 
     try {
@@ -269,7 +285,7 @@ if (isset($_POST['publier_trajet'])) {
         $stmt->bindParam(':prix', $prix_publication, PDO::PARAM_INT);
         $stmt->bindParam(':user_id', $_SESSION['user_id']);
         $stmt->execute();
-        var_dump($prix_publication);
+
         $success = "Crédits mis à jour avec succès!";
     } catch (PDOException $e) {
         $error = "Erreur lors de la mise à jour des crédits : " . $e->getMessage();
@@ -348,19 +364,70 @@ if (isset($_POST['demarrer_trajet'])) { // Correction de la faute de frappe dans
         $error = "Erreur lors du démarrage du trajet : " . $e->getMessage();
     }
 }
-if (isset($_POST['terminer_trajet'])) { // Correction de la faute de frappe dans le nom du bouton
+
+if (isset($_POST['terminer_trajet'])) {
     $covoiturageId = $_POST['covoiturage_id'];
 
     try {
+        // Mise à jour du statut
         $stmt = $pdo->prepare("UPDATE covoiturages SET statut = 'terminer' WHERE covoiturage_id = :covoiturage_id");
         $stmt->bindParam(':covoiturage_id', $covoiturageId);
         $stmt->execute();
-        $success = "Trajet démarré avec succès!";
-
-        header("Location: http://localhost:4000/pages/account.php");
-        exit(); // Ajout de exit() après la redirection
+        $success = "Trajet terminé avec succès !<br>";
     } catch (PDOException $e) {
-        $error = "Erreur lors du démarrage du trajet : " . $e->getMessage();
+        exit("Erreur lors de la mise à jour du trajet : " . $e->getMessage());
+    }
+
+    try {
+        // Récupère les voyageurs liés au trajet
+        $stmt = $pdo->prepare('SELECT voyageur_id FROM participations WHERE covoiturage_id = :covoiturage_id');
+        $stmt->bindParam(':covoiturage_id', $covoiturageId);
+        $stmt->execute();
+        $voyageurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($voyageurs as $voyageur) {
+            // Récupère leur email
+            $stmtEmail = $pdo->prepare('SELECT email FROM utilisateurs WHERE user_id = :voyageur_id');
+            $stmtEmail->bindParam(':voyageur_id', $voyageur['voyageur_id']);
+            $stmtEmail->execute();
+            $emailData = $stmtEmail->fetch(PDO::FETCH_ASSOC);
+
+            if ($emailData && isset($emailData['email'])) {
+                $destinataire = $emailData['email'];
+
+                // Envoi d’email via PHPMailer
+                $mail = new PHPMailer(true);
+
+                try {
+                    $mail->isSMTP();
+                    $mail->Host = 'smtp.gmail.com';
+                    $mail->SMTPAuth = true;
+                    $mail->Username = 'eco.ride.studi@gmail.com'; // ← Mon adresse Gmail
+                    $mail->Password = 'ewiv oucj nytx nlek'; // ← Mot de passe d'application
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                    $mail->Port = 465;
+
+                    $mail->setFrom('eco.ride.studi@gmail.com', 'ecoride');
+                    $mail->addAddress($destinataire);
+
+                    $mail->isHTML(true);
+                    $mail->Subject = 'Confirmation de fin de trajet';
+                    $mail->Body = '
+                        <p>Bonjour,</p>
+                        <p>Votre trajet est désormais terminé. Merci pour votre participation sur <strong>Ecoride</strong> !</p>
+                        <p>Rendez-vous dans votre espace personnel pour laisser un avis ou consulter les détails.</p>
+                        <p>Cordialement,<br>L’équipe Ecoride</p>';
+                    $mail->AltBody = 'Votre trajet est terminé. Rendez-vous sur votre espace personnel Ecoride.';
+
+                    $mail->send();
+                    $success .= "Email envoyé à " . htmlspecialchars($destinataire) . "<br>";
+                } catch (Exception $e) {
+                    $success .= "Erreur lors de l'envoi à " . htmlspecialchars($destinataire) . ": " . $mail->ErrorInfo . "<br>";
+                }
+            }
+        }
+    } catch (PDOException $e) {
+        exit("Erreur lors de l'envoi des emails : " . $e->getMessage());
     }
 }
 
@@ -370,6 +437,8 @@ if (isset($_POST['poster_avis'])) {
     $note = $_POST['note'];
     $chauffeur_id = $_POST['chauffeur_id'];
     $prix_personne = $_POST['prix_personne'];
+
+
 
     try {
         $stmt = $pdo->prepare("INSERT INTO avis (covoiturage_id, voyageur_id, commentaire, note, chauffeur_id) VALUES (:covoiturage_id, :voyageur_id, :commentaire, :note, :chauffeur_id)");
@@ -448,6 +517,8 @@ if (isset($_POST['poster_avis'])) {
     header("Location: http://localhost:4000/pages/account.php");
     exit();
 }
+
+
 
 require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
 

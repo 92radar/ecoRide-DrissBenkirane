@@ -5601,3 +5601,39 @@ Stack trace:
 [09-Apr-2025 16:30:34 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 513
 [09-Apr-2025 16:32:19 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 502
 [09-Apr-2025 16:32:19 Europe/Berlin] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 503
+[10-Apr-2025 15:22:06 Europe/Berlin] PHP Fatal error:  Uncaught Error: PDOStatement::bindParam(): Argument #2 ($var) cannot be passed by reference in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php:373
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 373
+[10-Apr-2025 15:23:43 Europe/Berlin] PHP Warning:  Array to string conversion in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 373
+[11-Apr-2025 10:12:45 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer\PHPMailer\PHPMailer" not found in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php:32
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 32
+[11-Apr-2025 10:13:27 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer\PHPMailer\PHPMailer" not found in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php:27
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 27
+[11-Apr-2025 10:14:25 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer\PHPMailer\PHPMailer" not found in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php:28
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 28
+[11-Apr-2025 10:14:26 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer\PHPMailer\PHPMailer" not found in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php:28
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 28
+[11-Apr-2025 10:15:44 Europe/Berlin] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 524
+[11-Apr-2025 10:15:44 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php:524
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 524
+[11-Apr-2025 10:16:18 Europe/Berlin] PHP Warning:  require_once(/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages../vendor/autoload.php): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 18
+[11-Apr-2025 10:16:18 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages../vendor/autoload.php' (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php:18
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 18
+[11-Apr-2025 10:16:29 Europe/Berlin] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 524
+[11-Apr-2025 10:16:29 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php:524
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/account.php on line 524
