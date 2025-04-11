@@ -66,18 +66,18 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/s
 
 <body>
     <?php if ($error) : ?>
-        <div class="alert alert-danger" role="alert">
-            <?= $error ?>
-        </div>
+    <div class="alert alert-danger" role="alert">
+        <?= $error ?>
+    </div>
     <?php endif; ?>
     <?php if ($success) : ?>
-        <div class="alert alert-success" role="alert">
-            <?= $success ?>
-        </div>
+    <div class="alert alert-success" role="alert">
+        <?= $success ?>
+    </div>
     <?php endif; ?>
     <div class="container">
         <h2>Inscription</h2>
-        <form action="#" method="post" onsubmit="return validateForm()">
+        <form action="" method="post" id="form-inscription" onsubmit="return validateForm()">
             <div class="form-group">
                 <label for="nom">Nom:</label>
                 <input type="text" id="nom" name="nom" required>
@@ -96,7 +96,10 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/s
             </div>
             <div class="form-group">
                 <label for="mot_de_passe">Mot de passe:</label>
-                <input type="password" id="mot_de_passe" name="password" required>
+                <input type="password" id="password" name="password" required>
+                <div id="password-feedback" style="color: red; font-size: 0.9em; margin-top: 5px;"></div>
+
+                </ul>
             </div>
             <div class="form-group">
                 <label for="verif_mot_de_passe">Vérifiez le mot de passe:</label>
@@ -120,10 +123,11 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/s
                 <label for="date_naissance">Date de naissance:</label>
                 <input type="date" id="date_naissance" name="date_naissance" required>
             </div>
-            <button type="submit" name="submit">S'inscrire</button>
+            <button type="submit" id="submit-btn" name="submit">S'inscrire</button>
         </form>
     </div>
     <script src="/JS/passwordverify.js"></script>
+    <script src="/JS/passwordSecurity.js"></script>
 </body>
 
 <?php
