@@ -6,6 +6,8 @@ error_reporting(E_ALL);
 ini_set('log_errors', 'On');
 ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
 
+
+
 $pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecoride.db");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -60,7 +62,7 @@ if (isset($_GET['covoiturage_id'])) {
             JOIN avis a ON p.voyageur_id = a.voyageur_id
             JOIN utilisateurs u ON a.voyageur_id = u.user_id
             WHERE p.chauffeur_id = :chauffeur_id
-            AND a.statut_avis = 'validé'
+            AND a.statut_avis = 'validé' LIMIT 3
         ");
 
         $stmt->bindParam(':chauffeur_id', $userId, PDO::PARAM_INT);
@@ -90,7 +92,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
         cliquez sur le bouton "Participer".
     </p><br>
 
-    <?php if ($covoiturage): ?>
+    <?php if (!empty($covoiturage)) : ?>
         <div class="form-control">
             <div class="publication-header">
                 <div class="utilisateur-info">
@@ -189,67 +191,76 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
         trajet, cliquez sur le bouton "Participer".</p></br>
 
     <form method="post">
-        <div class="container-bottom2">
-            <div class="publication-cadre">
-                <div class="publication-header">
-                    <div class="utilisateur-info">
-                        <span>
-                            <img src="<?= htmlspecialchars($covoiturage->photo) ?>"
-                                alt="Photo de <?= htmlspecialchars($covoiturage->nom) ?>" class="photo-utilisateur"
-                                height="50" width="50">
-                        </span>
-                        <span class="utilisateur" name="nom">
-                            <?= htmlspecialchars($covoiturage->nom) ?></br><?= htmlspecialchars($covoiturage->prenom) ?>
+        <?php if (!empty($covoiturage)) : ?>
+            <div class="container-bottom2">
+                <div class="publication-cadre">
+                    <div class="publication-header">
+                        <div class="utilisateur-info">
+                            <span>
+
+                                <img src="<?= htmlspecialchars($covoiturage->photo) ?>"
+                                    alt="Photo de <?= htmlspecialchars($covoiturage->nom) ?>" class="photo-utilisateur"
+                                    height="50" width="50">
+                            </span>
+                            <span class="utilisateur" name="nom">
+                                <?= htmlspecialchars($covoiturage->nom) ?></br><?= htmlspecialchars($covoiturage->prenom) ?>
+                            </span>
+                        </div>
+                        <span class="date-creation" name="created_at">
+                            **Publié le : <?= htmlspecialchars($covoiturage->created_at) ?>**
                         </span>
                     </div>
-                    <span class="date-creation" name="created_at">
-                        **Publié le : <?= htmlspecialchars($covoiturage->created_at) ?>**
-                    </span>
+
+                    <div class="publication-details">
+                        <div class="trajet">
+                            <h3>Trajet</h3>
+                            <p>
+                                <strong>Départ :</strong> <?= htmlspecialchars($covoiturage->lieu_depart) ?>
+                                <br>
+                                <strong>Arrivée :</strong> <?= htmlspecialchars($covoiturage->lieu_arrivee) ?>
+                            </p>
+                        </div>
+
+                        <div class="dates">
+                            <h3>Dates et Horaires</h3>
+                            <p>
+                                <strong>Départ :</strong>
+                                <?= htmlspecialchars(date('d/m/Y', strtotime($covoiturage->date_depart))) ?> à
+                                <?= htmlspecialchars(date('H:i', strtotime($covoiturage->heure_depart))) ?> h
+                                <br>
+                                <strong>Arrivée :</strong>
+                                <?= htmlspecialchars(date('d/m/Y', strtotime($covoiturage->date_arrivee))) ?> à
+                                <?= htmlspecialchars(date('H:i', strtotime($covoiturage->heure_arrivee))) ?> h
+                            </p>
+                        </div>
+
+                        <div class="informations">
+                            <h3>Informations</h3>
+                            <p>
+                                <strong>Type de voiture :</strong> <?= htmlspecialchars($covoiturage->energie) ?>
+                                <br>
+                                <strong>Places disponibles :</strong> <?= htmlspecialchars($covoiturage->nb_place) ?>
+                                <br>
+                                <strong>Prix par place :</strong> <?= htmlspecialchars($covoiturage->prix_personne) ?>
+                                Credits
+                            </p>
+                        </div>
+
+                        <div class="publication-actions">
+                            <input type="hidden" name="covoiturage_id"
+                                value="<?= htmlspecialchars($covoiturage->covoiturage_id) ?>">
+                            <button class="participer-btn" type="submit" name="participer">Participer</button>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="publication-details">
-                    <div class="trajet">
-                        <h3>Trajet</h3>
-                        <p>
-                            <strong>Départ :</strong> <?= htmlspecialchars($covoiturage->lieu_depart) ?>
-                            <br>
-                            <strong>Arrivée :</strong> <?= htmlspecialchars($covoiturage->lieu_arrivee) ?>
-                        </p>
-                    </div>
-
-                    <div class="dates">
-                        <h3>Dates et Horaires</h3>
-                        <p>
-                            <strong>Départ :</strong>
-                            <?= htmlspecialchars(date('d/m/Y', strtotime($covoiturage->date_depart))) ?> à
-                            <?= htmlspecialchars(date('H:i', strtotime($covoiturage->heure_depart))) ?> h
-                            <br>
-                            <strong>Arrivée :</strong>
-                            <?= htmlspecialchars(date('d/m/Y', strtotime($covoiturage->date_arrivee))) ?> à
-                            <?= htmlspecialchars(date('H:i', strtotime($covoiturage->heure_arrivee))) ?> h
-                        </p>
-                    </div>
-
-                    <div class="informations">
-                        <h3>Informations</h3>
-                        <p>
-                            <strong>Type de voiture :</strong> <?= htmlspecialchars($covoiturage->energie) ?>
-                            <br>
-                            <strong>Places disponibles :</strong> <?= htmlspecialchars($covoiturage->nb_place) ?>
-                            <br>
-                            <strong>Prix par place :</strong> <?= htmlspecialchars($covoiturage->prix_personne) ?>
-                            Credits
-                        </p>
-                    </div>
-
-                    <div class="publication-actions">
-                        <input type="hidden" name="covoiturage_id"
-                            value="<?= htmlspecialchars($covoiturage->covoiturage_id) ?>">
-                        <button class="participer-btn" type="submit" name="participer">Participer</button>
-                    </div>
-                </div>
             </div>
-        </div>
+        <?php else: ?>
+            <p>Covoiturage non trouvé.</p>
+        <?php endif; ?>
     </form>
 
 </div>

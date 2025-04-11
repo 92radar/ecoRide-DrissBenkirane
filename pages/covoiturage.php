@@ -3,8 +3,6 @@ session_start();
 $pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecoride.db");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true && isset($_SESSION['user_id'])) {
-    $userId = $_SESSION['user_id'];
 
 
 
@@ -13,30 +11,30 @@ if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true && isset($_SES
 
 
 
-    if (isset($_POST['logout'])) {
-        // Détruire toutes les variables de session
-        $_SESSION = array();
+if (isset($_POST['logout'])) {
+    // Détruire toutes les variables de session
+    $_SESSION = array();
 
-        if (ini_get("session.use_cookies")) {
-            $params = session_get_cookie_params();
-            setcookie(
-                session_name(),
-                '',
-                time() - 42000,
-                $params["path"],
-                $params["domain"],
-                $params["secure"],
-                $params["httponly"]
-            );
-        }
-
-        session_destroy();
-
-        // Rediriger vers la page de connexion ou la page actuelle (pour rafraîchir l'affichage)
-        header("Location: http://localhost:4000/pages/home.php"); // Redirige vers la page home
-        exit();
+    if (ini_get("session.use_cookies")) {
+        $params = session_get_cookie_params();
+        setcookie(
+            session_name(),
+            '',
+            time() - 42000,
+            $params["path"],
+            $params["domain"],
+            $params["secure"],
+            $params["httponly"]
+        );
     }
+
+    session_destroy();
+
+    // Rediriger vers la page de connexion ou la page actuelle (pour rafraîchir l'affichage)
+    header("Location: http://localhost:4000/pages/home.php"); // Redirige vers la page home
+    exit();
 }
+
 
 
 

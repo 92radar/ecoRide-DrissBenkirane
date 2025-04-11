@@ -414,13 +414,13 @@ if (isset($_POST['terminer_trajet'])) {
                     $mail->Subject = 'Confirmation de fin de trajet';
                     $mail->Body = '
                         <p>Bonjour,</p>
-                        <p>Votre trajet est désormais terminé. Merci pour votre participation sur <strong>Ecoride</strong> !</p>
-                        <p>Rendez-vous dans votre espace personnel pour laisser un avis ou consulter les détails.</p>
-                        <p>Cordialement,<br>L’équipe Ecoride</p>';
-                    $mail->AltBody = 'Votre trajet est terminé. Rendez-vous sur votre espace personnel Ecoride.';
+                        <p>Votre trajet est désormais finis. Merci pour votre participation sur <strong>Ecoride</strong> !</p>
+                        <p>Rendez-vous dans votre espace personnel pour laisser un avis ou consulter les details.</p>
+                        <p>Cordialement,<br>L’equipe Ecoride</p>';
+                    $mail->AltBody = 'Votre trajet est finis. Rendez-vous sur votre espace personnel Ecoride.';
 
                     $mail->send();
-                    $success .= "Email envoyé à " . htmlspecialchars($destinataire) . "<br>";
+                    $success .= "Email envoyé aux participants avec succès !<br>";
                 } catch (Exception $e) {
                     $success .= "Erreur lors de l'envoi à " . htmlspecialchars($destinataire) . ": " . $mail->ErrorInfo . "<br>";
                 }
@@ -671,7 +671,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                                     <label for="energie">Type de voiture :</label></br>
                                     <select class="form-control" name="energie" id="energie">
                                         <option value="Essence">Essence</option>
-                                        <option value="Diesel">Diesel</option>
+                                        <option value="Hybride">Hybride</option>
                                         <option value="Electrique">Electrique</option>
                                     </select></br>
                                 </div>
