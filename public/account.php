@@ -119,7 +119,7 @@ if (isset($_POST['logout'])) {
     session_destroy();
 
     // Rediriger vers la page de connexion ou la page d'accueil
-    header("Location: http://localhost:4000/pages/login.php"); // Redirige vers la page home
+    header("Location: http://localhost:4000/public/login.php"); // Redirige vers la page home
     exit();
 }
 
@@ -315,7 +315,7 @@ if (isset($_POST['ajouter_vehicule'])) {
         $stmt->execute();
         $success = "Véhicule ajouté avec succès!";
 
-        header("Location: http://localhost:4000/pages/account.php");
+        header("Location: http://localhost:4000/public/account.php");
         // Récupérer les informations utilisateur mises à jour
 
     } catch (PDOException $e) {
@@ -333,7 +333,7 @@ if (isset($_POST['annuler_trajet'])) {
         $stmt->execute();
         $success = "Trajet annulé avec succès!";
 
-        header("Location: http://localhost:4000/pages/account.php");
+        header("Location: http://localhost:4000/public/account.php");
     } catch (PDOException $e) {
         $error = "Erreur lors de l'annulation du trajet : " . $e->getMessage();
     }
@@ -357,7 +357,7 @@ if (isset($_POST['demarrer_trajet'])) { // Correction de la faute de frappe dans
         $stmt->execute();
         $success = "Trajet démarré avec succès!";
 
-        header("Location: http://localhost:4000/pages/account.php");
+        header("Location: http://localhost:4000/public/account.php");
         exit(); // Ajout de exit() après la redirection
     } catch (PDOException $e) {
 

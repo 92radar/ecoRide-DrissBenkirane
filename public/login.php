@@ -131,9 +131,7 @@ require '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header
                             <button data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-lg btn-block"
                                 type="submit" name="submit">Login</button>
                         </div>
-
-                        <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Mot de passe oublié ?</a></p>
-                        <p>Vous n'avez pas de compte ? <a href="/pages/register.php" class="link-info">Inscription
+                        <p>Vous n'avez pas de compte ? <a href="/public/register.php" class="link-info">Inscription
                                 ici</a></p>
 
                     </form>
@@ -147,7 +145,7 @@ require '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header
             </div>
         </div>
     </div>
-</section>
+</section></br>
 <?php
 require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/footer.php';
 ?>

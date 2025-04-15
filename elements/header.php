@@ -71,9 +71,27 @@ if (isset($_POST['search'])) {
             <a href="/public/covoiturage.php"></br><img src="/images/vecteezy_location-pointer-pin-icon_22220318.png"
                     class="logo">
             </a>
-            <a href="/public/account.php"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png"
+            <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'employee') {
+                echo '<a href="/public/employee.php"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png"
+                        class="logo">
+
+                </a>';
+            } elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'user') {
+
+                echo '<a href="/public/account.php"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png"
                     class="logo">
-            </a>
+
+            </a>';
+            } elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+                echo '<a href="/public/admin.php"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png"
+                    class="logo">
+            </a>';
+            } else {
+                echo '<a href="/public/login.php"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png"
+                    class="logo">
+            </a>';
+            }
+            ?>
 
 
         </nav>
