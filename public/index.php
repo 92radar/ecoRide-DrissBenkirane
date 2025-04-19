@@ -1,36 +1,9 @@
 <link rel="stylesheet" href="styles/home.css">
 <?php
-session_start();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-ini_set('log_errors', 'On');
-ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
 
-
-
-if (isset($_SESSION['loggedin']) &&  $_SESSION['loggedin'] == true) {
-
-    try {
-        $pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecoride.db");
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $stmt = $pdo->prepare("SELECT nom, prenom FROM utilisateurs WHERE user_id = :user_id");
-        $stmt->bindParam(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
-        $stmt->execute();
-        $welcome = $stmt->fetchAll(PDO::FETCH_OBJ);
-        if ($welcome) {
-            $welcomeInfo = $welcome[0]; // Récupérer le premier élément
-        }
-
-
-
-        $success = "Bienvenue "  . $welcomeInfo->prenom  . " ,vous etes connecté";
-    } catch (PDOException $e) {
-        $error = "Erreur de connexion à la base de données : " . $e->getMessage();
-    }
-}
 
 require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
+
 ?>
 
 
@@ -44,6 +17,34 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
         <?= $error ?>
     </div>
 <?php endif; ?>
+
+<style>
+    @media screen and (max-width: 968px) {
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            left: 20px;
+            right: 20px;
+
+
+        }
+
+        .grid-item {
+
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            left: 20px;
+            right: 20px;
+
+        }
+
+        .image {
+            display: none;
+        }
+    }
+</style>
 <div class="row">
     <div class="column">
 
@@ -68,11 +69,11 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
             pragmatique
             de la résolution de problèmes actuels.</p>
     </div>
-</div>
+</div></br></br></br></br>
 
 <div class="grid-container">
     <div class="grid-item">
-        <img src="../images/logoequipe.png" alt="Description de l'image" class="image"></br>
+        <img src="../images/logoequipe.png" alt="Description de l'image" class="image">
         <p>Notre Equipe :</p>
         <p>Nous sommes fier de vous presenter notre equipe engagée dans la revolution verte de nos deplacement. Notre
             team
@@ -86,7 +87,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
             France.</p>
     </div>
     <div class="grid-item">
-        <img src="../images/green_leaf_recycle_sign.jpg" alt="Description de l'image" class="image"></br>
+        <img src="../images/green_leaf_recycle_sign.jpg" alt="Description de l'image" class="image">
         <p>Pourquoi nous choisir ?</p>
         <p>Reduisez votre impact ecologique de 75% en utilisant notre plateforme de co-voiturage. Nous vous permettons
             de
@@ -97,13 +98,13 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
             qui remplissent nos conditions et standard de voyage pour vous permettre de voyager en toute serenité et
             securité.</p>
     </div>
-</div>
+</div></br></br></br></br>
 
 
 
 <div class="card-section">
     <h2>Nos destinations les plus actives</h2>
-    </br>
+    </br></br></br></br>
     <div class="card-container">
         <div class="card">
             <img src="/images/paris-6510643_640.jpg" alt="Image 1">
@@ -124,16 +125,16 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
             <a href="#">En savoir plus</a>
         </div>
     </div>
-</div>
+</div></br></br></br></br>
 <div>
     <h2>Les avantages</h2>
-</div>
+</div></br></br></br>
 
 <div class="grid-container">
 
     <div class="grid-item">
 
-        <p>Vos opportunitées</p></br>
+        <p>Vos opportunitées :</p>
         <p> Creer du lien social en voyageant avec des personnes qui partagent les memes valeurs que vous. Vous avez la
             possibilite de rencontrer des personnes de tout horizon et de partager des moments inoubliables avec eux.
             Vous
@@ -141,13 +142,13 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
     </div>
     <div class="grid-item">
 
-        <p>Notre engagement</p></br>
-        <p>Soutnenir la cause ecologique est notre principale mission. Réduire par trois l'impact environnemental de
+        <p>Notre engagement :</p>
+        <p>Soutenir la cause ecologique est notre principale mission. Réduire par trois l'impact environnemental de
             vos
             deplacements est notre objectif. Participer à la revolution verte en utilisant notre plateforme de
             co-voiturage.</p></br>
     </div></br>
-</div></br>
+</div></br></br></br></br></br>
 
 
 
@@ -178,7 +179,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
     </form></br>
 </div></br>
 
-<div class="conteneur-grid">
+<div class="conteneur-grid-avis">
     <h2>Nos meilleurs avis</h2>
     <div class="colonne"><u>Marie, 25 ans</u></br>
 
@@ -187,7 +188,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
         voiture était confortable. L'ambiance était détendue et nous avons eu des conversations intéressantes tout au
         long du trajet. C'est une excellente alternative pour voyager, à la fois économique et conviviale. Je recommande
         vivement !" - <i>Marie, 25 ans</i>
-    </div>
+    </div></br>
     <div class="colonne"><u>Thomas, 35 ans</u></br>
 
 

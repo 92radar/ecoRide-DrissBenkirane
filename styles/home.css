@@ -1,6 +1,10 @@
 * {
     font-family: 'Marianne';
+
+
 }
+
+
 
 
 
@@ -72,6 +76,13 @@ h2 {
         display: none;
     }
 
+    .conteneur-grid-avis {
+        display: none;
+    }
+
+    form {
+        margin-bottom: 50px;
+    }
 
 
 
@@ -100,6 +111,7 @@ h2 {
     border: 1px solid #0e910a;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 
 }
 
@@ -132,6 +144,8 @@ img {
     /* Chaque colonne prendra une part égale de l'espace disponible */
     padding: 10px;
     /* Ajoute un peu d'espace autour du contenu des colonnes */
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 
@@ -218,6 +232,8 @@ textarea {
     /* Définit trois colonnes de largeur égale */
     gap: 15px;
     margin: 10px;
+    margin-top: 5Opx;
+    margin-bottom: 50px;
     /* Ajoute un espace (gouttière) entre les colonnes */
 }
 

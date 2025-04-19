@@ -5805,3 +5805,27 @@ Stack trace:
 [11-Apr-2025 11:22:16 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 242
 [11-Apr-2025 11:22:16 Europe/Berlin] PHP Warning:  Attempt to read property "covoiturage_id" on null in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 249
 [11-Apr-2025 11:22:16 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/participer.php on line 249
+[15-Apr-2025 18:54:01 Europe/Berlin] PHP Warning:  require_once(): Unable to find the wrapper &quot;sftp&quot; - did you forget to enable it when you configured PHP? in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php on line 33
+[15-Apr-2025 18:54:01 Europe/Berlin] PHP Warning:  require_once(): Unable to find the wrapper &quot;sftp&quot; - did you forget to enable it when you configured PHP? in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php on line 33
+[15-Apr-2025 18:54:01 Europe/Berlin] PHP Warning:  require_once(): Unable to find the wrapper &quot;sftp&quot; - did you forget to enable it when you configured PHP? in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php on line 33
+[15-Apr-2025 18:54:01 Europe/Berlin] PHP Warning:  require_once(sftp://...@yx2loi.ftp.infomaniak.com/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.online/elements/header.php): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php on line 33
+[15-Apr-2025 18:54:01 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'sftp://...@yx2loi.ftp.infomaniak.com/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.online/elements/header.php' (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php:33
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php on line 33
+[15-Apr-2025 18:54:06 Europe/Berlin] PHP Warning:  require_once(): Unable to find the wrapper &quot;sftp&quot; - did you forget to enable it when you configured PHP? in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php on line 33
+[15-Apr-2025 18:54:06 Europe/Berlin] PHP Warning:  require_once(): Unable to find the wrapper &quot;sftp&quot; - did you forget to enable it when you configured PHP? in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php on line 33
+[15-Apr-2025 18:54:06 Europe/Berlin] PHP Warning:  require_once(): Unable to find the wrapper &quot;sftp&quot; - did you forget to enable it when you configured PHP? in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php on line 33
+[15-Apr-2025 18:54:06 Europe/Berlin] PHP Warning:  require_once(sftp://...@yx2loi.ftp.infomaniak.com/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.online/elements/header.php): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php on line 33
+[15-Apr-2025 18:54:06 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'sftp://...@yx2loi.ftp.infomaniak.com/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.online/elements/header.php' (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php:33
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php on line 33
+[15-Apr-2025 18:54:26 Europe/Berlin] PHP Warning:  require_once(): Unable to find the wrapper &quot;sftp&quot; - did you forget to enable it when you configured PHP? in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php on line 33
+[15-Apr-2025 18:54:26 Europe/Berlin] PHP Warning:  require_once(): Unable to find the wrapper &quot;sftp&quot; - did you forget to enable it when you configured PHP? in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php on line 33
+[15-Apr-2025 18:54:26 Europe/Berlin] PHP Warning:  require_once(): Unable to find the wrapper &quot;sftp&quot; - did you forget to enable it when you configured PHP? in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php on line 33
+[15-Apr-2025 18:54:26 Europe/Berlin] PHP Warning:  require_once(sftp://...@yx2loi.ftp.infomaniak.com/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.online/elements/header.php): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php on line 33
+[15-Apr-2025 18:54:26 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'sftp://...@yx2loi.ftp.infomaniak.com/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.online/elements/header.php' (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php:33
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php on line 33
