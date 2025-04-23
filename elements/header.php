@@ -5,6 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ini_set('log_errors', 'On');
 ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
+
 if (isset($_POST['logout'])) {
     // Détruire toutes les variables de session
     $_SESSION = array();
@@ -54,10 +55,7 @@ if (isset($_POST['search'])) {
     <link rel="stylesheet" href="../styles/research.css">
     <link rel="stylesheet" href="../styles/footer.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
-        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
-    </script>
+
 
 
 </head>
@@ -72,22 +70,22 @@ if (isset($_POST['search'])) {
                     class="logo">
             </a>
             <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'employee') {
-                echo '<a href="/public/employee.php"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png"
+                echo '<a href="../public/employee.php"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png"
                         class="logo">
 
                 </a>';
             } elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'user') {
 
-                echo '<a href="/public/account.php"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png"
+                echo '<a href="../public/account.php"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png"
                     class="logo">
 
             </a>';
             } elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
-                echo '<a href="/public/admin.php"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png"
+                echo '<a href="../public/admin.php"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png"
                     class="logo">
             </a>';
             } else {
-                echo '<a href="/public/login.php"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png"
+                echo '<a href="../public/login.php"></br><img src="/images/vecteezy_simple-user-default-icon_24983914.png"
                     class="logo">
             </a>';
             }
@@ -120,17 +118,17 @@ if (isset($_POST['search'])) {
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <?php
                         if (isset($_SESSION['role']) && $_SESSION['role'] === 'employee') {
-                            echo '<a class="dropdown-item" href="/public/employee.php">Espace employés</a>';
+                            echo '<a class="dropdown-item" href="../public/employee.php">Espace employés</a>';
                             echo '<form method="post"><button class="dropdown-item" name="logout">Déconnexion</button></form>';
                         } elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'user') {
-                            echo '<a class="dropdown-item" href="/public/account.php">Profil</a>';
+                            echo '<a class="dropdown-item" href="../public/account.php">Profil</a>';
                             echo '<form method="post"><button class="dropdown-item" name="logout">Déconnexion</button></form>';
                         } elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
-                            echo '<a class="dropdown-item" href="/public/admin.php"> Espace admin</a>';
+                            echo '<a class="dropdown-item" href="../public/admin.php"> Espace admin</a>';
                             echo '<form method="post"><button class="dropdown-item" name="logout">Déconnexion</button></form>';
                         } else {
-                            echo '<a class="dropdown-item" href="/public/login.php">Connexion</a>';
-                            echo '<a class="dropdown-item" href="/public/register.php">Inscription</a>';
+                            echo '<a class="dropdown-item" href="../public/login.php">Connexion</a>';
+                            echo '<a class="dropdown-item" href="../public/register.php">Inscription</a>';
                         }
                         ?>
                 </li>
@@ -175,3 +173,10 @@ if (isset($_POST['search'])) {
 
 
 </header>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
+    </script>
+</body>

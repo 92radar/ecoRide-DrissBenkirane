@@ -1,10 +1,12 @@
 <?php
-session_start();
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ini_set('log_errors', 'On');
 ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
+
+
 $pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecoride.db");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -72,7 +74,7 @@ if (isset($_POST['submit'])) {
                             } catch (PDOException $e) {
                                 echo "Erreur lors de la récupération du rôle : " . $e->getMessage();
                             }
-                            header("Location: http://localhost:4000/public/index.php");
+                            header("Location: http://localhost:4000/public/account.php");
                             exit();
                             // Ici, vous pouvez connecter l'utilisateur (démarrer une session, etc.)
                         } else {

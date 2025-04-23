@@ -5829,3 +5829,83 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php on line 33
+[23-Apr-2025 15:16:56 Europe/Berlin] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 2
+[23-Apr-2025 15:16:59 Europe/Berlin] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php on line 7
+[23-Apr-2025 15:16:59 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php:7
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php(9): require_once()
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php on line 7
+[23-Apr-2025 15:17:09 Europe/Berlin] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/covoiturageBe.php on line 2
+[23-Apr-2025 15:17:20 Europe/Berlin] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php on line 7
+[23-Apr-2025 15:17:20 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php:7
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php(9): require_once()
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php on line 7
+[23-Apr-2025 15:17:21 Europe/Berlin] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/covoiturageBe.php on line 2
+[23-Apr-2025 15:17:24 Europe/Berlin] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php on line 7
+[23-Apr-2025 15:17:24 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php:7
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php(9): require_once()
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php on line 7
+[23-Apr-2025 15:17:29 Europe/Berlin] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php on line 7
+[23-Apr-2025 15:17:29 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php:7
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php(9): require_once()
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php on line 7
+[23-Apr-2025 15:18:16 Europe/Berlin] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php on line 7
+[23-Apr-2025 15:18:16 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php:7
+Stack trace:
+#0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/public/index.php(9): require_once()
+#1 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php on line 7
+[23-Apr-2025 15:18:32 Europe/Berlin] PHP Warning:  Undefined array key "name" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php on line 10
+[23-Apr-2025 15:18:32 Europe/Berlin] PHP Warning:  Undefined array key "email" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php on line 11
+[23-Apr-2025 15:18:32 Europe/Berlin] PHP Warning:  Undefined array key "message" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php on line 12
+[23-Apr-2025 15:18:47 Europe/Berlin] PHP Warning:  Undefined array key "nom" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php on line 10
+[23-Apr-2025 15:18:47 Europe/Berlin] PHP Warning:  Undefined array key "email" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php on line 11
+[23-Apr-2025 15:18:47 Europe/Berlin] PHP Warning:  Undefined array key "message" in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php on line 12
+[23-Apr-2025 15:23:00 Europe/Berlin] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/covoiturageBe.php on line 2
+[23-Apr-2025 15:25:25 Europe/Berlin] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/covoiturageBe.php on line 2
+[23-Apr-2025 15:25:43 Europe/Berlin] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/covoiturageBe.php on line 2
+[23-Apr-2025 15:26:07 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/covoiturageBe.php on line 2
+[23-Apr-2025 15:29:37 Europe/Berlin] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 2
+[23-Apr-2025 15:30:32 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:137) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 75
+[23-Apr-2025 15:30:58 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:137) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 75
+[23-Apr-2025 15:31:25 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:137) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 75
+[23-Apr-2025 15:31:45 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:137) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 75
+[23-Apr-2025 15:32:02 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/second_header.php on line 2
+[23-Apr-2025 15:32:15 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/second_header.php on line 2
+[23-Apr-2025 15:34:50 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:137) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 75
+[23-Apr-2025 15:36:11 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:137) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 75
+[23-Apr-2025 15:38:21 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:137) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 77
+[23-Apr-2025 15:38:36 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:137) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 77
+[23-Apr-2025 15:39:46 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:137) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 77
+[23-Apr-2025 15:40:31 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:137) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 77
+[23-Apr-2025 15:41:42 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:137) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 77
+[23-Apr-2025 15:43:06 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:137) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 77
+[23-Apr-2025 15:43:16 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:137) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 77
+[23-Apr-2025 15:43:36 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:137) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 77
+[23-Apr-2025 15:44:16 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:137) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 77
+[23-Apr-2025 15:56:05 Europe/Berlin] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/adminBe.php on line 2
+[23-Apr-2025 15:56:05 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:134) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/adminBe.php on line 109
+[23-Apr-2025 15:56:35 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:134) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/adminBe.php on line 109
+[23-Apr-2025 15:56:48 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:134) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/adminBe.php on line 109
+[23-Apr-2025 15:57:09 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:134) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/adminBe.php on line 109
+[23-Apr-2025 15:57:17 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:134) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/adminBe.php on line 109
+[23-Apr-2025 15:57:29 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:134) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/adminBe.php on line 109
+[23-Apr-2025 15:57:33 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:134) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/adminBe.php on line 109
+[23-Apr-2025 15:58:12 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:134) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/adminBe.php on line 109
+[23-Apr-2025 15:58:22 Europe/Berlin] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/employeeBe.php on line 2
+[23-Apr-2025 15:58:22 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:134) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/employeeBe.php on line 57
+[23-Apr-2025 15:58:40 Europe/Berlin] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/employeeBe.php on line 2
+[23-Apr-2025 15:58:40 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:134) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/employeeBe.php on line 57
+[23-Apr-2025 15:59:10 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:134) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 77
+[23-Apr-2025 15:59:27 Europe/Berlin] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/employeeBe.php on line 2
+[23-Apr-2025 15:59:27 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:134) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/employeeBe.php on line 57
+[23-Apr-2025 16:00:43 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:134) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/adminBe.php on line 109
+[23-Apr-2025 16:01:06 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:134) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 77
+[23-Apr-2025 16:02:34 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php:134) in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/loginBe.php on line 77

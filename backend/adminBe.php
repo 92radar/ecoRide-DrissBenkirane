@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -106,7 +106,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
         echo "Erreur lors de la récupération des crédits : " . $e->getMessage();
     }
 } else {
-    header("Location: http://localhost:4000/pages/home.php"); // Redirige vers la page home
+    header("Location: http://localhost:4000/public/index.php"); // Redirige vers la page home
     exit();
 }
 if (isset($_POST['modifier'])) {

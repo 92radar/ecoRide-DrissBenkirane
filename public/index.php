@@ -1,13 +1,16 @@
-<link rel="stylesheet" href="styles/home.css">
 <?php
 
 
 require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
 
+require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/mobile-nav.php";
+
+require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php";
+
 ?>
 
 
-
+<link rel="stylesheet" href="styles/home.css">
 <?php if (isset($success)) : ?>
     <div class="alert alert-success">
         <?= $success ?>
@@ -17,6 +20,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
         <?= $error ?>
     </div>
 <?php endif; ?>
+
 
 <style>
     @media screen and (max-width: 968px) {
@@ -207,7 +211,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
         <img src="../images/communicate-2.png">
     </div>
     <div class="column">
-        <form action="/votre-script-de-traitement" method="post">
+        <form action="" method="post">
             <fieldset>
                 <legend>Nous contacter</legend></br>
 
@@ -223,7 +227,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                 <label for="message">Message :</label></br>
                 <textarea id="message" name="message" rows="5" required></textarea>
 
-                <button type="submit" id="button"> Envoyer</button>
+                <button type="submit" name="formulaire_contact" id="button"> Envoyer</button>
             </fieldset>
         </form>
     </div>

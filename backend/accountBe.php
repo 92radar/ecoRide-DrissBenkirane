@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 // Démarrer la session pour accéder aux variables de session et les modifier
 
 
@@ -35,7 +35,7 @@ $voitureId = null;
 
 
 
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SESSION['user_id'])) {
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'user') {
     $userId = $_SESSION['user_id'];
 
 
@@ -91,7 +91,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SE
         $error = "Erreur lors de la récupération des participations : " . $e->getMessage();
     }
 } else {
-    header("Location: http://localhost:4000/pages/login.php");
+    header("Location: http://localhost:4000/public/login.php");
     exit();
 }
 

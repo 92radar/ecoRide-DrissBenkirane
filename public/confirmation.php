@@ -1,6 +1,8 @@
 <?php
-require_once '/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.online/backend/confirmationBe.php';
-require_once '/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.online/elements/header.php';
+require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php";
+require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/confirmationBe.php";
+
+require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/mobile-nav.php";
 ?>
 
 

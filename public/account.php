@@ -1,11 +1,23 @@
 <?php
+session_start();
 
-require_once '/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.online/backend/accountBe.php';
-require_once '/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.online/elements/header.php';
-
-
+require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/accountBe.php";
+require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/second_header.php";
+require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/mobile-nav.php";
 ?>
 <link rel="stylesheet" href="styles/account.css">
+<style>
+    @media screen and (max-width: 968px) {
+        .sidebar {
+            display: none;
+        }
+
+
+
+
+
+    }
+</style>
 
 
 <div style="display: flex;">
@@ -29,12 +41,13 @@ require_once '/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.onli
                 <li><a href="#section5">Co-voiturage en cours</a></li>
             </ul>
         </div>
+
+    </div>
+
+    <div style="flex-grow: 1;" class="container"></br>
         <form method="post">
             <button type="submit" name="logout" class="logout-btn">Se déconnecter</button>
         </form>
-    </div>
-
-    <div style="flex-grow: 1;">
         <div class="ligne-horizontale"></div></br>
         <?php if (isset($success)) : ?>
             <div class="alert alert-success container" role="alert">

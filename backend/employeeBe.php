@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -54,7 +54,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'employee') {
         echo "Erreur lors de la récupération des données : " . $e->getMessage();
     }
 } else {
-    header("Location: http://localhost:4000/public/home.php"); // Redirige vers la page home
+    header("Location: http://localhost:4000/public/index.php"); // Redirige vers la page home
     exit();
 }
 
