@@ -4,6 +4,36 @@
 
 }
 
+body {
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.grid-item {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px;
+    margin: 0;
+    box-sizing: border-box;
+    border: solid 1px #000000;
+    border-radius: 0px;
+    font-size: 1.5em;
+}
+
+.grid-item1 {
+    padding: 15px;
+    margin: 0;
+    box-sizing: border-box;
+    border: solid 1px #000000;
+    border-radius: 0px;
+    font-size: 1.5em;
+
+}
+
 
 
 
@@ -22,6 +52,7 @@ h2 {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
+    color: #fefffe;
 }
 
 .calendar-icon {
@@ -36,6 +67,10 @@ h2 {
 .container-bottom {
     margin-bottom: 100px;
     background-color: #0a6638;
+    backdrop-filter: blur(10px);
+    background-color: rgba(7, 122, 43, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+
 
 }
 
@@ -139,6 +174,9 @@ img {
 
 
 .row {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(10px);
     display: flex;
     margin: 10px;
     /* Utilise Flexbox pour créer une mise en page en colonnes */
@@ -158,6 +196,10 @@ img {
 
 
 .card-container {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+
 
     display: flex;
     /* Utilise Flexbox pour la mise en page en colonnes */
@@ -170,6 +212,7 @@ img {
 
 
 .card {
+
 
     width: 30%;
     /* Chaque carte prend 30% de la largeur du conteneur */
@@ -251,5 +294,12 @@ textarea {
     box-sizing: border-box;
     border: solid 1px #000000;
     border-radius: 0px;
+    font-size: 1.5em;
 
+}
+
+p1 {
+    font-size: 1.5em;
+    bottom: 0px;
+    color: #fefffe;
 }

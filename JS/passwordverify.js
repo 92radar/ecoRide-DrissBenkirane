@@ -1,5 +1,5 @@
 function validateForm() {
-    const password = document.getElementById('mot_de_passe').value;
+    const password = document.getElementById('password').value;
     const verifyPassword = document.getElementById('verif_mot_de_passe').value;
     const passwordError = document.getElementById('password_error');
 

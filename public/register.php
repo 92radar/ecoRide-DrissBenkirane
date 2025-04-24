@@ -74,7 +74,25 @@ require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/m
             <button type="submit" id="submit-btn" name="submit">S'inscrire</button>
         </form>
     </div>
-    <script src="/JS/passwordverify.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("form-inscription");
+
+            form.addEventListener("submit", function(e) {
+                const password = document.getElementById('password').value;
+                const verifyPassword = document.getElementById('verif_mot_de_passe').value;
+                const passwordError = document.getElementById('password_error');
+
+                if (password !== verifyPassword) {
+                    e.preventDefault(); // Stop le formulaire
+                    passwordError.textContent = "Les mots de passe ne correspondent pas.";
+                } else {
+                    passwordError.textContent = "";
+                }
+            });
+        });
+    </script>
+
     <script src="/JS/passwordSecurity.js"></script>
 </body>
 

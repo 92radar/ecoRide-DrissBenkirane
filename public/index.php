@@ -1,15 +1,26 @@
 <?php
-
-
 require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
-
 require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/mobile-nav.php";
-
 require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/send.php";
 
 ?>
 
+<head>
+    <link rel="stylesheet" href="../styles/font.css">
 
+    <link rel="stylesheet" href="../styles/covoiturage.css">
+
+
+    <link rel="stylesheet" href="../styles/homecopy.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/research.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
+    </script>
+</head>
 <link rel="stylesheet" href="styles/home.css">
 <?php if (isset($success)) : ?>
     <div class="alert alert-success">
@@ -27,26 +38,42 @@ require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/se
 
         .grid-container {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-            left: 20px;
-            right: 20px;
-
+            grid-template-columns: 1fr 1fr;
 
         }
+
 
         .grid-item {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.2);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 15px;
+            margin: 0;
+            box-sizing: border-box;
+            border: solid 1px #000000;
+            border-radius: 0px;
+            font-size: 1.5em;
+        }
 
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            left: 20px;
-            right: 20px;
+        .grid-item1 {
+            padding: 15px;
+            margin: 0;
+            box-sizing: border-box;
+            border: solid 1px #000000;
+            border-radius: 0px;
+            font-size: 1.5em;
 
         }
 
-        .image {
-            display: none;
+        .mobile-nav {
+            position: fixed;
+            bottom: 0;
+            z-index: 999;
         }
+
+
+
+
     }
 </style>
 <div class="row">
@@ -75,9 +102,10 @@ require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/se
     </div>
 </div></br></br></br></br>
 
+
 <div class="grid-container">
     <div class="grid-item">
-        <img src="../images/logoequipe.png" alt="Description de l'image" class="image">
+
         <p>Notre Equipe :</p>
         <p>Nous sommes fier de vous presenter notre equipe engagée dans la revolution verte de nos deplacement. Notre
             team
@@ -90,9 +118,17 @@ require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/se
             eux si l'application fonctionne bien et nous permet d'offrir un des meilleurs service de covoiturage en
             France.</p>
     </div>
+    <div class="grid-item1">
+
+        <p1>Pourquoi nous choisir ?</p1>
+        <p></p>
+    </div>
+    <div class="grid-item1"></br>
+
+        <p1>Nos meilleurs avis</p1>
+    </div>
     <div class="grid-item">
-        <img src="../images/green_leaf_recycle_sign.jpg" alt="Description de l'image" class="image">
-        <p>Pourquoi nous choisir ?</p>
+
         <p>Reduisez votre impact ecologique de 75% en utilisant notre plateforme de co-voiturage. Nous vous permettons
             de
             voyager en toute securité et en respectant l'environnement.
@@ -102,6 +138,25 @@ require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/se
             qui remplissent nos conditions et standard de voyage pour vous permettre de voyager en toute serenité et
             securité.</p>
     </div>
+
+    <div class="grid-item"><u>Marie, 25 ans</u></br>
+
+        <p>"Je suis absolument ravi de mon expérience de covoiturage ! Non seulement j'ai économisé de l'argent par
+            rapport
+            à un trajet en train, mais j'ai aussi rencontré des gens formidables. Le conducteur était très sympathique
+            et la
+            voiture était confortable. L'ambiance était détendue et nous avons eu des conversations intéressantes tout
+            au
+            long du trajet. C'est une excellente alternative pour voyager, à la fois économique et conviviale. Je
+            recommande
+            vivement !" - <i>Marie, 25 ans</i></p>
+    </div>
+    <div class="grid-item1">
+        <p1>Vivez votre plus belle experience</p1>
+    </div>
+</div></br></br>
+
+
 </div></br></br></br></br>
 
 
@@ -162,19 +217,19 @@ require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/se
     <form action="" method="post" class="form">
         <div class="recherche-multicriteres text-black">
 
-            <img src="/images/location_16138523.png" alt="map" class="search-icon"></br>
+
 
             <input type="text" id="depart" name="depart" placeholder="Ville de départ">
 
             <input type="text" id="arrivee" name="arrivee" placeholder="Ville d'arrivée">
 
 
-            <img src="/images/calendar_6057403-2.png" alt="calendar" class="search-icon">
+
             <input type="date" id="date" name="date">
 
-            <button type="submit" name="search" aria-label="Rechercher">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
-                    viewBox="0 0 16 16">
+            <button type="submit" name="search" aria-label="Rechercher" style="float: right;">
+                <svg xmlns="http://www.w3.or    g/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-search" viewBox="0 0 16 16">
                     <path
                         d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                 </svg>
@@ -182,27 +237,6 @@ require_once "/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/backend/se
         </div>
     </form></br>
 </div></br>
-
-<div class="conteneur-grid-avis">
-    <h2>Nos meilleurs avis</h2>
-    <div class="colonne"><u>Marie, 25 ans</u></br>
-
-        "Je suis absolument ravi de mon expérience de covoiturage ! Non seulement j'ai économisé de l'argent par rapport
-        à un trajet en train, mais j'ai aussi rencontré des gens formidables. Le conducteur était très sympathique et la
-        voiture était confortable. L'ambiance était détendue et nous avons eu des conversations intéressantes tout au
-        long du trajet. C'est une excellente alternative pour voyager, à la fois économique et conviviale. Je recommande
-        vivement !" - <i>Marie, 25 ans</i>
-    </div></br>
-    <div class="colonne"><u>Thomas, 35 ans</u></br>
-
-
-        "C'était ma première expérience de covoiturage et je dois dire que j'ai été agréablement surpris ! Le conducteur
-        était super sympa et très ponctuel. La voiture était propre et confortable, et le trajet s'est déroulé sans
-        aucun problème. J'ai vraiment apprécié la convivialité et l'aspect économique de cette solution de transport.
-        C'est une excellente façon de voyager tout en faisant des rencontres intéressantes et en réduisant son empreinte
-        carbone. Je n'hésiterai pas à recommencer !"
-    </div>
-</div></br></br>
 
 
 <div class="row">

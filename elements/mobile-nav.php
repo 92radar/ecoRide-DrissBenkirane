@@ -57,7 +57,7 @@ if (isset($_POST['search'])) {
 
 <div>
     <nav class="mobile-nav">
-        <a href="/"> </br>
+        <a href="../public/index.php"> </br>
             <img src="/images/home-icon2.png" alt="logo" class="logo"></a>
 
         <a href="../public/covoiturage.php"></br><img src="/images/vecteezy_location-pointer-pin-icon_22220318.png"
