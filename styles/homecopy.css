@@ -81,7 +81,7 @@ h2 {
 
 
 
-@media (max-width: 930px) {
+@media screen and (max-width: 968px) {
     h1 {
         font-size: 1em;
 

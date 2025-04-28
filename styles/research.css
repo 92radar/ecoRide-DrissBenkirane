@@ -1,6 +1,7 @@
 .hero-scene {
     position: relative;
 
+
     &::before {
         content: "";
         position: absolute;
@@ -77,7 +78,7 @@ button svg {
     /* Couleur de remplissage de l'icône */
 }
 
-@media (max-width: 932px) {
+@media screen and (max-width: 932px) {
     h1 {
         font-size: 0.5em;
         /* Taille de police réduite pour les petits écrans */
