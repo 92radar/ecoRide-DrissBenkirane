@@ -1,11 +1,12 @@
 * {
     font-family: 'Marianne';
+    color: #ccc;
 
 
 }
 
 body {
-    background-image: url('../images/background.jpg');
+    background-image: url('../images/background2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
