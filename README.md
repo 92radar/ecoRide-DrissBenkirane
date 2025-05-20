@@ -18,8 +18,11 @@ L’utilisation de GitHub desktop et de vs code comme moyen d’organiser les di
 Le projet comporte une branche principale ainsi qu’une branche développement.
 -Chaque fonctionnalité issue de la branche développement, après, le merge sera effectué vers la branche Main.
 
-Technologie utilisées :
-Front-end : HTML5, CSS, Bootstrap javascript.
-Back-end : PHP, avec utilisation de PDO pour se connecter a la base de donnée.
-Outils de déploiement : Filezilla, vs code et infomaniak.
+Technologies utilisées :
+
+Front-end : HTML5, CSS/SCSS, Bootstrap et JavaScript.
+Back-end : PHP, le framework Symfony sera utilisé.
+Base de données : MySQL MariaDB 10.4.28.
+Outils et déploiement : Git, Composer, VS Code et Heroku.
+
 
