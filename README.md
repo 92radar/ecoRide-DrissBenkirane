@@ -29,6 +29,6 @@ Technologies utilisées :
 Front-end : HTML5, CSS/SCSS, Bootstrap et JavaScript.
 Back-end : PHP, le framework Symfony sera utilisé.
 Base de données : MySQL MariaDB 10.4.28.
-Outils et déploiement : Git, Composer, VS Code et Heroku.
+Outils et déploiement : Git, Composer, VS Code et Infomaniak.
 
 
