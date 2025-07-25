@@ -345,14 +345,7 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                                         Refusé
                                     </option>
                                 </select>
-                                <label for="email_user">Email utilisateur :</label>
-                                <select class="form-control" id="email_user" name="email_user">
-                                    <?php foreach ($utilisateurs as $u): ?>
-                                        <option value="<?= htmlspecialchars($u['email'] ?? '') ?>">
-                                            <?= htmlspecialchars($u['email'] ?? 'email inconnu') ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
+
                                 <input type="hidden" name="avis_id" value="<?= htmlspecialchars($avisDetails->avis_id) ?>">
                                 <strong>Commentaire :</strong></br>
                                 <textarea class="form-control" name="commentaire" rows="4"
@@ -369,6 +362,15 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
         <p>Aucun avis sélectionné.</p>
     <?php endif; ?>
     <div class="ligne-horizontale"></div></br>
+    <label for="email_user">Email utilisateur :</label>
+    <select class="form-control" id="email_user" name="email_user">
+        <?php foreach ($utilisateurs as $u): ?>
+            <option value="<?= htmlspecialchars($u['email'] ?? '') ?>">
+                <?= htmlspecialchars(($u['nom'] ?? 'Nom') . ' ' . ($u['prenom'] ?? 'Prénom') . ' - ' . ($u['email'] ?? 'email inconnu')) ?>
+            </option>
+
+        <?php endforeach; ?>
+    </select>
     <h3>Les avis vérifiés</h3></br>
     <form method="GET" id="verifierAvisForm">
         <div class="form-group">

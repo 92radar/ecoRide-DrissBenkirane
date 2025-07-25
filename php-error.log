@@ -5477,3 +5477,10 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 173
+[25-Jul-2025 07:13:55 Europe/Berlin] PHP Warning:  file_get_contents(yx2Loi_ecoride098765456.json): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 181
+[25-Jul-2025 07:14:07 Europe/Berlin] PHP Warning:  file_get_contents(yx2Loi_ecoride098765456.json): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 181
+[25-Jul-2025 07:17:54 Europe/Berlin] PHP Warning:  file_get_contents(yx2Loi_ecoride098765456.json): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 181
+[25-Jul-2025 07:18:22 Europe/Berlin] PHP Warning:  file_get_contents(yx2Loi_ecoride098765456.json): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 181
+[25-Jul-2025 07:19:39 Europe/Berlin] PHP Warning:  file_get_contents(yx2Loi_ecoride098765456.json): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 181
+[25-Jul-2025 07:20:36 Europe/Berlin] PHP Warning:  file_get_contents(yx2Loi_ecoride098765456.json): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 181
+[25-Jul-2025 07:21:03 Europe/Berlin] PHP Warning:  file_get_contents(yx2Loi_ecoride098765456.json): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 181
