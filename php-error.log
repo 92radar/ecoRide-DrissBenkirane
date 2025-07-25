@@ -5466,3 +5466,14 @@ Stack trace:
 #0 /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php(104): PDO->prepare('SELECT DATE(dat...')
 #1 {main}
   thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/admin.php on line 104
+[25-Jul-2025 06:37:05 Europe/Berlin] PHP Warning:  Undefined variable $utilisateurs in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 308
+[25-Jul-2025 06:37:05 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 308
+[25-Jul-2025 06:38:07 Europe/Berlin] PHP Warning:  Undefined variable $utilisateurs in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 309
+[25-Jul-2025 06:38:07 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 309
+[25-Jul-2025 06:39:03 Europe/Berlin] PHP Warning:  Undefined variable $utilisateurs in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 310
+[25-Jul-2025 06:39:03 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 310
+[25-Jul-2025 06:42:42 Europe/Berlin] PHP Warning:  require(../vendor/autoload.php): Failed to open stream: No such file or directory in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 173
+[25-Jul-2025 06:42:42 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required '../vendor/autoload.php' (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php:173
+Stack trace:
+#0 {main}
+  thrown in /Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/pages/employee.php on line 173

@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 ini_set('log_errors', 'On');
 ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
 
+
 $avisDetails = null; // Initialisation de $avisDetails
 $pdo = new PDO("sqlite:/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/ecoride.db");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -169,7 +170,48 @@ if (isset($_GET['avis_id']) && !empty($_GET['avis_id'])) {
 
 
 
+require '../vendor/autoload.php';
+
+use MongoDB\Client;
+
+$client = new Client("mongodb://localhost:27017");
+$collection = $client->ma_base->utilisateurs; // This targets the 'utilisateurs' collection
+
+// Charger les données JSON
+$json = file_get_contents('yx2Loi_ecoride098765456.json');
+$full_json_data = json_decode($json, true); // Decode the entire JSON structure
+
+$users_data_found = false;
+$users_to_insert = [];
+
+// Iterate through the top-level array to find the 'utilisateurs' table data
+if (is_array($full_json_data)) {
+    foreach ($full_json_data as $block) {
+        if (isset($block['type']) && $block['type'] === 'table' && $block['name'] === 'utilisateurs') {
+            $users_to_insert = $block['data']; // This is the array of user documents
+            $users_data_found = true;
+            break; // Found the users data, no need to continue
+        }
+    }
+}
+
+// Supprimer les anciens pour éviter doublons et insérer les nouveaux
+if ($users_data_found && is_array($users_to_insert) && !empty($users_to_insert)) {
+    $collection->drop(); // Drop the existing collection
+    $collection->insertMany($users_to_insert); // Insert only the user documents
+    echo "Données utilisateurs importées avec succès.<br>";
+} else {
+    echo "Erreur : Les données des utilisateurs n'ont pas été trouvées ou le fichier JSON est mal formé/vide.<br>";
+}
+
+// Récupération des utilisateurs pour affichage
+$utilisateurs = $collection->find();
+
+
+
+
 require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/header.php';
+
 
 ?>
 <div style="display: flex;">
@@ -302,6 +344,14 @@ require_once '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/elements/h
                                     <option value="refuser">
                                         Refusé
                                     </option>
+                                </select>
+                                <label for="email_user">Email utilisateur :</label>
+                                <select class="form-control" id="email_user" name="email_user">
+                                    <?php foreach ($utilisateurs as $u): ?>
+                                        <option value="<?= htmlspecialchars($u['email'] ?? '') ?>">
+                                            <?= htmlspecialchars($u['email'] ?? 'email inconnu') ?>
+                                        </option>
+                                    <?php endforeach; ?>
                                 </select>
                                 <input type="hidden" name="avis_id" value="<?= htmlspecialchars($avisDetails->avis_id) ?>">
                                 <strong>Commentaire :</strong></br>
