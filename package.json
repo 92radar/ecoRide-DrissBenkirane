@@ -1,8 +1,24 @@
 {
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "mongodb": "^6.18.0"
   },
   "scripts": {
     "start": "php -S 0.0.0.0:$PORT -t public"
-  }
+  },
+  "name": "ecoride-drissbenkirane",
+  "version": "1.0.0",
+  "description": "Eco ride est une startup française qui a pour objectif de réduire l’impact environnementale des déplacements en encourageant le covoiturage. Eco ride décide de s’implémenter sur le web pour faire bénéficier de nombreux utilisateurs de son service, c’est-à-dire une plateforme qui permet de rassembler des utilisateurs, chauffeurs ou simples voyageurs, et de leur permettre de partager des cout du transport le temps d’un trajet commun tout en réduisant leur empreintes Carbonne. Projet initié par Jose, directeur technique de l’entreprise.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/92radar/ecoRide-DrissBenkirane.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/92radar/ecoRide-DrissBenkirane/issues"
+  },
+  "homepage": "https://github.com/92radar/ecoRide-DrissBenkirane#readme"
 }

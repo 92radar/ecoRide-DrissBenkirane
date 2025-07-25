@@ -34,8 +34,7 @@ if (isset($_POST['submit'])) {
 
 
                 if ($motDePasseHacheBDD) {
-                    // Maintenant, vous avez le mot de passe hashé de la base de données dans $motDePasseHacheBDD
-                    // Vous pouvez maintenant vérifier le mot de passe entré par l'utilisateur :
+
                     if (isset($_POST['password'])) {
                         $motDePasseEntre = $_POST['password'];
                         if (password_verify($motDePasseEntre, $motDePasseHacheBDD)) {
@@ -54,10 +53,8 @@ if (isset($_POST['submit'])) {
                             if ($userIdFromDatabase !== false) {
                                 $_SESSION['user_id'] = $userIdFromDatabase; // Stockez l'ID en session
                             } else {
-                                // Gérer le cas où l'ID n'est pas trouvé (devrait rarement arriver si l'email existe)
-                                echo "Erreur : Impossible de récupérer l'ID de l'utilisateur.";
 
-                                // Vous pourriez envisager de déconnecter l'utilisateur ou d'afficher un message d'erreur.
+                                echo "Erreur : Impossible de récupérer l'ID de l'utilisateur.";
                             }
                             try {
                                 $stmt = $pdo->prepare('SELECT role FROM utilisateurs WHERE user_id = :user_id');
