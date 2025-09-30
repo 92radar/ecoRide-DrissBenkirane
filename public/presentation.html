@@ -80,9 +80,369 @@
             l'utilisation
             de mots de passe forts et uniques, la vérification des liens avant de cliquer dessus, etc.
             En résumé, la sécurité est un aspect crucial du développement d'une application web et doit être prise en
+            compte par le developpeur.
+            pour ma part j'ai veillé a implementer un maximum de ces mesures de sécurité dans mon application. En
+            faisant des requetes préparées pour eviter les injections SQL, en hashant les mots de passe avec la
+            librairie bcrypt, en validant les données
+            envoyées par les utilisateurs, en utilisant des tokens CSRF pour proteger les formulaires, en mettant en
+            place une gestion des sessions sécurisée.
+
         </p>
+        <h1>Les choix techniques</h1>
+        <p>Les choix techniques que j'ai fait pour ce projet sont les suivants, j'ai choisi d'utiliser le langage de
+            programmation PHP pour le backend car c'est un langage que je maitrise bien et qui est adapté pour ce type
+            de projet. Pour la base de données, j'ai choisi MySQL car c'est
+            une base de données relationnelle qui est facile a utiliser et qui est bien adaptée pour ce type de projet.
+            Pour le frontend, j'ai utilisé HTML, CSS et JavaScript pour créer une interface utilisateur simple et
+            efficace. J'ai également utilisé la bibliothèque jQuery pour faciliter la manipulation du DOM et les
+            requêtes AJAX.
+            Pour le design, j'ai utilisé mes propres connaissance pour créer une interface utilisateur responsive et
+            moderne. En faisant des recherche sur l'animation au scroll j'ai aussi integrer une navigation fluide et
+            agréable pour l'utilisateur.
+            J'ai aussi utilisé des outils de gestion de version comme Git pour suivre les modifications apportées au
+            code source
+            En résumé, j'ai choisi des technologies que je maitrise bien et qui sont adaptées pour ce type de projet,
+            tout en veillant a respecter les bonnes pratiques de développement web.
 
     </div>
+
+    <h3>Maquette et mise en place</h3>
+    <p>Pour les premières etapes de ce projet, j'ai commencer par chercher des photos, des icons, des polices, et tout
+        les elements qui pouvais donc constituer un dossier pour realiser la charte graphique. J'ai ensuite reduit les
+        idées et organiser la charte graphique autour d'une identité visuel simple et moderne. Cela fait j'ai commencer
+        par le
+        design du site sur Figma, j'ai realiser 3 pages en desktop et en version mobile pour ensuite avoir une claire
+        idée de comment disposer les éléments sur la page et avoir un rendu concret de ce que le site allait etre. Le
+        fait de faire sa donne une tres bonne base de visuel pour ensuite re pensé le design, et peut etre re travailler
+        l'apparence et la disposition des elements sur le site. j'avoue avoir été perdu au debut, car je suis aller
+        regarder les autres site eco-ride d'autres etudiants pour me donner une idée du design a adopter. je chercher a
+        tout pris comment rendre l'experience utilisateur agreable et fluide. Grossiere
+        erreur, car cela m'a pas mal influencer dans l'effort que je devais fournir coté front end. Mais j'ai reussi a
+        me rattraper plus tard, grace au travail, sur d'autres projet, qui m'ont fait gagner d'avantage d'experience et
+        de comprehension
+        grace a la pratique et la recherche. Coté back end, a l'époque je ne savais pas du tout comment j'allais m'y
+        prendre cela etais encore un mystere pour moi, je me suis donc aligné sur les recommendation de l'evaluation</p>
+
+    <h3>developpement du front-end</h3>
+    <p>Le developpement du front end a été une partie assez longue et semer de doute car je ne savais pas quel etais les
+        bonne pratique en matiere d'experience utilisateur, et que je n'avais pas encore
+        l'habitude de connaitre toute les logique css, par exemple les different type de position. j'ai donc commencer
+        par faire la navigation en utilisaant le framework bootstrap, puis j'ai enchainé
+        avec la page d'acceuil, puis la page de connexion et d'inscription, puis la barre de recherche de covoiturage,
+
+        j'ai ensuite fait la page de detail d'un covoiturage, puis la page d'espace utilisateur,j'ai utiliser la class
+        form-control du framework bootstrap pour l'apparence des inputs
+        puis la page d'espace employé, puis la page d'espace administrateur avec la meme class form-control pour les
+        input pour que le site soit uniforme. j'ai essayer de respecter au maximum la
+        charte graphique que j'avais realiser sur figma, mais j'ai du faire quelques modifications.
+
+        j'ai d'abord structure le html et le css et ensuite je me suis pencher sur la logique de php pour injecter les
+        informations dans la structure html. Mon evaluateur a souligne quelques points important sur la partie
+        responsive de lapplication qui n'etais pas tout a fait au point et sur l'experience utilisateur moyenne.
+        j'ai donc modifier toute l'apparence du site, qui etais assez basique et pas tres user friendly au final, meme
+        si a l'epoque j'etais plutot assez fier de moi d'avoir une page assez propre et fonctionnelle. j'ai donc tout
+        repris a zero, en me basant sur les conseils de mon evaluateur, en faisant des recherches sur internet pour
+        trouver des inspirations et des idées pour rendre le site plus moderne et plus user friendly. En plus, en
+        parralele je travailler sur d'autre projet personnel, et qui m'ont pousser a maximiser l'experience utilisateur.
+        et de manière plus generale je consomme beaucoup plus de contenu sur le web, et je me suis rendu compte que pas
+        mal de nouveau site utilise des animations au scroll, et que cela rend l'experience utilisateur plus fluide et
+        plus fun.
+        j'ai donc integrer cette fonctionnalité dans mon site, en utilisant du javascript pour detecter le scroll et
+        ajouter des classes css pour animer les elements au scroll. J'ai trouver une page qui recense plusieurs type
+        d'animation au scroll, et j'ai choisi celles qui me plaisait le plus et qui correspondait le mieux a mon site.
+        donc par exemple, j'ai changer la barre de navigation statique de bootstrap, pour une barre de navigation qui
+        s'elargie au scroll, laissant apparaitre une barre de recherche quand l'utilisateur scroll vers le bas et
+        disparait quand il scroll vers le haut.
+        le menu de la nav est un menu burger qui s'ouvre et se ferme au clic et qui se ferme automatiquement si on
+        scroll trop pour descendre sur la page.
+        j'ai
+        aussi du modifier certains parametre pour le responsive design, car je voulais que le site soit utilisable sur
+        mobile et
+        tablette mais aussi que l'utilisateur n'est pas a scroller horizontalement. j'ai donc utiliser des media queries
+        pour adapter le design en fonction de la taille de l'ecran. et paramettre le body et les div en max-width 100%
+        pour eviter le scroll horizontal. pour certaines pages j'ai du utiliser l'outline pour visualiser les elements
+        qui depassé en largeur de l'ecran mobile et ajuster en consequence. Suite aux remarque du correcteur j'ai aussi
+        decider de changer toute la page d'acceuil, en utilisant des carousel pour afficher certains élément qui
+        prennais trop de place et alourdisser l'experience .
+        j'ai aussi utiliser des
+        animations grace aux keyFrames de css pour rendre l'experience utilisateur plus agréable.
+        j'ai aussi utiliser
+        des icones fontawesome pour rendre le
+        design plus moderne, plus visuel et uniforme, car dans l'ancienne version, les icon etais des icon gratuite à
+        telecharger manuelement, tout un travail en plus de recherche et de css pour au final ne pas avoir de theme
+        uniforme sur sa,
+        a la base je ne savais pas que l'on pouvais utiliser fontawesome de maniere aussi simple .
+
+        j'ai aussi utiliser des images libre de droit pour rendre le design plus visuel et plus attractif, coupler a de
+        l'animation au
+        scroll qui dispose a mesure que vous scroller les image en grid.
+        j'ai aussi utiliser des tooltips pour rendre le design plus interactif et plus pratique a utiliser.
+        donc au final, un site interactif au toucher, equilibré, et a l'apparence professionelle.
+    <h3>La base de données relationelle </h3>
+    <p>Pour la base de données, j'ai tout d'abord essayer de me connecter a phpmyadmin en local, mais je n'y suis pas
+        arriver, j'ai ensuite essayer d'utiliser mysql workbench mais je n'y suis pas arriver non plus l'application
+        planter a chaque fois,
+        j'ai donc utiliser dbbrowser for sqlite, qui est une base de données relationnelle mais qui n'est pas mysql,
+        mais qui a le merite de fonctionner et de me permettre de faire mes requetes sql. j'ai donc du adapter certaines
+        requetes pour qu'elles fonctionnent avec sqlite, mais dans l'ensemble cela ne m'a pas trop poser de probleme,
+        c'etais surtout pour continuer de travailler en local et d'afficher les resultats sur ma page php. Le temps
+        s'ecouler et je ne trouve aucune autre solution pour se connecter a une base de donnée..
+        j'ai commencer par faire un diagramme de classes pour visualiser les differentes tables
+        et leurs relations. j'ai ensuite creer les tables dans la base de donné sqlite en utilisant le langage SQL.
+        j'ai ensuite inserer des données de test pour pouvoir tester les requetes SQL. j'ai utiliser des requetes
+        préparées pour eviter les injections SQL. j'ai aussi utiliser des clés étrangères pour assurer l'intégrité
+        référentielle entre les tables.
+
+        c'est en déployant mon application avec infomaniak que j'ai pu utiliser phpmyadmin en utilisant le langage SQL
+        pour creer les tables et les relations. j'ai ensuite inserer
+        des données de test pour pouvoir tester les requetes SQL.
+        j'ai aussi utiliser des procédures stockées pour encapsuler la logique
+        métier dans la base de données. comme l'id de l'utilisateur ou sa photo. je n'ai pas reussi a utiliser des
+        triggers pour automatiser certaines actions dans la base
+        de données car le phpmyadmin de infomaniak ne le permet pas.
+        j'ai aussi utiliser des contraintes pour assurer la validité des données dans la base de données comme l'adresse
+        email unique de chaque utilisateur. j'ai aussi
+        utiliser des types de données appropriés pour chaque colonne dans les tables.
+
+    <h3>Connexion & authentification</h3>
+    <p>
+        Pour la connexion a la base de données, j'ai utiliser PDO (PHP Data Objects) qui est une extension de PHP
+        qui permet de se connecter a une base de données en utilisant une interface orientée objet. j'ai creer un
+        fichier .env pour stocker les informations de connexion a la base de données (host, dbname, username, password)
+        de maniere securisée. j'ai ensuite importer la librairie vlucas/phpdotenv pour lire les variables
+        d'environnement
+        depuis le fichier .env.
+        j'ai ensuite utiliser cette instance de PDO pour faire des requetes SQL dans
+        les différentes pages de l'application.
+        Pour l'authentification, j'ai creer une table users dans la base de données qui contient les informations
+        des utilisateurs (id, nom, prenom, email, mot de passe, role, photo). le role par defaut est celui d'un
+        utilisateur c'est celui que tout le monde obtient quand il s'inscrit sur le site. j'ai ensuite creer un
+        formulaire de
+        connexion dans la page login.php qui envoie les informations saisies par l'utilisateur (email et mot de passe)
+        a la page loginBe.php qui verifie si l'email existe dans la base de données et si le mot de passe
+        correspond a celui stocké dans la base de données en utilisant la fonction password_verify(). si les
+        informations sont correctes, j'initialise une session pour l'utilisateur en utilisant la fonction
+        session_start()
+        et je stocke les informations de l'utilisateur dans des variables de session ($_SESSION['user_id'],
+        , $_SESSION['role'], et $_SESSION['photo']).
+        j'utilise ensuite ces variables de session pour afficher des informations personnalisées dans l'espace
+        utilisateur et pour gerer les permissions d'acces aux differentes pages en fonction du role de l'utilisateur.
+        j'ai aussi creer un formulaire d'inscription dans la page register.php qui envoie les informations saisies par
+        l'utilisateur (nom, prenom, email, mot de passe) a la page registerBe.php qui verifie si l'email n'existe
+        pas deja dans la base de données et si le mot de passe respecte les critères de sécurité (longueur minimale,
+        présence de caractères spéciaux, etc) en utilisant des expressions régulières. si les informations sont
+        correctes, j'insere les informations de l'utilisateur dans la base de données en utilisant une requete préparée
+        avec des paramètres liés pour eviter les injections SQL. j'utilise ensuite la fonction password_hash() pour
+        hasher le mot de passe avant de le stocker dans la base de données.
+        j'ai aussi creer un formulaire de modification des informations personnelles dans l'espace utilisateur qui
+        envoie les informations saisies par l'utilisateur (nom, prenom, email, mot de passe, photo) a la page
+        accountBe.php apres verification de l'email et du mot de passe, j'update les informations de l'utilisateur dans
+        la base de
+        données en utilisant une requete préparée avec des paramètres liés pour eviter les injections SQL.
+        j'ai aussi creer un formulaire de deconnexion dans l'espace utilisateur qui detruit la session de
+        l'utilisateur en utilisant la fonction session_destroy() et redirige l'utilisateur vers la page d'acceuil.
+    </p>
+    <h3>La recherche</h3>
+    <p>
+        Pour la recherche de covoiturage, j'ai creer un formulaire de recherche dans la barre de navigation qui envoie
+        les informations saisies par l'utilisateur (ville de depart, ville d'arrivee, date) a la page covoiturageBe.php
+
+        en utilisant la methode GET pour que pour que l'utilisateur puisse faire une recherche de n'importe quel page du
+        site et les informations soient visibles dans l'URL et puissent etre partagées.
+        j'utilise ensuite ces informations pour faire une requete SQL dans la table covoiturages en utilisant des
+        clauses
+        WHERE pour filtrer les résultats en fonction des critères de recherche. j'utilise aussi des opérateurs
+        logiques (AND, OR) pour combiner plusieurs critères de recherche.
+        j'affiche ensuite les résultats de la recherche dans la page covoiturage.php en utilisant une boucle foreach
+        pour
+        parcourir les résultats et afficher les informations de chaque covoiturage (ville de depart, ville d'arrivee,
+        date, heure, nombre de places disponibles, prix, nom du chauffeur, photo du chauffeur).
+        il m'arrivera de faire des erreurs dans les requetes SQL, mais j'ai reussi a les corriger en utilisant la
+        console de
+        debug de mon navigateur pour afficher les erreurs et les messages d'erreur de PHP pour comprendre ce qui
+        n'allais pas.
+        j'ai fait des jointures entre les tables covoiturages et users pour afficher le nom et la photo du chauffeur
+        dans les résultats de la recherche.
+        l'affichage des resultats de la recherche est fait en utilisant un carte custom pour chaque covoiturage, le nom
+        du chauffeur, la photo du chauffeur, la ville de depart, la ville d'arrivee, la date, l'heure, le nombre de
+        places disponibles et le prix. j'ai utiliser des icones fontawesome pour rendre le design plus moderne et plus
+        visuel.
+        j'ai aussi creer un formulaire de filtre dans la page search.php qui permet a l'utilisateur de filtrer les
+        résultats de la recherche en fonction du prix (croissant ou decroissant) et du nombre de places disponibles
+        (croissant ou decroissant). j'utilise ensuite ces informations pour trier les resultats de la recherche qui
+        affiche ou non les covoiturages en fonction des critères de filtre.
+    </p>
+    <h3>FILTRES DYNAMIQUE</h3>
+    <p>
+        j'ai cibler dans le html de la page covoiturage.php les elements a filtrer en leur ajoutant une class ou un id
+        unique, puis j'ai utiliser javascript pour ajouter un evenement au clic sur les boutons de filtre qui va
+        parcourir tous les elements a filtrer et les afficher ou les cacher en fonction du critere de filtre
+        selectionné.
+        le javascript compare les valeurs des elements a filtrer avec la valeur du critere de filtre selectionné, il en
+        sort un booléen, et ajoute ou retire une class css qui va afficher ou cacher l'element en fonction du booléen de
+        filtre selectionné. Le booléen par défaut est "vrai" pour afficher tous les elements et en fonction du filtre
+        selectionné, le booléen devient "faux" si il n'y pas de correspondance et cache les elements qui ne
+        correspondent pas au critere de filtre
+        selectionné en appliquant un display none en css sur le container en question.
+    </p>
+
+    <h3>Espace user/employé/administrateur</h3>
+    <p>
+        Pour l'espace utilisateur, j'ai creer une page account.php qui affiche les informations personnelles de
+        l'utilisateur (nom, prenom, email, photo) en utilisant les variables de session ($_SESSION['user_id'],
+        $_SESSION['role'], et $_SESSION['photo']) pour recuperer les informations de l'utilisateur dans la base de
+        données.
+        j'ai aussi afficher a l'aide d'un carroussel les covoiturages auxquels l'utilisateur a participé en utilisant
+        une requete SQL avec une
+        jointure entre les tables covoiturages et participations pour afficher les informations de chaque covoiturage
+        (ville de depart, ville d'arrivee, date, heure, nombre de places disponibles, prix, nom du chauffeur, photo du
+        chauffeur) grace a une boucle foreach pour parcourir les résultats et afficher les informations de chaque
+        covoiturage.
+        j'ai aussi afficher a l'aide d'un carroussel les covoiturages que l'utilisateur a creer en utilisant une
+        requete SQL pour recuperer les covoiturages dont l'id du chauffeur est egal a l'id de l'utilisateur
+        ($_SESSION['user_id']) dans la table covoiturages.
+        j'ai aussi creer un formulaire de modification des informations personnelles dans l'espace utilisateur qui
+        envoie les informations saisies par l'utilisateur (nom, prenom, email, mot de passe, photo) a la page
+        accountBe.php apres verification de l'email et du mot de passe, j'update les informations de l'utilisateur dans
+        la base de
+        données en utilisant une requete préparée avec des paramètres liés pour eviter les injections SQL.
+        j'ai aussi creer un formulaire de creation de covoiturage dans l'espace utilisateur qui fonctionne que si
+        l'utilisateur a ajouter un vehicule et qui envoie les
+        informations saisies par l'utilisateur (ville de depart, ville d'arrivee, date, heure, nombre de places
+        disponibles, prix) a la page accountBE.php qui insere les informations du covoiturage dans la base
+        de données en utilisant une requete préparée avec des paramètres liés pour eviter les injections SQL. j'utilise
+        aussi la variable de session ($_SESSION['user_id']) pour stocker l'id du chauffeur dans la table covoiturages.
+        j'utilise aussi la variable de session ($_SESSION['user_id']) pour stocker
+        l'id de l'utilisateur dans la table participations.
+        Pour l'espace employé j'ai creer une page employee.php strictement accessible aux employes grace a une
+        verification du
+        role de l'utilisateur ($_SESSION['role']).
+        j'ai aussi afficher les avis en attente de validation en utilisant une requete SQL pour recuperer les avis
+        dont le statut est "en attente" dans la table avis.
+        j'affiche les informations de chaque avis (nom de l'utilisateur, photo de l'utilisateur, note, commentaire,
+        date) en utilisant une
+        boucle foreach pour parcourir les résultats et afficher les informations de chaque avis dynamiquement dans le
+        html sans recharger la page grace a ajax.
+        le javascript utilise ajax pour envoyer les informations saisies par l'employé (id de l'avis, statut) a la page
+        fetchavis.php qui renvoie un json
+        avec les informations de l'avis mis a jour (id, statut) pour mettre a jour l'affichage de l'avis dans la page
+        employee.php sans recharger la page.
+        j'ai aussi creer un formulaire de validation des avis dans l'espace employé qui envoie les informations saisies
+        par l'employé (id de l'avis, statut) a la page employeeBe.php qui update le statut de l'avis dans la base de
+        données en utilisant une requete préparée avec des paramètres liés pour eviter les injections SQL.
+        Pour l'espace administrateur j'ai creer une page admin.php qui affiche les utilisateurs inscrits sur la
+        plateforme en utilisant une requete SQL pour recuperer les informations de chaque utilisateur (nom, prenom,
+        email, role,).
+        l'administrateur peux a tout moment suprimer un utilisateur de la base de données en utilisant un formulaire de
+        suppression d'utilisateur mais aussi en creer un nouveau en lui attribuant le role d'utilisateur ou d'employé.
+        j'ai aussi afficher l'activité du site illustrée en graphiques en utilisant la librairie Chart.js pour
+        afficher des graphiques en barres et en lignes.
+
+    </p>
+    <h3>Base de données non relationelle</h3>
+    <p>
+        j'ai du installer mongodb sur mon ordinateur pour pouvoir l'utiliser en local, j'ai ensuite installer la
+        librairie
+        mongodb/mongodb via composer pour pouvoir utiliser mongodb en php. j'ai mis 2 jours a installer mongodb sur mon
+        ordinateur car je n'y arrivais pas, car la version de php n'etais pas compatible avec la version de mongodb que
+        j'avais
+        telecharger, j'ai donc du changer la version de php pour que cela fonctionne. ensuite j'ai exporter la base de
+        données
+        de mysql vers un json pour pouvoir l'importer dans mongodb. j'ai ensuite creer une connexion a mongodb en
+        utilisant la librairie
+        mongodb/mongodb et en utilisant les variables d'environnement pour stocker les informations de connexion a la
+        base de données.
+        j'ai ensuite creer une collection avis dans la base de données qui contient les informations des untilisateurs
+        (id, nom, prenom, email, note, commentaire, date, statut).
+        j'ai ensuite inserer des données de test pour pouvoir tester les requetes mongodb. j'ai utiliser des requetes
+        préparées pour eviter les injections mongodb. j'ai utilisé un file_get_contents
+        pour lire le fichier json et un json_decode pour le convertir en tableau associatif. j'ai ensuite parcouru le
+        tableau
+        associatif pour inserer les données dans la collection avis en utilisant la méthode insertOne() de la librairie
+        mongodb/mongodb.
+
+    </p>
+    <h3>le mailer</h3>
+    <p>
+        Pour l'envoie d'email, j'ai utiliser la librairie PHPMailer qui est une librairie php qui permet d'envoyer des
+        emails en utilisant le protocole SMTP. j'ai installer la librairie via composer en utilisant la commande
+        composer require phpmailer/phpmailer. j'ai ensuite creer une instance de PHPMailer et configurer les
+        paramètres de connexion au serveur SMTP (host, username, password, port, encryption) en utilisant les variables
+        d'environnement pour stocker les informations de connexion a la base de données.
+        pour configurer le smtp gmail j'ai du genererun mot de passe d'application dans les paramètres de mon compte
+        google, car google n'autorise pas les applications tierces a se connecter a son serveur SMTP avec le mot de
+        passe
+        de l'utilisateur. j'ai donc generer un mot de passe d'application qui est un mot de passe spécifique a
+        l'application qui permet a l'application de se connecter au serveur SMTP de google.
+        j'ai ensuite utiliser cette instance de PHPMailer pour envoyer des emails dans les différentes pages de
+        l'application.
+        j'ai creer un formulaire de contact dans la page index.php qui envoie les informations saisies par
+        l'utilisateur (nom, prenom, email, sujet, message) a la page send.php qui utilise l'instance de PHPMailer
+        pour envoyer un email a l'adresse email du support technique avec les informations saisies par l'utilisateur.
+
+        j'ai aussi creer un envoie d'email automatique aux participants d'un covoiturage une fois que le covoiturage est
+        arreter dans la page account.php qui utilise l'instance de PHPMailer pour envoyer un email a chaque participant
+        avec les informations du covoiturage (ville de depart, ville d'arrivee, date, heure, nom du chauffeur, photo du
+        chauffeur) et un message pour se rendre sur l'espace utilisateur pour noter le chauffeur et laisser un avis.
+    </p>
+
+    <h3>deploiement</h3>
+    <p>
+        Pour le déploiement de l'application, j'ai utiliser le service d'hébergement web infomaniak qui est un service
+        d'hébergement web payant mais qui offre un bon rapport qualité prix. j'ai choisi ce service car il offre une
+        base de données mysql et un accès a phpmyadmin pour gérer la base de données. j'ai aussi choisi ce service car
+        il offre un certificat SSL gratuit pour sécuriser les communications entre le serveur et le client.
+        j'ai ensuite acheter un nom de domaine eco-ride.online pour rendre l'application accessible via une
+        adresse web facile a retenir.
+        j'ai ensuite utiliser un client FTP (FileZilla) pour transférer les fichiers de l'application depuis mon
+        ordinateur vers le serveur infomaniak. j'ai ensuite configurer les paramètres de connexion a la base de données
+        dans le fichier .env pour qu'ils correspondent aux paramètres de connexion a la base de données infomaniak.
+        j'ai ensuite creer les table dans la base de données infomaniak en utilisant le langage SQL dans
+        phpmyadmin.
+        j'ai ensuite tester l'application en ligne pour vérifier que tout fonctionne correctement et que les
+        fonctionnalités sont opérationnelles.
+        j'ai aussi du faire des modifications dans le code pour que l'application fonctionne correctement en ligne, car
+        certaines fonctionnalités ne fonctionnaient pas correctement en lign mais fonctionnaient correctement en local.
+        a cause des chemins relatifs et absolus, j'ai du modifier les chemins des fichiers pour qu'ils soient relatifs a
+        la racine du
+        serveur et non pas a la racine de mon ordinateur.
+        J'ai du corriger le front-end du site car malgre le fait que j'avais tester le site en local sur mon navigateur
+        google chrome, le site ne s'affichait pas correctement sur d'autre navigateur comme safari. j'ai donc
+        du tester le site sur plusieurs navigateur pour vérifier que le site s'affiche correctement sur tous les
+        navigateurs.
+        j'ai aussi du corriger le responsive design du site car malgre le fait que j'avais tester le site en local sur
+        mon ordinateur et mon téléphone, le site ne s'affichait pas correctement sur d'autre téléphone ou tablette. j'ai
+        donc du tester le site sur plusieurs appareil pour vérifier que le site s'affiche correctement sur tous les
+        appareils.
+
+
+        j'ai aussi du faire des modifications dans le code pour améliorer la sécurité de l'application en ligne, car
+        certaines fonctionnalités étaient vulnérables aux attaques XSS ou CSRF. j'ai donc du ajouter des mesures de
+        sécurité supplémentaires comme la validation des données, la protection contre les attaques XSS et CSRF, etc.
+        j'ai aussi du faire des modifications dans le code pour améliorer l'expérience utilisateur de l'application en
+        ligne, car certaines fonctionnalités n'étaient pas intuitives ou faciles a utiliser. j'ai donc du modifier
+        l'interface utilisateur, ajouter des messages d'erreur clairs et précis, etc.
+        en résumé, le déploiement de l'application a été une étape importante et cruciale pour rendre l'application
+        accessible au public. cela m'a permis de mettre en pratique mes compétences en développement web et de
+        découvrir les défis et les opportunités liés au déploiement d'une application web en ligne.
+        j'ai meme reussi a rajouter une fav icon au site, ce qui n'etais pas prevu au depart. et ameliorer les balises
+        meta pour le referencement naturel.
+    </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 
